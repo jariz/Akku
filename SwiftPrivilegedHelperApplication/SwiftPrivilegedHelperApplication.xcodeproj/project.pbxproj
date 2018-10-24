@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		532308FA2163A87600A456CF /* ExtensionsNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532308F92163A87600A456CF /* ExtensionsNSTextView.swift */; };
+		5332883321660B2400028C27 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3960215E3068007310F5 /* HelperAuthorization.swift */; };
+		5332883421660D7A00028C27 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */; };
+		535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
+		53604C07215E12F300071149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C06215E12F300071149 /* AppDelegate.swift */; };
+		53604C09215E12F400071149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53604C08215E12F400071149 /* Assets.xcassets */; };
+		53604C0C215E12F400071149 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53604C0A215E12F400071149 /* MainMenu.xib */; };
+		53604C1B215E131E00071149 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C1A215E131E00071149 /* main.swift */; };
+		53604C20215E134500071149 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C1F215E134500071149 /* Helper.swift */; };
+		53604C22215E13E200071149 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
+		53604C26215E185D00071149 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
+		53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C29215E1B0100071149 /* AppProtocol.swift */; };
+		53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C29215E1B0100071149 /* AppProtocol.swift */; };
+		53604C2E215E1CFB00071149 /* com.github.erikberglund.SwiftPrivilegedHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6B95921676219001A80FD /* CodesignCheck.swift */; };
+		53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
+		53EE3961215E3068007310F5 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3960215E3068007310F5 /* HelperAuthorization.swift */; };
+		53EE3965215E3A85007310F5 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53EE395B215E22CE007310F5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53604BFB215E12F300071149 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53604C17215E131D00071149;
+			remoteInfo = com.github.erikberglund.SwiftPrivilegedHelper;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		53604C16215E131D00071149 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		53604C2D215E1CE600071149 /* Copy Helper */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Contents/Library/LaunchServices;
+			dstSubfolderSpec = 1;
+			files = (
+				53604C2E215E1CFB00071149 /* com.github.erikberglund.SwiftPrivilegedHelper in Copy Helper */,
+			);
+			name = "Copy Helper";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		532308F42163910700A456CF /* CodeSignUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CodeSignUpdate.sh; sourceTree = "<group>"; };
+		532308F92163A87600A456CF /* ExtensionsNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsNSTextView.swift; sourceTree = "<group>"; };
+		53604C03215E12F300071149 /* SwiftPrivilegedHelperApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPrivilegedHelperApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		53604C08215E12F400071149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		53604C0B215E12F400071149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		53604C0D215E12F400071149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.github.erikberglund.SwiftPrivilegedHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		53604C1A215E131E00071149 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		53604C1F215E134500071149 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		53604C21215E13E200071149 /* HelperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperConstants.swift; sourceTree = "<group>"; };
+		53604C23215E14C900071149 /* Helper-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Helper-Info.plist"; sourceTree = "<group>"; };
+		53604C24215E150C00071149 /* Helper-Launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Helper-Launchd.plist"; sourceTree = "<group>"; };
+		53604C25215E185D00071149 /* HelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperProtocol.swift; sourceTree = "<group>"; };
+		53604C29215E1B0100071149 /* AppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocol.swift; sourceTree = "<group>"; };
+		53C6B95921676219001A80FD /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
+		53EE3960215E3068007310F5 /* HelperAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAuthorization.swift; sourceTree = "<group>"; };
+		53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAuthorizationRight.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53604C00215E12F300071149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53604C15215E131D00071149 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		532308F12163908D00A456CF /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				532308F42163910700A456CF /* CodeSignUpdate.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		53604BFA215E12F300071149 = {
+			isa = PBXGroup;
+			children = (
+				53604C05215E12F300071149 /* SwiftPrivilegedHelperApplication */,
+				53604C19215E131E00071149 /* SwiftPrivilegedHelper */,
+				53C6B95B2167621D001A80FD /* Extensions */,
+				53C6B95C21676229001A80FD /* Utility */,
+				532308F12163908D00A456CF /* Scripts */,
+				53604C04215E12F300071149 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53604C04215E12F300071149 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53604C03215E12F300071149 /* SwiftPrivilegedHelperApplication.app */,
+				53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53604C05215E12F300071149 /* SwiftPrivilegedHelperApplication */ = {
+			isa = PBXGroup;
+			children = (
+				53604C06215E12F300071149 /* AppDelegate.swift */,
+				53604C29215E1B0100071149 /* AppProtocol.swift */,
+				53604C08215E12F400071149 /* Assets.xcassets */,
+				53604C0A215E12F400071149 /* MainMenu.xib */,
+				53604C0D215E12F400071149 /* Info.plist */,
+			);
+			path = SwiftPrivilegedHelperApplication;
+			sourceTree = "<group>";
+		};
+		53604C19215E131E00071149 /* SwiftPrivilegedHelper */ = {
+			isa = PBXGroup;
+			children = (
+				53604C1A215E131E00071149 /* main.swift */,
+				53604C1F215E134500071149 /* Helper.swift */,
+				53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */,
+				53EE3960215E3068007310F5 /* HelperAuthorization.swift */,
+				53604C21215E13E200071149 /* HelperConstants.swift */,
+				53604C25215E185D00071149 /* HelperProtocol.swift */,
+				53604C23215E14C900071149 /* Helper-Info.plist */,
+				53604C24215E150C00071149 /* Helper-Launchd.plist */,
+			);
+			path = SwiftPrivilegedHelper;
+			sourceTree = "<group>";
+		};
+		53C6B95B2167621D001A80FD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				532308F92163A87600A456CF /* ExtensionsNSTextView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53C6B95C21676229001A80FD /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				53C6B95921676219001A80FD /* CodesignCheck.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53604C02215E12F300071149 /* SwiftPrivilegedHelperApplication */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "SwiftPrivilegedHelperApplication" */;
+			buildPhases = (
+				5361D2122162410E0036E296 /* ShellScript */,
+				53604BFF215E12F300071149 /* Sources */,
+				53604C00215E12F300071149 /* Frameworks */,
+				53604C01215E12F300071149 /* Resources */,
+				53604C2D215E1CE600071149 /* Copy Helper */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53EE395C215E22CE007310F5 /* PBXTargetDependency */,
+			);
+			name = SwiftPrivilegedHelperApplication;
+			productName = SwiftPrivilegedHelperApplication;
+			productReference = 53604C03215E12F300071149 /* SwiftPrivilegedHelperApplication.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53604C17215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "com.github.erikberglund.SwiftPrivilegedHelper" */;
+			buildPhases = (
+				5361D213216254BC0036E296 /* ShellScript */,
+				53604C14215E131D00071149 /* Sources */,
+				53604C15215E131D00071149 /* Frameworks */,
+				53604C16215E131D00071149 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = com.github.erikberglund.SwiftPrivilegedHelper;
+			productName = SwiftPrivilegedHelper;
+			productReference = 53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53604BFB215E12F300071149 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Erik Berglund";
+				TargetAttributes = {
+					53604C02215E12F300071149 = {
+						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
+					};
+					53604C17215E131D00071149 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 53604BFE215E12F300071149 /* Build configuration list for PBXProject "SwiftPrivilegedHelperApplication" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53604BFA215E12F300071149;
+			productRefGroup = 53604C04215E12F300071149 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53604C02215E12F300071149 /* SwiftPrivilegedHelperApplication */,
+				53604C17215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53604C01215E12F300071149 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53604C09215E12F400071149 /* Assets.xcassets in Resources */,
+				53604C0C215E12F400071149 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5361D2122162410E0036E296 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n";
+		};
+		5361D213216254BC0036E296 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53604BFF215E12F300071149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53604C07215E12F300071149 /* AppDelegate.swift in Sources */,
+				535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */,
+				53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */,
+				53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */,
+				53EE3965215E3A85007310F5 /* HelperAuthorizationRight.swift in Sources */,
+				532308FA2163A87600A456CF /* ExtensionsNSTextView.swift in Sources */,
+				53EE3961215E3068007310F5 /* HelperAuthorization.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53604C14215E131D00071149 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */,
+				53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */,
+				53604C1B215E131E00071149 /* main.swift in Sources */,
+				53604C26215E185D00071149 /* HelperProtocol.swift in Sources */,
+				53604C22215E13E200071149 /* HelperConstants.swift in Sources */,
+				53604C20215E134500071149 /* Helper.swift in Sources */,
+				5332883421660D7A00028C27 /* HelperAuthorizationRight.swift in Sources */,
+				5332883321660B2400028C27 /* HelperAuthorization.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53EE395C215E22CE007310F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53604C17215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */;
+			targetProxy = 53EE395B215E22CE007310F5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53604C0A215E12F400071149 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53604C0B215E12F400071149 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53604C0F215E12F400071149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		53604C10215E12F400071149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		53604C12215E12F400071149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JHKDY4UQ72;
+				INFOPLIST_FILE = SwiftPrivilegedHelperApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelperApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		53604C13215E12F400071149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = JHKDY4UQ72;
+				INFOPLIST_FILE = SwiftPrivilegedHelperApplication/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelperApplication;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		53604C1D215E131E00071149 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JHKDY4UQ72;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Launchd.plist\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		53604C1E215E131E00071149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JHKDY4UQ72;
+				INFOPLIST_FILE = "$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				OTHER_LDFLAGS = (
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Launchd.plist\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53604BFE215E12F300071149 /* Build configuration list for PBXProject "SwiftPrivilegedHelperApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53604C0F215E12F400071149 /* Debug */,
+				53604C10215E12F400071149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "SwiftPrivilegedHelperApplication" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53604C12215E12F400071149 /* Debug */,
+				53604C13215E12F400071149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "com.github.erikberglund.SwiftPrivilegedHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53604C1D215E131E00071149 /* Debug */,
+				53604C1E215E131E00071149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53604BFB215E12F300071149 /* Project object */;
+}
