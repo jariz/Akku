@@ -3,18 +3,18 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.github.erikberglund.SwiftPrivilegedHelper</string>
+	<string>io.jari.AkkuHelper</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>com.github.erikberglund.SwiftPrivilegedHelper</string>
+	<string>io.jari.AkkuHelper</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>SMAuthorizedClients</key>
 	<array>
-		<string>identifier "com.github.erikberglund.SwiftPrivilegedHelperApplication" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Erik Berglund (BXUF2UUW7E)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		<string>identifier "io.jari.Akku" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Jari Zwarts (GZXL2VN3E9)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 	</array>
 </dict>
 </plist>

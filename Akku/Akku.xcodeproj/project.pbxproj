@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
 		532308FA2163A87600A456CF /* ExtensionsNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532308F92163A87600A456CF /* ExtensionsNSTextView.swift */; };
 		5332883321660B2400028C27 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3960215E3068007310F5 /* HelperAuthorization.swift */; };
 		5332883421660D7A00028C27 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */; };
@@ -20,7 +21,7 @@
 		53604C26215E185D00071149 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
 		53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C29215E1B0100071149 /* AppProtocol.swift */; };
 		53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C29215E1B0100071149 /* AppProtocol.swift */; };
-		53604C2E215E1CFB00071149 /* com.github.erikberglund.SwiftPrivilegedHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		53604C2E215E1CFB00071149 /* io.jari.AkkuHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* io.jari.AkkuHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6B95921676219001A80FD /* CodesignCheck.swift */; };
 		53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
 		53EE3961215E3068007310F5 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3960215E3068007310F5 /* HelperAuthorization.swift */; };
@@ -28,12 +29,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		53EE395B215E22CE007310F5 /* PBXContainerItemProxy */ = {
+		49A57C342181DA1C00119136 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53604BFB215E12F300071149 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 53604C17215E131D00071149;
-			remoteInfo = com.github.erikberglund.SwiftPrivilegedHelper;
+			remoteInfo = io.jari.AkkuHelper;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -53,7 +54,7 @@
 			dstPath = Contents/Library/LaunchServices;
 			dstSubfolderSpec = 1;
 			files = (
-				53604C2E215E1CFB00071149 /* com.github.erikberglund.SwiftPrivilegedHelper in Copy Helper */,
+				53604C2E215E1CFB00071149 /* io.jari.AkkuHelper in Copy Helper */,
 			);
 			name = "Copy Helper";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,14 +62,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		532308F42163910700A456CF /* CodeSignUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CodeSignUpdate.sh; sourceTree = "<group>"; };
 		532308F92163A87600A456CF /* ExtensionsNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsNSTextView.swift; sourceTree = "<group>"; };
-		53604C03215E12F300071149 /* SwiftPrivilegedHelperApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPrivilegedHelperApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53604C08215E12F400071149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53604C0B215E12F400071149 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		53604C0D215E12F400071149 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = com.github.erikberglund.SwiftPrivilegedHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+		53604C18215E131D00071149 /* io.jari.AkkuHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = io.jari.AkkuHelper; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C1A215E131E00071149 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		53604C1F215E134500071149 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		53604C21215E13E200071149 /* HelperConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperConstants.swift; sourceTree = "<group>"; };
@@ -110,8 +112,9 @@
 		53604BFA215E12F300071149 = {
 			isa = PBXGroup;
 			children = (
-				53604C05215E12F300071149 /* SwiftPrivilegedHelperApplication */,
-				53604C19215E131E00071149 /* SwiftPrivilegedHelper */,
+				495D69CE218124CC004621C9 /* SMJobBlessUtil.py */,
+				53604C05215E12F300071149 /* Akku */,
+				53604C19215E131E00071149 /* AkkuHelper */,
 				53C6B95B2167621D001A80FD /* Extensions */,
 				53C6B95C21676229001A80FD /* Utility */,
 				532308F12163908D00A456CF /* Scripts */,
@@ -122,13 +125,13 @@
 		53604C04215E12F300071149 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				53604C03215E12F300071149 /* SwiftPrivilegedHelperApplication.app */,
-				53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */,
+				53604C03215E12F300071149 /* Akku.app */,
+				53604C18215E131D00071149 /* io.jari.AkkuHelper */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		53604C05215E12F300071149 /* SwiftPrivilegedHelperApplication */ = {
+		53604C05215E12F300071149 /* Akku */ = {
 			isa = PBXGroup;
 			children = (
 				53604C06215E12F300071149 /* AppDelegate.swift */,
@@ -137,10 +140,10 @@
 				53604C0A215E12F400071149 /* MainMenu.xib */,
 				53604C0D215E12F400071149 /* Info.plist */,
 			);
-			path = SwiftPrivilegedHelperApplication;
+			path = Akku;
 			sourceTree = "<group>";
 		};
-		53604C19215E131E00071149 /* SwiftPrivilegedHelper */ = {
+		53604C19215E131E00071149 /* AkkuHelper */ = {
 			isa = PBXGroup;
 			children = (
 				53604C1A215E131E00071149 /* main.swift */,
@@ -152,7 +155,7 @@
 				53604C23215E14C900071149 /* Helper-Info.plist */,
 				53604C24215E150C00071149 /* Helper-Launchd.plist */,
 			);
-			path = SwiftPrivilegedHelper;
+			path = AkkuHelper;
 			sourceTree = "<group>";
 		};
 		53C6B95B2167621D001A80FD /* Extensions */ = {
@@ -174,9 +177,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		53604C02215E12F300071149 /* SwiftPrivilegedHelperApplication */ = {
+		53604C02215E12F300071149 /* Akku */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "SwiftPrivilegedHelperApplication" */;
+			buildConfigurationList = 53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "Akku" */;
 			buildPhases = (
 				5361D2122162410E0036E296 /* ShellScript */,
 				53604BFF215E12F300071149 /* Sources */,
@@ -189,14 +192,14 @@
 			dependencies = (
 				53EE395C215E22CE007310F5 /* PBXTargetDependency */,
 			);
-			name = SwiftPrivilegedHelperApplication;
+			name = Akku;
 			productName = SwiftPrivilegedHelperApplication;
-			productReference = 53604C03215E12F300071149 /* SwiftPrivilegedHelperApplication.app */;
+			productReference = 53604C03215E12F300071149 /* Akku.app */;
 			productType = "com.apple.product-type.application";
 		};
-		53604C17215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */ = {
+		53604C17215E131D00071149 /* io.jari.AkkuHelper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "com.github.erikberglund.SwiftPrivilegedHelper" */;
+			buildConfigurationList = 53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "io.jari.AkkuHelper" */;
 			buildPhases = (
 				5361D213216254BC0036E296 /* ShellScript */,
 				53604C14215E131D00071149 /* Sources */,
@@ -207,9 +210,9 @@
 			);
 			dependencies = (
 			);
-			name = com.github.erikberglund.SwiftPrivilegedHelper;
+			name = io.jari.AkkuHelper;
 			productName = SwiftPrivilegedHelper;
-			productReference = 53604C18215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */;
+			productReference = 53604C18215E131D00071149 /* io.jari.AkkuHelper */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -220,7 +223,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "Erik Berglund";
+				ORGANIZATIONNAME = JARI.IO;
 				TargetAttributes = {
 					53604C02215E12F300071149 = {
 						CreatedOnToolsVersion = 10.0;
@@ -235,7 +238,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 53604BFE215E12F300071149 /* Build configuration list for PBXProject "SwiftPrivilegedHelperApplication" */;
+			buildConfigurationList = 53604BFE215E12F300071149 /* Build configuration list for PBXProject "Akku" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -248,8 +251,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				53604C02215E12F300071149 /* SwiftPrivilegedHelperApplication */,
-				53604C17215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */,
+				53604C02215E12F300071149 /* Akku */,
+				53604C17215E131D00071149 /* io.jari.AkkuHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -259,6 +262,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */,
 				53604C09215E12F400071149 /* Assets.xcassets in Resources */,
 				53604C0C215E12F400071149 /* MainMenu.xib in Resources */,
 			);
@@ -338,8 +342,8 @@
 /* Begin PBXTargetDependency section */
 		53EE395C215E22CE007310F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 53604C17215E131D00071149 /* com.github.erikberglund.SwiftPrivilegedHelper */;
-			targetProxy = 53EE395B215E22CE007310F5 /* PBXContainerItemProxy */;
+			target = 53604C17215E131D00071149 /* io.jari.AkkuHelper */;
+			targetProxy = 49A57C342181DA1C00119136 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,17 +478,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
-				INFOPLIST_FILE = SwiftPrivilegedHelperApplication/Info.plist;
+				INFOPLIST_FILE = Akku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelperApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.Akku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
@@ -493,17 +499,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
-				INFOPLIST_FILE = SwiftPrivilegedHelperApplication/Info.plist;
+				INFOPLIST_FILE = Akku/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelperApplication;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.Akku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -511,21 +519,22 @@
 		53604C1D215E131E00071149 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
-				INFOPLIST_FILE = "$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
 					__info_plist,
-					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist\"",
+					"\"$(SRCROOT)/AkkuHelper/Helper-Info.plist\"",
 					"-sectcreate",
 					__TEXT,
 					__launchd_plist,
-					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Launchd.plist\"",
+					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -535,21 +544,22 @@
 		53604C1E215E131E00071149 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
-				INFOPLIST_FILE = "$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
 					__info_plist,
-					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Info.plist\"",
+					"\"$(SRCROOT)/AkkuHelper/Helper-Info.plist\"",
 					"-sectcreate",
 					__TEXT,
 					__launchd_plist,
-					"\"$(SRCROOT)/SwiftPrivilegedHelper/Helper-Launchd.plist\"",
+					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.github.erikberglund.SwiftPrivilegedHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -559,7 +569,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		53604BFE215E12F300071149 /* Build configuration list for PBXProject "SwiftPrivilegedHelperApplication" */ = {
+		53604BFE215E12F300071149 /* Build configuration list for PBXProject "Akku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53604C0F215E12F400071149 /* Debug */,
@@ -568,7 +578,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "SwiftPrivilegedHelperApplication" */ = {
+		53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "Akku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53604C12215E12F400071149 /* Debug */,
@@ -577,7 +587,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "com.github.erikberglund.SwiftPrivilegedHelper" */ = {
+		53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "io.jari.AkkuHelper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				53604C1D215E131E00071149 /* Debug */,

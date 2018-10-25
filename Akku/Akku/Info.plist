@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string></string>
 	<key>CFBundleIdentifier</key>
-	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<string>io.jari.Akku</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,15 +23,15 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Erik Berglund. All rights reserved.</string>
+	<string>Copyright © 2018 Jari Zwarts. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>SMPrivilegedExecutables</key>
 	<dict>
-		<key>com.github.erikberglund.SwiftPrivilegedHelper</key>
-		<string>identifier "com.github.erikberglund.SwiftPrivilegedHelper" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Erik Berglund (BXUF2UUW7E)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+		<key>io.jari.AkkuHelper</key>
+		<string>identifier "io.jari.AkkuHelper" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Jari Zwarts (GZXL2VN3E9)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
 	</dict>
 </dict>
 </plist>

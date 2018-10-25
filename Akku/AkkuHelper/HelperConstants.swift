@@ -17,5 +17,5 @@ let kAuthorizationRightKeyVersion   = "version"
 let kAuthorizationFailedExitCode    = NSNumber(value: 503340)
 
 struct HelperConstants {
-    static let machServiceName = "com.github.erikberglund.SwiftPrivilegedHelper"
+    static let machServiceName = "io.jari.AkkuHelper"
 }

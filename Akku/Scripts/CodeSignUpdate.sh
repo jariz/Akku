@@ -12,8 +12,8 @@ set -e
 ### CUSTOM VARIABLES
 ###
 
-bundleIdentifierApplication="com.github.erikberglund.SwiftPrivilegedHelperApplication"
-bundleIdentifierHelper="com.github.erikberglund.SwiftPrivilegedHelper"
+bundleIdentifierApplication="io.jari.Akku"
+bundleIdentifierHelper="io.jari.AkkuHelper"
 
 ###
 ### STATIC VARIABLES
