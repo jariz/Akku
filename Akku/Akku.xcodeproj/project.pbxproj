@@ -8,9 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
-		532308FA2163A87600A456CF /* ExtensionsNSTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532308F92163A87600A456CF /* ExtensionsNSTextView.swift */; };
-		5332883321660B2400028C27 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3960215E3068007310F5 /* HelperAuthorization.swift */; };
-		5332883421660D7A00028C27 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */; };
+		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
+		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
+		49A57C452182359100119136 /* L2CapPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3C2182359100119136 /* L2CapPacket.swift */; };
+		49A57C462182359100119136 /* EventPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3D2182359100119136 /* EventPacket.swift */; };
+		49A57C472182359100119136 /* BluetoothHCIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3F2182359100119136 /* BluetoothHCIError.swift */; };
+		49A57C482182359100119136 /* PacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C402182359100119136 /* PacketType.swift */; };
+		49A57C492182359100119136 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C412182359100119136 /* Driver.swift */; };
+		49A57C4C2182494100119136 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */; };
+		49A57C4D2182494100119136 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4B2182494100119136 /* HelperAuthorization.swift */; };
+		49A57C4E218249E500119136 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4B2182494100119136 /* HelperAuthorization.swift */; };
+		49A57C4F218249E500119136 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */; };
+		49A57C5121824AA400119136 /* HelperInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C5021824AA400119136 /* HelperInstaller.swift */; };
+		49A57C5321824B1A00119136 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C5221824B1A00119136 /* StatusMenuController.swift */; };
+		49A57C55218250CA00119136 /* HelperInstaller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A57C54218250CA00119136 /* HelperInstaller.xib */; };
+		49A83C7721866F7C005BFBFD /* CVarArg+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */; };
+		49A83C7A21867235005BFBFD /* kern_return_t+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7821867150005BFBFD /* kern_return_t+string.swift */; };
 		535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
 		53604C07215E12F300071149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C06215E12F300071149 /* AppDelegate.swift */; };
 		53604C09215E12F400071149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53604C08215E12F400071149 /* Assets.xcassets */; };
@@ -24,8 +37,6 @@
 		53604C2E215E1CFB00071149 /* io.jari.AkkuHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* io.jari.AkkuHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6B95921676219001A80FD /* CodesignCheck.swift */; };
 		53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
-		53EE3961215E3068007310F5 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3960215E3068007310F5 /* HelperAuthorization.swift */; };
-		53EE3965215E3A85007310F5 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +74,21 @@
 
 /* Begin PBXFileReference section */
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
+		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
+		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
+		49A57C3C2182359100119136 /* L2CapPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L2CapPacket.swift; sourceTree = "<group>"; };
+		49A57C3D2182359100119136 /* EventPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventPacket.swift; sourceTree = "<group>"; };
+		49A57C3F2182359100119136 /* BluetoothHCIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothHCIError.swift; sourceTree = "<group>"; };
+		49A57C402182359100119136 /* PacketType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacketType.swift; sourceTree = "<group>"; };
+		49A57C412182359100119136 /* Driver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperAuthorizationRight.swift; sourceTree = "<group>"; };
+		49A57C4B2182494100119136 /* HelperAuthorization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperAuthorization.swift; sourceTree = "<group>"; };
+		49A57C5021824AA400119136 /* HelperInstaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperInstaller.swift; sourceTree = "<group>"; };
+		49A57C5221824B1A00119136 /* StatusMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		49A57C54218250CA00119136 /* HelperInstaller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelperInstaller.xib; sourceTree = "<group>"; };
+		49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVarArg+hex.swift"; sourceTree = "<group>"; };
+		49A83C7821867150005BFBFD /* kern_return_t+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "kern_return_t+string.swift"; sourceTree = "<group>"; };
 		532308F42163910700A456CF /* CodeSignUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CodeSignUpdate.sh; sourceTree = "<group>"; };
-		532308F92163A87600A456CF /* ExtensionsNSTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsNSTextView.swift; sourceTree = "<group>"; };
 		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53604C08215E12F400071149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -79,8 +103,6 @@
 		53604C25215E185D00071149 /* HelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperProtocol.swift; sourceTree = "<group>"; };
 		53604C29215E1B0100071149 /* AppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocol.swift; sourceTree = "<group>"; };
 		53C6B95921676219001A80FD /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
-		53EE3960215E3068007310F5 /* HelperAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAuthorization.swift; sourceTree = "<group>"; };
-		53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperAuthorizationRight.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +123,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		49A57C352182353A00119136 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				49A57C4B2182494100119136 /* HelperAuthorization.swift */,
+				49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */,
+				53604C1F215E134500071149 /* Helper.swift */,
+				53604C21215E13E200071149 /* HelperConstants.swift */,
+				53604C25215E185D00071149 /* HelperProtocol.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		49A57C382182359100119136 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				49A57C392182359100119136 /* RFCOMMChannel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		49A57C3A2182359100119136 /* Packets */ = {
+			isa = PBXGroup;
+			children = (
+				49A57C3B2182359100119136 /* RFCOMMPacket.swift */,
+				49A57C3C2182359100119136 /* L2CapPacket.swift */,
+				49A57C3D2182359100119136 /* EventPacket.swift */,
+			);
+			path = Packets;
+			sourceTree = "<group>";
+		};
+		49A57C3E2182359100119136 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				49A57C3F2182359100119136 /* BluetoothHCIError.swift */,
+				49A57C402182359100119136 /* PacketType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		49A83C7421866F06005BFBFD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */,
+				49A83C7821867150005BFBFD /* kern_return_t+string.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		532308F12163908D00A456CF /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +185,6 @@
 				495D69CE218124CC004621C9 /* SMJobBlessUtil.py */,
 				53604C05215E12F300071149 /* Akku */,
 				53604C19215E131E00071149 /* AkkuHelper */,
-				53C6B95B2167621D001A80FD /* Extensions */,
 				53C6B95C21676229001A80FD /* Utility */,
 				532308F12163908D00A456CF /* Scripts */,
 				53604C04215E12F300071149 /* Products */,
@@ -139,6 +208,9 @@
 				53604C08215E12F400071149 /* Assets.xcassets */,
 				53604C0A215E12F400071149 /* MainMenu.xib */,
 				53604C0D215E12F400071149 /* Info.plist */,
+				49A57C5021824AA400119136 /* HelperInstaller.swift */,
+				49A57C5221824B1A00119136 /* StatusMenuController.swift */,
+				49A57C54218250CA00119136 /* HelperInstaller.xib */,
 			);
 			path = Akku;
 			sourceTree = "<group>";
@@ -146,24 +218,17 @@
 		53604C19215E131E00071149 /* AkkuHelper */ = {
 			isa = PBXGroup;
 			children = (
+				49A83C7421866F06005BFBFD /* Extensions */,
+				49A57C382182359100119136 /* Entities */,
+				49A57C3E2182359100119136 /* Enums */,
+				49A57C3A2182359100119136 /* Packets */,
+				49A57C352182353A00119136 /* Helper */,
 				53604C1A215E131E00071149 /* main.swift */,
-				53604C1F215E134500071149 /* Helper.swift */,
-				53EE3964215E3A85007310F5 /* HelperAuthorizationRight.swift */,
-				53EE3960215E3068007310F5 /* HelperAuthorization.swift */,
-				53604C21215E13E200071149 /* HelperConstants.swift */,
-				53604C25215E185D00071149 /* HelperProtocol.swift */,
+				49A57C412182359100119136 /* Driver.swift */,
 				53604C23215E14C900071149 /* Helper-Info.plist */,
 				53604C24215E150C00071149 /* Helper-Launchd.plist */,
 			);
 			path = AkkuHelper;
-			sourceTree = "<group>";
-		};
-		53C6B95B2167621D001A80FD /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				532308F92163A87600A456CF /* ExtensionsNSTextView.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		53C6B95C21676229001A80FD /* Utility */ = {
@@ -264,6 +329,7 @@
 			files = (
 				495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */,
 				53604C09215E12F400071149 /* Assets.xcassets in Resources */,
+				49A57C55218250CA00119136 /* HelperInstaller.xib in Resources */,
 				53604C0C215E12F400071149 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,9 +382,10 @@
 				535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */,
 				53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */,
 				53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */,
-				53EE3965215E3A85007310F5 /* HelperAuthorizationRight.swift in Sources */,
-				532308FA2163A87600A456CF /* ExtensionsNSTextView.swift in Sources */,
-				53EE3961215E3068007310F5 /* HelperAuthorization.swift in Sources */,
+				49A57C4F218249E500119136 /* HelperAuthorizationRight.swift in Sources */,
+				49A57C5321824B1A00119136 /* StatusMenuController.swift in Sources */,
+				49A57C5121824AA400119136 /* HelperInstaller.swift in Sources */,
+				49A57C4E218249E500119136 /* HelperAuthorization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,14 +393,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49A57C4C2182494100119136 /* HelperAuthorizationRight.swift in Sources */,
+				49A57C472182359100119136 /* BluetoothHCIError.swift in Sources */,
 				53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */,
+				49A57C482182359100119136 /* PacketType.swift in Sources */,
+				49A57C492182359100119136 /* Driver.swift in Sources */,
+				49A57C4D2182494100119136 /* HelperAuthorization.swift in Sources */,
 				53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */,
+				49A57C452182359100119136 /* L2CapPacket.swift in Sources */,
 				53604C1B215E131E00071149 /* main.swift in Sources */,
+				49A57C462182359100119136 /* EventPacket.swift in Sources */,
 				53604C26215E185D00071149 /* HelperProtocol.swift in Sources */,
+				49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */,
+				49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */,
 				53604C22215E13E200071149 /* HelperConstants.swift in Sources */,
 				53604C20215E134500071149 /* Helper.swift in Sources */,
-				5332883421660D7A00028C27 /* HelperAuthorizationRight.swift in Sources */,
-				5332883321660B2400028C27 /* HelperAuthorization.swift in Sources */,
+				49A83C7A21867235005BFBFD /* kern_return_t+string.swift in Sources */,
+				49A83C7721866F7C005BFBFD /* CVarArg+hex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,7 +563,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = io.jari.Akku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -508,7 +584,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = io.jari.Akku;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -523,7 +599,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -534,7 +610,6 @@
 					__launchd_plist,
 					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -548,7 +623,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"-sectcreate",
 					__TEXT,
@@ -559,7 +634,6 @@
 					__launchd_plist,
 					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;

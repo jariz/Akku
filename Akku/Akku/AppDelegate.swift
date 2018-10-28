@@ -1,210 +1,103 @@
 //
 //  AppDelegate.swift
-//  SwiftPrivilegedHelperApplication
+//  SwiftPrivilegedHelperApplication / Akku
 //
 //  Created by Erik Berglund on 2018-10-01.
 //  Copyright © 2018 Erik Berglund. All rights reserved.
+//  Copyright © 2018 Jari Zwarts. All rights reserved.
 //
 
 import Cocoa
 import ServiceManagement
+import IOBluetooth
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
-
-    // MARK: -
-    // MARK: IBOutlets
-
-    @IBOutlet weak var window: NSWindow!
-
-    @IBOutlet weak var buttonInstallHelper: NSButton!
-    @IBOutlet weak var buttonDestroyCachedAuthorization: NSButton!
-    @IBOutlet weak var buttonRunCommand: NSButton!
-
-    @IBOutlet weak var textFieldHelperInstalled: NSTextField!
-    @IBOutlet weak var textFieldAuthorizationCached: NSTextField!
-    @IBOutlet weak var textFieldInput: NSTextField!
-
-    @IBOutlet var textViewOutput: NSTextView!
-
-    @IBOutlet weak var checkboxRequireAuthentication: NSButton!
-    @IBOutlet weak var checkboxCacheAuthentication: NSButton!
-
+    
     // MARK: -
     // MARK: Variables
 
     private var currentHelperConnection: NSXPCConnection?
+    private var timeoutCheck: Timer?
 
-    @objc dynamic private var currentHelperAuthData: NSData?
-    private let currentHelperAuthDataKeyPath: String
-
-    @objc dynamic private var helperIsInstalled = false
-    private let helperIsInstalledKeyPath: String
-
+    @objc dynamic var helperIsInstalled = false
+    let helperIsInstalledKeyPath: String
+    
     // MARK: -
-    // MARK: Computed Variables
-
-    var inputPath: String? {
-        if self.textFieldInput.stringValue.isEmpty {
-            self.textViewOutput.appendText("You need to enter a path to a directory!")
-            return nil
-        }
-
-        let inputURL = URL(fileURLWithPath: self.textFieldInput.stringValue)
-        do {
-            guard try inputURL.checkResourceIsReachable() else { return nil }
-        } catch {
-            self.textViewOutput.appendText("\(self.textFieldInput.stringValue) is not a valid path!")
-            return nil
-        }
-        return inputURL.path
-    }
+    // MARK: IBOutlets
+    
+    @IBOutlet weak var statusMenuController: StatusMenuController?
 
     // MARK: -
     // MARK: NSApplicationDelegate Methods
 
     override init() {
-        self.currentHelperAuthDataKeyPath = NSStringFromSelector(#selector(getter: self.currentHelperAuthData))
         self.helperIsInstalledKeyPath = NSStringFromSelector(#selector(getter: self.helperIsInstalled))
         super.init()
     }
 
-    override func awakeFromNib() {
-        self.configureBindings()
-    }
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-
-        // Update the current authorization database right
-        // This will prmpt the user for authentication if something needs updating.
-
-        do {
-            try HelperAuthorization.authorizationRightsUpdateDatabase()
-        } catch {
-            self.textViewOutput.appendText("Failed to update the authorization database rights with error: \(error)")
-        }
-
         // Check if the current embedded helper tool is installed on the machine.
-
+        
         self.helperStatus { installed in
+            if installed {
+                // helper is installed... tell it to start listening
+                if let helper = self.helper(nil) {
+                    helper.startListening(completion: { error in
+                        if error != nil {
+                            self.alertWithError(error!.localizedDescription)
+                        }
+                    })
+                }
+            }
+            
             OperationQueue.main.addOperation {
-                self.textFieldHelperInstalled.stringValue = (installed) ? "Yes" : "No"
                 self.setValue(installed, forKey: self.helperIsInstalledKeyPath)
-            }
-        }
-    }
-
-    // MARK: -
-    // MARK: Initialization
-
-    func configureBindings() {
-
-        // Button: Install Helper
-        self.buttonInstallHelper.bind(.enabled,
-                                      to: self,
-                                      withKeyPath: self.helperIsInstalledKeyPath,
-                                      options: [.continuouslyUpdatesValue: true,
-                                                .valueTransformerName: NSValueTransformerName.negateBooleanTransformerName])
-
-        // Button: Run Command
-        self.buttonRunCommand.bind(.enabled,
-                                   to: self,
-                                   withKeyPath: self.helperIsInstalledKeyPath,
-                                   options: [.continuouslyUpdatesValue: true])
-
-    }
-
-    // MARK: -
-    // MARK: IBActions
-
-    @IBAction func buttonInstallHelper(_ sender: Any) {
-        do {
-            if try self.helperInstall() {
-                OperationQueue.main.addOperation {
-                    self.textViewOutput.appendText("Helper installed successfully.")
-                    self.textFieldHelperInstalled.stringValue = "Yes"
-                    self.setValue(true, forKey: self.helperIsInstalledKeyPath)
-                }
-                return
-            } else {
-                OperationQueue.main.addOperation {
-                    self.textFieldHelperInstalled.stringValue = "No"
-                    self.textViewOutput.appendText("Failed install helper with unknown error.")
-                }
-            }
-        } catch {
-            OperationQueue.main.addOperation {
-                self.textViewOutput.appendText("Failed to install helper with error: \(error)")
-            }
-        }
-        OperationQueue.main.addOperation {
-            self.textFieldHelperInstalled.stringValue = "No"
-            self.setValue(false, forKey: self.helperIsInstalledKeyPath)
-        }
-    }
-
-    @IBAction func buttonDestroyCachedAuthorization(_ sender: Any) {
-        self.currentHelperAuthData = nil
-        self.textFieldAuthorizationCached.stringValue = "No"
-        self.buttonDestroyCachedAuthorization.isEnabled = false
-    }
-
-    @IBAction func buttonRunCommand(_ sender: Any) {
-        guard
-            let inputPath = self.inputPath,
-            let helper = self.helper(nil) else { return }
-
-        if self.checkboxRequireAuthentication.state == .on {
-            do {
-                guard let authData = try self.currentHelperAuthData ?? HelperAuthorization.emptyAuthorizationExternalFormData() else {
-                    self.textViewOutput.appendText("Failed to get the empty authorization external form")
+                
+                guard let statusMenuController = self.statusMenuController else {
                     return
                 }
 
-                helper.runCommandLs(withPath: inputPath, authData: authData) { (exitCode) in
-                    OperationQueue.main.addOperation {
-
-                        // Verify that authentication was successful
-
-                        guard exitCode != kAuthorizationFailedExitCode else {
-                            self.textViewOutput.appendText("Authentication Failed")
-                            return
-                        }
-
-                        self.textViewOutput.appendText("Command exit code: \(exitCode)")
-                        if self.checkboxCacheAuthentication.state == .on, self.currentHelperAuthData == nil {
-                            self.currentHelperAuthData = authData
-                            self.textFieldAuthorizationCached.stringValue = "Yes"
-                            self.buttonDestroyCachedAuthorization.isEnabled = true
-                        }
-
-                    }
+                statusMenuController.initStatusItem()
+            }
+        }
+        
+        // TODO: this is kinda hacky??
+        // but... invoking a non existing helper does not seem to cause any errors for whatever reason.
+        self.timeoutCheck = Timer(timeInterval: 2.5, repeats: false, block: { _ in
+            if !self.helperIsInstalled {
+                guard let statusMenuController = self.statusMenuController else {
+                    return
                 }
-            } catch {
-                self.textViewOutput.appendText("Command failed with error: \(error)")
+                
+                statusMenuController.initStatusItem()
             }
-        } else {
-            helper.runCommandLs(withPath: inputPath) { (exitCode) in
-                self.textViewOutput.appendText("Command exit code: \(exitCode)")
-            }
+        })
+        
+        RunLoop.current.add(self.timeoutCheck!, forMode: .common)
+    }
+
+    // MARK: -
+    // MARK: Error handling
+    
+    func alertWithError(_ error: String) {
+        // FIXME: improve all this a bit UI-wise...
+        // Currently there's a lot of stuff that can go wrong. But it all leads back to this single function.
+        // Retry buttons, and perhaps something a bit more subtle than a modal...
+        
+        print(error)
+        OperationQueue.main.addOperation {
+            let alert = NSAlert()
+            alert.informativeText = error
+            alert.runModal()
         }
     }
 
     // MARK: -
     // MARK: AppProtocol Methods
 
-    func log(stdOut: String) {
-        guard !stdOut.isEmpty else { return }
-        OperationQueue.main.addOperation {
-            self.textViewOutput.appendText(stdOut)
-        }
-    }
-
-    func log(stdErr: String) {
-        guard !stdErr.isEmpty else { return }
-        OperationQueue.main.addOperation {
-            self.textViewOutput.appendText(stdErr)
-        }
+    func reportBattery(address: BluetoothDeviceAddress, percentage: Int) {
+        // TODO: do something
     }
 
     // MARK: -
@@ -237,7 +130,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
         // Get the current helper connection and return the remote object (Helper.swift) as a proxy object to call functions on.
 
         guard let helper = self.helperConnection()?.remoteObjectProxyWithErrorHandler({ error in
-            self.textViewOutput.appendText("Helper connection was closed with error: \(error)")
+            print("Helper connection was closed with error: \(error)")
             if let onCompletion = completion { onCompletion(false) }
         }) as? HelperProtocol else { return nil }
         return helper
@@ -245,7 +138,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
 
     func helperStatus(completion: @escaping (_ installed: Bool) -> Void) {
 
-        // Comppare the CFBundleShortVersionString from the Info.plisin the helper inside our application bundle with the one on disk.
+        // Compare the CFBundleShortVersionString from the Info.plist in the helper inside our application bundle with the one on disk.
 
         let helperURL = Bundle.main.bundleURL.appendingPathComponent("Contents/Library/LaunchServices/" + HelperConstants.machServiceName)
         guard
@@ -255,10 +148,11 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
                 completion(false)
                 return
         }
-
+        
         helper.getVersion { installedHelperVersion in
             completion(installedHelperVersion == helperVersion)
         }
+        
     }
 
     func helperInstall() throws -> Bool {

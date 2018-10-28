@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="HelperInstaller" customModule="Akku" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonInstallHelper" destination="lbx-tu-Yaq" id="kza-a8-fhd"/>
+                <outlet property="view" destination="hDj-eP-Ewz" id="SOY-c1-3AC"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView identifier="SheetView" id="hDj-eP-Ewz" userLabel="View">
+            <rect key="frame" x="0.0" y="0.0" width="440" height="352"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ph4-60-gc6">
+                    <rect key="frame" x="193" y="289" width="55" height="32"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="IntroIcon" id="YQu-f7-TMg"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3S8-GD-jmW">
+                    <rect key="frame" x="151" y="249" width="138" height="31"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Hi, I'm Akku." id="bqQ-Sb-ONe">
+                        <font key="font" metaFont="systemLight" size="26"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Zfq-hz-6zl">
+                    <rect key="frame" x="46" y="179" width="348" height="51"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="CXj-7m-FVk">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <string key="title">I will be your tiny companion who lives in your menu bar.
+Whenever I pick up a bluetooth battery signal, 
+I will let you know!</string>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N55-lE-tXb">
+                    <rect key="frame" x="129" y="122" width="183" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="However, first I'll need you to" id="b9I-Pg-qes">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K5T-4l-vOh">
+                    <rect key="frame" x="36" y="25" width="319" height="17"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Why does this app require administrator privileges?" id="Idp-l0-wzA">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lbx-tu-Yaq">
+                    <rect key="frame" x="125" y="86" width="191" height="32"/>
+                    <buttonCell key="cell" type="push" title="Install my helper app" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fwR-Jj-8b3">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="buttonInstallHelper:" target="-2" id="mej-ca-Epi"/>
+                    </connections>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="geH-9G-fh7">
+                    <rect key="frame" x="19" y="26" width="13" height="13"/>
+                    <buttonCell key="cell" type="disclosureTriangle" bezelStyle="disclosure" imagePosition="only" alignment="left" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="N3Y-nx-hCL">
+                        <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2G2-Od-TC1">
+                    <rect key="frame" x="16" y="-51" width="406" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" alignment="left" id="cu2-xn-1WW">
+                        <font key="font" usesAppearanceFont="YES"/>
+                        <mutableString key="title">Akku needs to intercept communication with the system’s bluetooth audio service. Sadly, this requires root access.
+It’s helper app is designed to only accept commands from the Akku application and certifies it’s certificate. On top of that, Akku is open 
+source and can be fully audited on it’s GitHub repo.</mutableString>
+                        <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstItem="Zfq-hz-6zl" firstAttribute="centerX" secondItem="hDj-eP-Ewz" secondAttribute="centerX" id="0kR-Yg-bID"/>
+                <constraint firstItem="geH-9G-fh7" firstAttribute="leading" secondItem="hDj-eP-Ewz" secondAttribute="leading" constant="19" id="1Wb-rF-Jhb"/>
+                <constraint firstItem="N55-lE-tXb" firstAttribute="centerX" secondItem="hDj-eP-Ewz" secondAttribute="centerX" id="B2g-Px-juh"/>
+                <constraint firstItem="lbx-tu-Yaq" firstAttribute="top" secondItem="N55-lE-tXb" secondAttribute="bottom" constant="8" id="BqH-Ef-e9s"/>
+                <constraint firstItem="Zfq-hz-6zl" firstAttribute="top" secondItem="3S8-GD-jmW" secondAttribute="bottom" constant="19" id="Cyx-Ne-pp2"/>
+                <constraint firstItem="3S8-GD-jmW" firstAttribute="centerX" secondItem="hDj-eP-Ewz" secondAttribute="centerX" id="GUe-NT-exs"/>
+                <constraint firstItem="ph4-60-gc6" firstAttribute="top" secondItem="hDj-eP-Ewz" secondAttribute="top" constant="31" id="Q3c-da-Iji"/>
+                <constraint firstAttribute="bottom" secondItem="geH-9G-fh7" secondAttribute="bottom" constant="26" id="VmD-7I-au4"/>
+                <constraint firstItem="lbx-tu-Yaq" firstAttribute="width" secondItem="N55-lE-tXb" secondAttribute="width" id="aTn-1Z-eNs"/>
+                <constraint firstItem="K5T-4l-vOh" firstAttribute="leading" secondItem="geH-9G-fh7" secondAttribute="trailing" constant="6" id="cqI-Ed-JzO"/>
+                <constraint firstItem="lbx-tu-Yaq" firstAttribute="centerX" secondItem="hDj-eP-Ewz" secondAttribute="centerX" id="ctl-ns-T0t"/>
+                <constraint firstItem="ph4-60-gc6" firstAttribute="centerX" secondItem="hDj-eP-Ewz" secondAttribute="centerX" id="d0E-sM-BHQ"/>
+                <constraint firstItem="3S8-GD-jmW" firstAttribute="top" secondItem="ph4-60-gc6" secondAttribute="bottom" constant="9" id="gCc-8w-7N7"/>
+                <constraint firstItem="N55-lE-tXb" firstAttribute="top" secondItem="Zfq-hz-6zl" secondAttribute="bottom" constant="40" id="xJ6-Gg-aZb"/>
+            </constraints>
+            <point key="canvasLocation" x="51" y="200"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="IntroIcon" width="55" height="32"/>
+    </resources>
+</document>

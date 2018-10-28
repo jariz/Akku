@@ -1,9 +1,9 @@
 //
 //  Helper.swift
-//  SwiftPrivilegedHelper
+//  SwiftPrivilegedHelper / Akku
 //
-//  Created by Erik Berglund on 2018-10-01.
 //  Copyright © 2018 Erik Berglund. All rights reserved.
+//  Copyright © 2018 Jari Zwarts. All rights reserved.
 //
 
 import Foundation
@@ -21,6 +21,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     private var connections = [NSXPCConnection]()
     private var shouldQuit = false
     private var shouldQuitCheckInterval = 1.0
+    private var driver: Driver? = nil
 
     // MARK: -
     // MARK: Initialization
@@ -33,6 +34,12 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
 
     public func run() {
         self.listener.resume()
+        
+        // --- HACK ---
+        startListening { (_) in
+            print("listening")
+        }
+        // ------------
 
         // Keep the helper tool running until the variable shouldQuit is set to true.
         // The variable should be changed in the "listener(_ listener:shoudlAcceptNewConnection:)" function.
@@ -83,26 +90,18 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
         completion(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "0")
     }
 
-    func runCommandLs(withPath path: String, completion: @escaping (NSNumber) -> Void) {
-
-        // For security reasons, all commands should be hardcoded in the helper
-        let command = "/bin/ls"
-        let arguments = [path]
-
-        // Run the task
-        self.runTask(command: command, arguments: arguments, completion: completion)
-    }
-
-    func runCommandLs(withPath path: String, authData: NSData?, completion: @escaping (NSNumber) -> Void) {
-
-        // Check the passed authorization, if the user need to authenticate to use this command the user might be prompted depending on the settings and/or cached authentication.
-
-        guard self.verifyAuthorization(authData, forCommand: #selector(HelperProtocol.runCommandLs(withPath:authData:completion:))) else {
-            completion(kAuthorizationFailedExitCode)
+    func startListening(completion: @escaping (Error?) -> Void) {
+        let driver = Driver()
+        do {
+            try driver.open()
+            try driver.process()
+            try driver.waitForData()
+        } catch {
+            completion(error)
             return
         }
-
-        self.runCommandLs(withPath: path, completion: completion)
+        self.driver = driver
+        completion(nil)
     }
 
     // MARK: -
@@ -117,54 +116,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
         }
     }
 
-    private func verifyAuthorization(_ authData: NSData?, forCommand command: Selector) -> Bool {
-        do {
-            try HelperAuthorization.verifyAuthorization(authData, forCommand: command)
-        } catch {
-            if let remoteObject = self.connection()?.remoteObjectProxy as? AppProtocol {
-                remoteObject.log(stdErr: "Authentication Error: \(error)")
-            }
-            return false
-        }
-        return true
-    }
-
     private func connection() -> NSXPCConnection? {
         return self.connections.last
-    }
-
-    private func runTask(command: String, arguments: Array<String>, completion:@escaping ((NSNumber) -> Void)) -> Void {
-        let task = Process()
-        let stdOut = Pipe()
-
-        let stdOutHandler =  { (file: FileHandle!) -> Void in
-            let data = file.availableData
-            guard let output = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return }
-            if let remoteObject = self.connection()?.remoteObjectProxy as? AppProtocol {
-                remoteObject.log(stdOut: output as String)
-            }
-        }
-        stdOut.fileHandleForReading.readabilityHandler = stdOutHandler
-
-        let stdErr:Pipe = Pipe()
-        let stdErrHandler =  { (file: FileHandle!) -> Void in
-            let data = file.availableData
-            guard let output = NSString(data: data, encoding: String.Encoding.utf8.rawValue) else { return }
-            if let remoteObject = self.connection()?.remoteObjectProxy as? AppProtocol {
-                remoteObject.log(stdErr: output as String)
-            }
-        }
-        stdErr.fileHandleForReading.readabilityHandler = stdErrHandler
-
-        task.launchPath = command
-        task.arguments = arguments
-        task.standardOutput = stdOut
-        task.standardError = stdErr
-
-        task.terminationHandler = { task in
-            completion(NSNumber(value: task.terminationStatus))
-        }
-
-        task.launch()
     }
 }

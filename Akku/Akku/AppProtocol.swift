@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import IOBluetooth
 
 @objc(AppProtocol)
 protocol AppProtocol {
-    func log(stdOut: String) -> Void
-    func log(stdErr: String) -> Void
+    func reportBattery(address: BluetoothDeviceAddress, percentage: Int) -> Void
 }
