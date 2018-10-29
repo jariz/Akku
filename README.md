@@ -1,7 +1,29 @@
 # Akku
 
 Akku is a tiny monitoring app for headset bluetooth devices.
-It will work with any headset that conforms to the [Apple bluetooth spec](https://developer.apple.com/hardwaredrivers/BluetoothDesignGuidelines.pdf)\* (translation: if it works on your iPhone, it will work with Akku)
+
+# Compatibility  
+It will work with any headset that conforms to the [Apple bluetooth spec](https://developer.apple.com/hardwaredrivers/BluetoothDesignGuidelines.pdf)\* or the [XEvent spec](https://developer.plantronics.com/article/plugging-plantronics-headset-sensor-events-android)  
+
+**Translation**:  
+If your Android device can read it's battery status, there's a high chance it will work.  
+If your iPhone device can read your headset's battery status, Akku will be guaranteedly be able to do so as well.  
+
+## How does it work?
+
+**The simple explanation:**   
+You give it root, and it will monitor all bluetooth communication that goes through the system to intercept battery indicator commands.  
+
+**The hard explanation**:  
+You give it root, and it will install a helper application.  
+The helper proceeds to communicate to the app through [XPC](https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html)  
+Once the helper is activated, it will communicate with the `IOBluetoothHCIController` driver through [IOKit](https://developer.apple.com/documentation/iokit)  
+It will map a region of memory from the kernel to Akku, and scan through the raw bluetooth data.  
+Akku can currently decode HCI events, L2CAP packets and RFCOMM packets (RFCOMM is build upon L2CAP).  
+Once it has exhausted said bluetooth data, it will poll and instruct the system to dump any new data to Akku's mapped memory every 5 seconds.  
+The only communication that goes back to the non-privileged process is the normalized battery indication signals.  
+Both Akku and it's helper verify their signatures to ensure no unauthorized access is made.  
+Both are codesigned with a valid Apple developer cert.
 
 ## Inspirations / Shoutouts
 
