@@ -100,7 +100,7 @@ class Driver: NSObject, NSMachPortDelegate {
 
                 if packet.eventCode == 0x03 /* ConnectComplete */ && packet.status == 0x00 /* Success */ {
                     let conn = Connection(addr: packet.addr, connectionHandle: packet.connectionHandle)
-                    print("Added connection, handle: \(packet.connectionHandle.hex)")
+                    NSLog("Added connection, handle: \(packet.connectionHandle.hex)")
                     self.connections.append(conn)
                 }
                 
@@ -116,7 +116,7 @@ class Driver: NSObject, NSMachPortDelegate {
                     if let sourceCID = packet.sourceCID,
                         let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
                         let channel = RFCOMMChannel(CID: packet.CID, sourceCID: sourceCID, connection: connection)
-                        print("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), handle: \(channel.connection.connectionHandle.hex)")
+                        NSLog("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), handle: \(channel.connection.connectionHandle.hex)")
                         self.channels.append(channel)
                     }
                     break
@@ -149,32 +149,19 @@ class Driver: NSObject, NSMachPortDelegate {
         } while opened
     }
     
-    var port: NSMachPort?;
     var timer: Timer?;
     
-    func waitForData () throws {
-        let queuePointer = UnsafeMutablePointer<IODataQueueMemory>(bitPattern: Int(self.mem_addr));
-        
-        if queuePointer == nil {
-            return
-        }
-        
-        let port = NSMachPort()
-        
-        port.setDelegate(self)
-        
-        self.port = port
-        
+    func poll () {
         self.timer = Timer(timeInterval: 5, repeats: true, block: { (_) in
-            print("fucc")
+            do {
+                try self.process()
+            } catch {
+                NSLog(error.localizedDescription)
+            }
         })
-        RunLoop.current.add(self.timer!, forMode: .common)
-        RunLoop.current.add(self.port!, forMode: .common)
         
-        let ret = IODataQueueSetNotificationPort(queuePointer, port.machPort)
-        
-        if ret != kIOReturnSuccess {
-            throw BluetoothHCIError.machPortInitFail(ioError: ret.string)
+        OperationQueue.main.addOperation {
+            RunLoop.current.add(self.timer!, forMode: .common)
         }
     }
 }

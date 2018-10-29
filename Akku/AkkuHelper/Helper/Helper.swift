@@ -95,7 +95,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
         do {
             try driver.open()
             try driver.process()
-            try driver.waitForData()
+            try driver.poll()
         } catch {
             completion(error)
             return
