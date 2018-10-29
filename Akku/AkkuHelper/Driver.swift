@@ -13,7 +13,7 @@ struct Connection {
     var connectionHandle: UInt16;
 }
 
-class Driver: NSObject, NSMachPortDelegate {
+class Driver: NSObject {
     var connection: io_connect_t = 0
     var mem_addr: mach_vm_address_t = 0;
     
@@ -135,10 +135,6 @@ class Driver: NSObject, NSMachPortDelegate {
         } while IODataQueueDataAvailable(queuePointer)
         
         return true
-    }
-
-    public func handleMachMessage(_ msg: UnsafeMutableRawPointer) {
-        print("abc")
     }
     
     func process () throws {
