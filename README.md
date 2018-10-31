@@ -2,11 +2,11 @@
 
 Akku is a tiny monitoring app for headset bluetooth devices.
 
-# Compatibility  
+## Compatibility  
 It will work with any headset that conforms to the [Apple bluetooth spec](https://developer.apple.com/hardwaredrivers/BluetoothDesignGuidelines.pdf)\* or the [XEvent spec](https://developer.plantronics.com/article/plugging-plantronics-headset-sensor-events-android)  
 
 **Translation**:  
-If your Android device can read it's battery status, there's a high chance it will work.  
+If your Android device can read it's battery status, it will very likely work.  
 If your iPhone device can read your headset's battery status, Akku will be guaranteedly be able to do so as well.  
 
 ## How does it work?
@@ -28,9 +28,7 @@ Both are codesigned with a valid Apple developer cert.
 ## Inspirations / Shoutouts
 
 - Jeff Reiner // @mirshko  
-Icon design  
-- `IOBluetooth.framework/Resources/BluetoothReporter`  
-Most of the lowlevel stuff was figured out by reverse engineering this tool. (tiny shoutout to the trial version of the [hopper disassembler](https://www.hopperapp.com/))  
+Icon design    
 - [SwiftPrivilegedHelper](https://github.com/erikberglund/SwiftPrivilegedHelper/)  
 Great starting point to implement helper installation & XPC communication, thanks @erikberglund!  
 - Android's [BluetoothHeadset.java](http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/java/android/bluetooth/BluetoothHeadset.java)  

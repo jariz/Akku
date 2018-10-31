@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		49415EB82189E68100C854F7 /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C812189E1BB005BFBFD /* CommandParser.swift */; };
+		49415EBD2189F56D00C854F7 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
+		49415EBE2189F57000C854F7 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EB92189F55500C854F7 /* Connection.swift */; };
+		49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
+		49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */; };
+		49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */; };
+		49415EC5218A2C5500C854F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC4218A2C5500C854F7 /* README.md */; };
 		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
@@ -24,6 +31,7 @@
 		49A57C55218250CA00119136 /* HelperInstaller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A57C54218250CA00119136 /* HelperInstaller.xib */; };
 		49A83C7721866F7C005BFBFD /* CVarArg+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */; };
 		49A83C7A21867235005BFBFD /* kern_return_t+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7821867150005BFBFD /* kern_return_t+string.swift */; };
+		49A83C7D2189BECB005BFBFD /* L2CapCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */; };
 		535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
 		53604C07215E12F300071149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C06215E12F300071149 /* AppDelegate.swift */; };
 		53604C09215E12F400071149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53604C08215E12F400071149 /* Assets.xcassets */; };
@@ -73,6 +81,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		49415EB92189F55500C854F7 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		49415EBB2189F56700C854F7 /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
+		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
+		49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMenuItemController.swift; sourceTree = "<group>"; };
+		49415EC4218A2C5500C854F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
 		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
@@ -88,6 +101,8 @@
 		49A57C54218250CA00119136 /* HelperInstaller.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HelperInstaller.xib; sourceTree = "<group>"; };
 		49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CVarArg+hex.swift"; sourceTree = "<group>"; };
 		49A83C7821867150005BFBFD /* kern_return_t+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "kern_return_t+string.swift"; sourceTree = "<group>"; };
+		49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L2CapCommand.swift; sourceTree = "<group>"; };
+		49A83C812189E1BB005BFBFD /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
 		532308F42163910700A456CF /* CodeSignUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CodeSignUpdate.sh; sourceTree = "<group>"; };
 		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +153,8 @@
 		49A57C382182359100119136 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				49415EB92189F55500C854F7 /* Connection.swift */,
+				49415EBB2189F56700C854F7 /* BatteryInfo.swift */,
 				49A57C392182359100119136 /* RFCOMMChannel.swift */,
 			);
 			path = Entities;
@@ -149,6 +166,7 @@
 				49A57C3B2182359100119136 /* RFCOMMPacket.swift */,
 				49A57C3C2182359100119136 /* L2CapPacket.swift */,
 				49A57C3D2182359100119136 /* EventPacket.swift */,
+				49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */,
 			);
 			path = Packets;
 			sourceTree = "<group>";
@@ -171,6 +189,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		49A83C802189E179005BFBFD /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				49A57C412182359100119136 /* Driver.swift */,
+				49A83C812189E1BB005BFBFD /* CommandParser.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
 		532308F12163908D00A456CF /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +209,7 @@
 		53604BFA215E12F300071149 = {
 			isa = PBXGroup;
 			children = (
+				49415EC4218A2C5500C854F7 /* README.md */,
 				495D69CE218124CC004621C9 /* SMJobBlessUtil.py */,
 				53604C05215E12F300071149 /* Akku */,
 				53604C19215E131E00071149 /* AkkuHelper */,
@@ -211,6 +239,8 @@
 				49A57C5021824AA400119136 /* HelperInstaller.swift */,
 				49A57C5221824B1A00119136 /* StatusMenuController.swift */,
 				49A57C54218250CA00119136 /* HelperInstaller.xib */,
+				49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */,
+				49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */,
 			);
 			path = Akku;
 			sourceTree = "<group>";
@@ -218,13 +248,13 @@
 		53604C19215E131E00071149 /* AkkuHelper */ = {
 			isa = PBXGroup;
 			children = (
+				49A83C802189E179005BFBFD /* Bluetooth */,
 				49A83C7421866F06005BFBFD /* Extensions */,
 				49A57C382182359100119136 /* Entities */,
 				49A57C3E2182359100119136 /* Enums */,
 				49A57C3A2182359100119136 /* Packets */,
 				49A57C352182353A00119136 /* Helper */,
 				53604C1A215E131E00071149 /* main.swift */,
-				49A57C412182359100119136 /* Driver.swift */,
 				53604C23215E14C900071149 /* Helper-Info.plist */,
 				53604C24215E150C00071149 /* Helper-Launchd.plist */,
 			);
@@ -327,7 +357,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49415EC5218A2C5500C854F7 /* README.md in Resources */,
 				495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */,
+				49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */,
 				53604C09215E12F400071149 /* Assets.xcassets in Resources */,
 				49A57C55218250CA00119136 /* HelperInstaller.xib in Resources */,
 				53604C0C215E12F400071149 /* MainMenu.xib in Resources */,
@@ -380,8 +412,10 @@
 			files = (
 				53604C07215E12F300071149 /* AppDelegate.swift in Sources */,
 				535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */,
+				49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */,
 				53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */,
 				53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */,
+				49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */,
 				49A57C4F218249E500119136 /* HelperAuthorizationRight.swift in Sources */,
 				49A57C5321824B1A00119136 /* StatusMenuController.swift in Sources */,
 				49A57C5121824AA400119136 /* HelperInstaller.swift in Sources */,
@@ -400,16 +434,20 @@
 				49A57C492182359100119136 /* Driver.swift in Sources */,
 				49A57C4D2182494100119136 /* HelperAuthorization.swift in Sources */,
 				53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */,
+				49415EB82189E68100C854F7 /* CommandParser.swift in Sources */,
 				49A57C452182359100119136 /* L2CapPacket.swift in Sources */,
 				53604C1B215E131E00071149 /* main.swift in Sources */,
 				49A57C462182359100119136 /* EventPacket.swift in Sources */,
+				49A83C7D2189BECB005BFBFD /* L2CapCommand.swift in Sources */,
 				53604C26215E185D00071149 /* HelperProtocol.swift in Sources */,
+				49415EBE2189F57000C854F7 /* Connection.swift in Sources */,
 				49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */,
 				49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */,
 				53604C22215E13E200071149 /* HelperConstants.swift in Sources */,
 				53604C20215E134500071149 /* Helper.swift in Sources */,
 				49A83C7A21867235005BFBFD /* kern_return_t+string.swift in Sources */,
 				49A83C7721866F7C005BFBFD /* CVarArg+hex.swift in Sources */,
+				49415EBD2189F56D00C854F7 /* BatteryInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

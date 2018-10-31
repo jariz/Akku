@@ -40,7 +40,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
             print("listening")
         }
         // ------------
-
+        
         // Keep the helper tool running until the variable shouldQuit is set to true.
         // The variable should be changed in the "listener(_ listener:shoudlAcceptNewConnection:)" function.
 
@@ -91,11 +91,13 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     }
 
     func startListening(completion: @escaping (Error?) -> Void) {
-        let driver = Driver()
+        let remoteObject = self.connection()?.remoteObjectProxy as? AppProtocol
+        
+        let driver = Driver(appProtocol: remoteObject)
         do {
             try driver.open()
             try driver.process()
-            try driver.poll()
+            driver.poll()
         } catch {
             completion(error)
             return

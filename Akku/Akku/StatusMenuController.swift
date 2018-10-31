@@ -16,6 +16,7 @@ class StatusMenuController: NSObject {
     
     private var popover: NSPopover?;
     private var menu: NSMenu?;
+    private var batteryInfo: [String: BatteryInfo] = [:]
     
     // MARK: Private constants
     
@@ -60,15 +61,35 @@ class StatusMenuController: NSObject {
         buildMenu()
         
         IOBluetoothDevice.register(forConnectNotifications: self, selector: #selector(buildMenu))
-//        NotificationCenter.default.addObserver(self, selector: #selector(batteryStateChange(notification:)), name: Notification.Name("BatteryStateChange"), object: nil)
     }
     
-//    @objc func batteryStateChange (notification: NSNotification) {
-//        if let body = notification.object as? [String: String], let address = body["address"] {
-//            batteryStates[address] = body["charge"]
-//            buildMenu()
-//        }
-//    }
+    fileprivate func getBatteryInfo(for: BluetoothDeviceAddress) -> (String, BatteryInfo)? {
+        var `for` = `for`
+        guard let adress = IOBluetoothNSStringFromDeviceAddress(&`for`) else {
+            return nil
+        }
+        return (adress, self.batteryInfo[adress] ?? BatteryInfo())
+    }
+
+    func reportDockChange(address: BluetoothDeviceAddress, docked: Bool) {
+        guard var (address, batteryInfo) = getBatteryInfo(for: address) else {
+            return
+        }
+        
+        batteryInfo.docked = docked
+        self.batteryInfo[address] = batteryInfo
+        buildMenu()
+    }
+    
+    func reportBatteryChange(address: BluetoothDeviceAddress, percentage: Int) {
+        guard var (address, batteryInfo) = getBatteryInfo(for: address) else {
+            return
+        }
+        
+        batteryInfo.percentage = percentage
+        self.batteryInfo[address] = batteryInfo
+        buildMenu()
+    }
     
     @objc func warnSettingChange (sender: NSMenuItem) {
         UserDefaults.standard.set(sender.title, forKey: "warnAt")
@@ -96,15 +117,26 @@ class StatusMenuController: NSObject {
         for device in devices {
             menu.addItem(withTitle: device.name, action: nil, keyEquivalent: "")
             let batteryMenuItem = NSMenuItem()
-//            if let rawState = batteryStates[device.addressString], let state = Double(rawState) {
-//                let batteryViewController = storyboard!.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier("ViewController")) as! ViewController
-//                batteryViewController.setProgress(value: state)
-//                batteryMenuItem.view = batteryViewController.view
-//                statusItem.button!.image = NSImage(named: NSImage.Name("akku_" + rawState))
-//            } else {
+            
+            if let batteryInfo = self.batteryInfo[device.addressString] {
+                let controller = BatteryMenuItemController(nibName: NSNib.Name("BatteryMenuItem"), bundle: nil)
+                
+                if let percentage = batteryInfo.percentage {
+                    controller.setProgress(value: Double(percentage))
+                    statusItem.button!.image = NSImage(named: NSImage.Name("akku_" + String(percentage)))
+                }
+                
+                if let docked = batteryInfo.docked {
+                    controller.setDocked(docked: docked)
+                }
+                
+                batteryMenuItem.view = controller.view
+                
+            } else {
                 batteryMenuItem.title = "No reported battery state yet, try reconnecting."
                 statusItem.button!.image = NSImage(named: NSImage.Name("akku_noconnect"))
-//            }
+            }
+            
             menu.addItem(batteryMenuItem)
             
             device.register(forDisconnectNotification: self, selector: #selector(buildMenu))

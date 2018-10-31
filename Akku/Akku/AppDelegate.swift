@@ -95,11 +95,21 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
 
     // MARK: -
     // MARK: AppProtocol Methods
-
-    func reportBattery(address: BluetoothDeviceAddress, percentage: Int) {
-        // TODO: do something
+    
+    func reportDockChange(address: BluetoothDeviceAddress, docked: Bool) {
+        debugPrint(address, "docked", docked)
+        OperationQueue.main.addOperation {
+            self.statusMenuController?.reportDockChange(address: address, docked: docked)
+        }
     }
-
+    
+    func reportBatteryChange(address: BluetoothDeviceAddress, percentage: Int) {
+        debugPrint(address, "battery", percentage)
+        OperationQueue.main.addOperation {
+            self.statusMenuController?.reportBatteryChange(address: address, percentage: percentage)
+        }
+    }
+    
     // MARK: -
     // MARK: Helper Connection Methods
 

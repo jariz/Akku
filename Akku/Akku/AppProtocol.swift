@@ -11,5 +11,6 @@ import IOBluetooth
 
 @objc(AppProtocol)
 protocol AppProtocol {
-    func reportBattery(address: BluetoothDeviceAddress, percentage: Int) -> Void
+    func reportDockChange(address: BluetoothDeviceAddress, docked: Bool) -> Void
+    func reportBatteryChange(address: BluetoothDeviceAddress, percentage: Int) -> Void
 }
