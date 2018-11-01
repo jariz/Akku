@@ -114,6 +114,10 @@ class StatusMenuController: NSObject {
             return
         }
         
+        guard let button = statusItem.button else {
+            return
+        }
+        
         for device in devices {
             menu.addItem(withTitle: device.name, action: nil, keyEquivalent: "")
             let batteryMenuItem = NSMenuItem()
@@ -123,7 +127,15 @@ class StatusMenuController: NSObject {
                 
                 if let percentage = batteryInfo.percentage {
                     controller.setProgress(value: Double(percentage))
-                    statusItem.button!.image = NSImage(named: NSImage.Name("akku_" + String(percentage)))
+                    button.image = NSImage(named: NSImage.Name("akku_" + String(percentage)))
+                    
+                    if percentage <= 20 {
+                        if #available(OSX 10.14, *) {
+                            button.contentTintColor = .systemRed
+                        } else {
+                            button.image = button.image?.tinting(with: .systemRed)
+                        }
+                    }
                 }
                 
                 if let docked = batteryInfo.docked {

@@ -21,6 +21,7 @@
                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ph4-60-gc6">
                     <rect key="frame" x="193" y="289" width="55" height="32"/>
                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="IntroIcon" id="YQu-f7-TMg"/>
+                    <color key="contentTintColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                 </imageView>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3S8-GD-jmW">
                     <rect key="frame" x="151" y="249" width="138" height="31"/>
@@ -79,9 +80,9 @@ I will let you know!</string>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" alignment="left" id="cu2-xn-1WW">
                         <font key="font" usesAppearanceFont="YES"/>
-                        <mutableString key="title">Akku needs to intercept communication with the system’s bluetooth audio service. Sadly, this requires root access.
+                        <string key="title">Akku needs to intercept communication with the system’s bluetooth audio service. Sadly, this requires root access.
 It’s helper app is designed to only accept commands from the Akku application and certifies it’s certificate. On top of that, Akku is open 
-source and can be fully audited on it’s GitHub repo.</mutableString>
+source and can be fully audited on it’s GitHub repo.</string>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>

@@ -14,6 +14,7 @@
 		49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */; };
 		49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */; };
 		49415EC5218A2C5500C854F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC4218A2C5500C854F7 /* README.md */; };
+		49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
 		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
@@ -86,6 +87,7 @@
 		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
 		49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMenuItemController.swift; sourceTree = "<group>"; };
 		49415EC4218A2C5500C854F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		49415EC6218B965E00C854F7 /* NSImage+tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+tinting.swift"; sourceTree = "<group>"; };
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
 		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 			children = (
 				49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */,
 				49A83C7821867150005BFBFD /* kern_return_t+string.swift */,
+				49415EC6218B965E00C854F7 /* NSImage+tinting.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */,
 				53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */,
 				53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */,
+				49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */,
 				49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */,
 				49A57C4F218249E500119136 /* HelperAuthorizationRight.swift in Sources */,
 				49A57C5321824B1A00119136 /* StatusMenuController.swift in Sources */,
