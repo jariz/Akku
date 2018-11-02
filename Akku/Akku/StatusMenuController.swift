@@ -63,32 +63,56 @@ class StatusMenuController: NSObject {
         IOBluetoothDevice.register(forConnectNotifications: self, selector: #selector(buildMenu))
     }
     
-    fileprivate func getBatteryInfo(for: BluetoothDeviceAddress) -> (String, BatteryInfo)? {
-        var `for` = `for`
-        guard let adress = IOBluetoothNSStringFromDeviceAddress(&`for`) else {
+    fileprivate func getAddressString(for address: BluetoothDeviceAddress) -> String? {
+        var address = address
+        guard let addressString = IOBluetoothNSStringFromDeviceAddress(&address) else {
             return nil
         }
-        return (adress, self.batteryInfo[adress] ?? BatteryInfo())
+        return addressString
+    }
+    
+    fileprivate func getBatteryInfo(for addressString: String) -> BatteryInfo {
+        return self.batteryInfo[addressString] ?? BatteryInfo()
     }
 
     func reportDockChange(address: BluetoothDeviceAddress, docked: Bool) {
-        guard var (address, batteryInfo) = getBatteryInfo(for: address) else {
+        guard let addressString = self.getAddressString(for: address) else {
             return
         }
         
+        var batteryInfo = self.getBatteryInfo(for: addressString)
         batteryInfo.docked = docked
-        self.batteryInfo[address] = batteryInfo
+        self.batteryInfo[addressString] = batteryInfo
         buildMenu()
     }
     
     func reportBatteryChange(address: BluetoothDeviceAddress, percentage: Int) {
-        guard var (address, batteryInfo) = getBatteryInfo(for: address) else {
+        guard let addressString = self.getAddressString(for: address) else {
             return
         }
         
+        self.shouldShowNotification(addressString, percentage)
+        
+        var batteryInfo = self.getBatteryInfo(for: addressString)
         batteryInfo.percentage = percentage
-        self.batteryInfo[address] = batteryInfo
+        self.batteryInfo[addressString] = batteryInfo
         buildMenu()
+    }
+    
+    func shouldShowNotification (_ addressString: String, _ percentage: Int) {
+        let warnAt = UserDefaults.standard.string(forKey: "warnAt") ?? "20%"
+        let devices = IOBluetoothDevice.pairedDevices() as! [IOBluetoothDevice]
+        
+        guard warnAt == "\(String(percentage))%",
+            let device = devices.first(where: { device in device.addressString == addressString }) else {
+            return
+        }
+        
+        let noti = NSUserNotification()
+        noti.hasActionButton = false
+        noti.title = "Headset will run out of battery soon."
+        noti.informativeText = "\(device.name!) only has \(String(percentage))% battery left."
+        NSUserNotificationCenter.default.deliver(noti)
     }
     
     @objc func warnSettingChange (sender: NSMenuItem) {
@@ -165,10 +189,7 @@ class StatusMenuController: NSObject {
         let warnAtItem = NSMenuItem(title: "Show notification at...", action: nil, keyEquivalent: "")
         let submenu = NSMenu(title: "Show notification at")
         func addWarnAtItem(value: String) {
-            var warnAt = UserDefaults.standard.string(forKey: "warnAt")
-            if warnAt == nil {
-                warnAt = "10%"
-            }
+            let warnAt = UserDefaults.standard.string(forKey: "warnAt") ?? "20%"
             let item = NSMenuItem(title: value, action: #selector(warnSettingChange(sender:)), keyEquivalent: "")
             item.target = self
             item.state = warnAt == value ? .on : .off
@@ -178,6 +199,8 @@ class StatusMenuController: NSObject {
         for i in 0...4 {
             addWarnAtItem(value: String(describing: i * 10) + "%")
         }
+        
+        addWarnAtItem(value: "Never")
         
         warnAtItem.submenu = submenu
         menu.addItem(warnAtItem)

@@ -35,11 +35,10 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     public func run() {
         self.listener.resume()
         
-        // --- HACK ---
-        startListening { (_) in
-            print("listening")
-        }
-        // ------------
+//        #if DEBUG
+//        NSLog("Helper started in debugging mode, not waiting for XPC connections and going to start listening immediately...")
+//        startListening { _ in }
+//        #endif
         
         // Keep the helper tool running until the variable shouldQuit is set to true.
         // The variable should be changed in the "listener(_ listener:shoudlAcceptNewConnection:)" function.
@@ -94,6 +93,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
         let remoteObject = self.connection()?.remoteObjectProxy as? AppProtocol
         
         let driver = Driver(appProtocol: remoteObject)
+        self.driver = driver
         do {
             try driver.open()
             try driver.process()
@@ -102,7 +102,6 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
             completion(error)
             return
         }
-        self.driver = driver
         completion(nil)
     }
 

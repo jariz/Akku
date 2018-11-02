@@ -144,7 +144,7 @@ class Driver: NSObject {
                     
                     if packetType == .RECV_ACL_DATA,
                         let payload = rfcommPacket.payload,
-                        let battInfo = CommandParser.parseCommand(payload) {
+                        let battInfo = CommandParser.parsePayload(payload) {
                         NSLog("Got battery command: docked = \(String(describing: battInfo.docked)), percentage = \(String(describing: battInfo.percentage))")
                         
                         if let appProtocol = self.appProtocol {

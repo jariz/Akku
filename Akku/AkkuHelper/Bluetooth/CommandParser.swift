@@ -19,7 +19,7 @@ class CommandParser {
     // MARK: -
     // MARK: AT Command parser
     
-    static func parseCommand (_ payload: String) -> BatteryInfo? {
+    static func parsePayload (_ payload: String) -> BatteryInfo? {
         if payload.count < 4 {
             return nil
         }
@@ -42,11 +42,11 @@ class CommandParser {
     }
     
     static fileprivate func processCommand (type: String, args: [String]) -> BatteryInfo? {
-        debugPrint(type, args)
-        
         switch (type) {
         case CommandParser.appleVscCommandType:
             return getBatteryFromAppleVsc(args)
+        case CommandParser.xeventVscCommandType:
+            return getBatteryFromXEventVsc(args)
         default:
             return nil
         }
@@ -71,6 +71,7 @@ class CommandParser {
         
         if intArgs.count - 1 < length * 2 {
             NSLog("getBatteryFromAppleVsc WARN: received a apple vsc that contains a invalid length")
+            return nil
         }
         
         var battInfo = BatteryInfo(percentage: nil, docked: nil)
@@ -86,7 +87,7 @@ class CommandParser {
                 
                 if percentage > 100 || percentage < 0 {
                     NSLog("getBatteryFromAppleVsc WARN: illegal battery value! (\(percentage)%)")
-                    break
+                    return nil
                 }
                 
                 battInfo.percentage = percentage
@@ -102,12 +103,12 @@ class CommandParser {
         } while index / 2 < length
         
         
-        
-        
         return battInfo
     }
     
-    static func getBatteryFromXEventVsc () {
-        // TODO
+    static func getBatteryFromXEventVsc (_ args: [String]) -> BatteryInfo? {
+        // TODO: https://github.com/jariz/Akku/issues/9
+        
+        return nil
     }
 }
