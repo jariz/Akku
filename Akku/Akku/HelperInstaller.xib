@@ -9,6 +9,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="HelperInstaller" customModule="Akku" customModuleProvider="target">
             <connections>
                 <outlet property="buttonInstallHelper" destination="lbx-tu-Yaq" id="kza-a8-fhd"/>
+                <outlet property="disclosureButton" destination="geH-9G-fh7" id="psw-Gk-VzK"/>
+                <outlet property="disclosureText" destination="2G2-Od-TC1" id="GJU-1s-6LJ"/>
                 <outlet property="view" destination="hDj-eP-Ewz" id="SOY-c1-3AC"/>
             </connections>
         </customObject>
@@ -74,8 +76,11 @@ I will let you know!</string>
                         <behavior key="behavior" pushIn="YES" changeBackground="YES" changeGray="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="buttonDisclosure:" target="-2" id="owM-um-GY8"/>
+                    </connections>
                 </button>
-                <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2G2-Od-TC1">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" alphaValue="0.0" translatesAutoresizingMaskIntoConstraints="NO" id="2G2-Od-TC1">
                     <rect key="frame" x="16" y="-51" width="406" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" alignment="left" id="cu2-xn-1WW">

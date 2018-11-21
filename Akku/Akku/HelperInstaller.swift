@@ -30,6 +30,8 @@ class HelperInstaller: NSViewController {
     // MARK: IBOutlets
     
     @IBOutlet weak var buttonInstallHelper: NSButton!
+    @IBOutlet weak var disclosureButton: NSButton!
+    @IBOutlet weak var disclosureText: NSTextField!
     
     // MARK: -
     // MARK: IBActions
@@ -41,6 +43,7 @@ class HelperInstaller: NSViewController {
                 OperationQueue.main.addOperation {
                     delegate.setValue(true, forKey: delegate.helperIsInstalledKeyPath)
                 }
+                delegate.startListeningIfHelperAvailable()
                 return
             } else {
                 OperationQueue.main.addOperation {
@@ -55,6 +58,19 @@ class HelperInstaller: NSViewController {
         OperationQueue.main.addOperation {
             delegate.setValue(false, forKey: delegate.helperIsInstalledKeyPath)
         }
+    }
+    
+    @IBAction func buttonDisclosure (_ sender: Any) {
+        disclosureText.alphaValue = disclosureButton.state == .on ? 0 : 1
+        
+        NSAnimationContext.runAnimationGroup { context in
+            context.duration = 0.25
+            disclosureText.animator().alphaValue = disclosureButton.state == .on ? 1 : 0
+        }
+        
+//        var size = self.size
+//        size.height += 40
+//        self.view.setBoundsSize(size)
     }
     
 }

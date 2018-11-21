@@ -9,6 +9,7 @@
 import Foundation
 import Cocoa
 import IOBluetooth
+import IOBluetoothUI
 
 class StatusMenuController: NSObject {
     
@@ -159,6 +160,8 @@ class StatusMenuController: NSObject {
                         } else {
                             button.image = button.image?.tinting(with: .systemRed)
                         }
+                    } else if #available(OSX 10.14, *) {
+                        button.contentTintColor = nil
                     }
                 }
                 
@@ -174,11 +177,17 @@ class StatusMenuController: NSObject {
             }
             
             menu.addItem(batteryMenuItem)
-            
-            device.register(forDisconnectNotification: self, selector: #selector(buildMenu))
+
+            device.register(forDisconnectNotification: self, selector: #selector(onDeviceDisconnect(sender:device:)))
         }
         
         buildSettings()
+    }
+    
+    @objc
+    func onDeviceDisconnect (sender: AnyObject, device: IOBluetoothDevice) {
+        self.batteryInfo.removeValue(forKey: device.addressString)
+        self.buildMenu()
     }
     
     func buildSettings () {

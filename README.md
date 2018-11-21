@@ -2,6 +2,10 @@
 
 Akku is a tiny monitoring app for headset bluetooth devices.
 
+## Features
+- Notifies you when headset battery gets low
+- Displays battery state in 
+
 ## Compatibility  
 It will work with any headset that conforms to the [Apple bluetooth spec](https://developer.apple.com/hardwaredrivers/BluetoothDesignGuidelines.pdf)\*
 

@@ -35,6 +35,7 @@ class Driver: NSObject {
     // NOTE: these connections/channels may be long gone, Akku does not track connection/channel closing events (yet).
     
     var connections: [Connection] = []
+    var connectionRequests: [ConnectionRequest] = []
     var channels: [RFCOMMChannel] = []
     
     // MARK: -
@@ -135,10 +136,7 @@ class Driver: NSObject {
                 offset += L2CapPacket.length + 1
                 buffer = UnsafeMutableBufferPointer(start: UnsafeMutablePointer<UInt8>(bitPattern: offset), count: Int(size));
                 
-                // FIXME: this stuff currently only works when the host device attempts a connection request
-                // FIXME: not when the remote device does so.
-                
-                if let channel = channels.first(where: { $0.sourceCID == packet.CID }) {
+                if let channel = channels.first(where: { $0.sourceCID == packet.CID || $0.destinationCID == packet.CID }) {
                     // known RFCOMM channel, assume we're speaking RFCOMM
                     let rfcommPacket = RFCOMMPacket(pointer: buffer, parent: packet)
                     
@@ -163,15 +161,30 @@ class Driver: NSObject {
                 } else {
                     // unknown channel, assume it's a command
                     let cmdPacket = L2CapCommand(pointer: buffer, parent: packet)
-                    if let psm = cmdPacket.psm,
-                        cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionRequest.rawValue),
+                    let connectionHandle = packet.flags & 0x0fff
+                    
+                    if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionRequest.rawValue),
+                        let psm = cmdPacket.psm,
                         psm == kBluetoothL2CAPPSMRFCOMM {
-                        let connectionHandle = packet.flags & 0x0fff
 
-                        if let sourceCID = cmdPacket.sourceCID,
+                        if /*let sourceCID = cmdPacket.sourceCID,*/
                             let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
-                            let channel = RFCOMMChannel(CID: packet.CID, sourceCID: sourceCID, connection: connection)
-                            NSLog("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), handle: \(channel.connection.connectionHandle.hex)")
+                            let request = ConnectionRequest(commandID: cmdPacket.commandID, connection: connection)
+                            NSLog("Got connection request, ID: \(request.commandID.hex), handle: \(request.connection.connectionHandle.hex)")
+                            self.connectionRequests.append(request)
+                        }
+                    } else if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue),
+                        let result = cmdPacket.result,
+                        result == 0x0, // TODO: find the correct constant for this (not kBluetoothHCICommandAcceptConnectionRequest)
+                        let sourceCID = cmdPacket.sourceCID,
+                        let destinationCID = cmdPacket.destinationCID,
+                        let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
+                        
+                        // check if this is a connection request attempt that we've heard of...
+                        if let requestIndex = self.connectionRequests.firstIndex(where: { $0.commandID == cmdPacket.commandID && $0.connection.connectionHandle == connectionHandle }) {
+                            self.connectionRequests.remove(at: requestIndex)
+                            let channel = RFCOMMChannel(CID: packet.CID, sourceCID: sourceCID, destinationCID: destinationCID, connection: connection)
+                            NSLog("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), destinationCID: \(destinationCID.hex) handle: \(channel.connection.connectionHandle.hex)")
                             self.channels.append(channel)
                         }
                     }

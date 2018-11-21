@@ -41,14 +41,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
         
         self.helperStatus { installed in
             if installed {
-                // helper is installed... tell it to start listening
-                if let helper = self.helper(nil) {
-                    helper.startListening(completion: { error in
-                        if error != nil {
-                            self.alertWithError(error!.localizedDescription)
-                        }
-                    })
-                }
+                self.startListeningIfHelperAvailable()
             }
             
             OperationQueue.main.addOperation {
@@ -107,6 +100,19 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
         debugPrint(address, "battery", percentage)
         OperationQueue.main.addOperation {
             self.statusMenuController?.reportBatteryChange(address: address, percentage: percentage)
+        }
+    }
+    
+    // MARK: -
+    // MARK: Helper commands
+    
+    func startListeningIfHelperAvailable () {
+        if let helper = self.helper(nil) {
+            helper.startListening(completion: { error in
+                if error != nil {
+                    self.alertWithError(error!.localizedDescription)
+                }
+            })
         }
     }
     

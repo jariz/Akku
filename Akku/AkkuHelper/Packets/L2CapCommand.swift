@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import IOBluetooth
 
 class L2CapCommand {
     
@@ -22,10 +23,16 @@ class L2CapCommand {
     let commandID: UInt8;
     let commandLength: UInt16;
     
-    // MARK: Public connection request command specific fields
+    var sourceCID: UInt16?;
+    
+    // MARK: Connection request command specific fields
     
     var psm: UInt16?;
-    var sourceCID: UInt16?;
+    
+    // MARK: Connection response command specific fields
+    
+    var destinationCID: UInt16?;
+    var result: UInt16?;
     
     // MARK: -
     // MARK: Initializers
@@ -39,11 +46,21 @@ class L2CapCommand {
         self.commandID = data[1...1].withUnsafeBytes { $0.pointee }
         self.commandLength = data[2...3].withUnsafeBytes { $0.pointee }
         
-        if self.commandCode == 0x02 /* Connection Request */ {
+        if self.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionRequest.rawValue) {
             let psm: UInt16 = data[4...5].withUnsafeBytes { $0.pointee }
             let sourceCID: UInt16 = data[6...7].withUnsafeBytes { $0.pointee }
             self.psm = psm
             self.sourceCID = sourceCID
+        }
+        
+        if (self.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue)) {
+            let destinationCID: UInt16 = data[4...5].withUnsafeBytes { $0.pointee }
+            let sourceCID: UInt16 = data[6...7].withUnsafeBytes { $0.pointee }
+            let result: UInt16 = data[8...9].withUnsafeBytes { $0.pointee }
+            
+            self.destinationCID = destinationCID
+            self.sourceCID = sourceCID
+            self.result = result
         }
     }
 }

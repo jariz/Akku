@@ -11,5 +11,6 @@ import Foundation
 struct RFCOMMChannel {
     var CID: UInt16;
     var sourceCID: UInt16;
+    var destinationCID: UInt16;
     var connection: Connection;
 }

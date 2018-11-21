@@ -16,6 +16,7 @@
 		49415EC5218A2C5500C854F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC4218A2C5500C854F7 /* README.md */; };
 		49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
 		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
+		4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
 		49A57C452182359100119136 /* L2CapPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3C2182359100119136 /* L2CapPacket.swift */; };
@@ -89,6 +90,7 @@
 		49415EC4218A2C5500C854F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		49415EC6218B965E00C854F7 /* NSImage+tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+tinting.swift"; sourceTree = "<group>"; };
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
+		4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRequest.swift; sourceTree = "<group>"; };
 		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
 		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
 		49A57C3C2182359100119136 /* L2CapPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = L2CapPacket.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				49415EB92189F55500C854F7 /* Connection.swift */,
 				49415EBB2189F56700C854F7 /* BatteryInfo.swift */,
 				49A57C392182359100119136 /* RFCOMMChannel.swift */,
+				4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -240,8 +243,8 @@
 				53604C0A215E12F400071149 /* MainMenu.xib */,
 				53604C0D215E12F400071149 /* Info.plist */,
 				49A57C5021824AA400119136 /* HelperInstaller.swift */,
-				49A57C5221824B1A00119136 /* StatusMenuController.swift */,
 				49A57C54218250CA00119136 /* HelperInstaller.xib */,
+				49A57C5221824B1A00119136 /* StatusMenuController.swift */,
 				49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */,
 				49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */,
 			);
@@ -320,7 +323,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = JARI.IO;
 				TargetAttributes = {
 					53604C02215E12F300071149 = {
@@ -434,6 +437,7 @@
 				49A57C4C2182494100119136 /* HelperAuthorizationRight.swift in Sources */,
 				49A57C472182359100119136 /* BluetoothHCIError.swift in Sources */,
 				53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */,
+				4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */,
 				49A57C482182359100119136 /* PacketType.swift in Sources */,
 				49A57C492182359100119136 /* Driver.swift in Sources */,
 				49A57C4D2182494100119136 /* HelperAuthorization.swift in Sources */,
@@ -652,6 +656,7 @@
 					__launchd_plist,
 					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -676,6 +681,7 @@
 					__launchd_plist,
 					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
