@@ -175,7 +175,7 @@ class Driver: NSObject {
                         }
                     } else if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue),
                         let result = cmdPacket.result,
-                        result == 0x0, // TODO: find the correct constant for this (not kBluetoothHCICommandAcceptConnectionRequest)
+                        result == UInt16(kBluetoothL2CAPConnectionResultSuccessful.rawValue),
                         let sourceCID = cmdPacket.sourceCID,
                         let destinationCID = cmdPacket.destinationCID,
                         let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {

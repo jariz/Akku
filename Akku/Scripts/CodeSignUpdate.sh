@@ -93,6 +93,12 @@ function updateSMAuthorizedClients {
 ### MAIN SCRIPT
 ###
 
+if [ "$CODE_SIGNING_REQUIRED" == "NO" ]
+then
+    echo "Code signing not required, aborting code sign update"
+    exit 0
+fi
+
 case "${ACTION}" in
     "build")
         appString=$( identifierApplication )

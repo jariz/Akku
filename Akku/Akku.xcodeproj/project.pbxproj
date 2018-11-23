@@ -407,7 +407,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n";
+			shellScript = "\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
