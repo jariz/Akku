@@ -134,9 +134,12 @@ class StatusMenuController: NSObject {
         let devices = (IOBluetoothDevice.pairedDevices() as! [IOBluetoothDevice])
             .filter { $0.isConnected() && $0.isHandsFreeDevice }
         
-        guard devices.count != 0 else {
+        statusItem.button!.appearsDisabled = devices.count == 0
+        
+        guard devices.count > 0 else {
             menu.addItem(withTitle: "No connected handsfree devices.", action: nil, keyEquivalent: "")
             statusItem.button!.image = NSImage(named: NSImage.Name("akku_noconnect"))
+            
             if #available(OSX 10.14, *) {
                 statusItem.button!.contentTintColor = nil
             }
@@ -177,8 +180,9 @@ class StatusMenuController: NSObject {
                 batteryMenuItem.view = controller.view
                 
             } else {
-                batteryMenuItem.title = "No reported battery state yet, try reconnecting."
+                batteryMenuItem.title = "No reported battery state (yet), try reconnecting."
                 statusItem.button!.image = NSImage(named: NSImage.Name("akku_noconnect"))
+                statusItem.button!.appearsDisabled = true
             }
             
             menu.addItem(batteryMenuItem)
