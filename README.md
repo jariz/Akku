@@ -1,10 +1,19 @@
-# Akku
+# Akku [![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
 
-Akku is a tiny monitoring app for headset bluetooth devices.
+Akku is a tiny battery status monitoring app for headset bluetooth devices.  
 
-## Features
-- Notifies you when headset battery gets low
-- Displays battery state in 
+![](https://jari.lol/96mXIdTphl.png)
+
+## What does it do?
+- Displays headset battery status, which can't be viewed on macOS at all (only for Apple accessories).
+- (Optionally) notifies you when headset battery gets low.
+- Menu bar icon.
+
+## What it doesn't do
+
+- Display battery status for non-headsets, and/or Apple accessories.  
+_Those can all be viewed from the regular macOS bluetooth menu.  
+Maybe someday. Currently not part of Akku's scope._
 
 ## Compatibility  
 It will work with any headset that conforms to the [Apple bluetooth spec](https://developer.apple.com/hardwaredrivers/BluetoothDesignGuidelines.pdf)\*
