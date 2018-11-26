@@ -28,7 +28,7 @@ If your iPhone device can read your headset's battery status, it will work.
 
 ## My device doesn't work!  
 
-It's possible that your device doesn't have a battery indication feature, or that it's not supported.
+It's possible that your device doesn't have a battery indication feature, or that it's not supported.  
 If it works on iPhone / Android: donate me the device and I will ensure it works. (DM me [@JariZwarts](https://twitter.com/JariZwarts))  
 
 ## How does it work?
