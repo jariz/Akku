@@ -2,7 +2,8 @@
 
 Akku is a tiny battery status monitoring app for headset bluetooth devices.  
 
-![](https://jari.lol/96mXIdTphl.png)
+![](https://jari.lol/96mXIdTphl.png)  
+![](https://jari.lol/3LyevzRwde.png)  
 
 ## What does it do?
 - Displays headset battery status, which can't be viewed on macOS at all (only for Apple accessories).
