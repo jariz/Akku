@@ -137,6 +137,9 @@ class StatusMenuController: NSObject {
         guard devices.count != 0 else {
             menu.addItem(withTitle: "No connected handsfree devices.", action: nil, keyEquivalent: "")
             statusItem.button!.image = NSImage(named: NSImage.Name("akku_noconnect"))
+            if #available(OSX 10.14, *) {
+                statusItem.button!.contentTintColor = nil
+            }
             buildSettings()
             return
         }

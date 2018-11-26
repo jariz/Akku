@@ -13,7 +13,6 @@
 		49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
 		49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */; };
 		49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */; };
-		49415EC5218A2C5500C854F7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC4218A2C5500C854F7 /* README.md */; };
 		49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
 		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
 		4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
@@ -366,7 +365,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49415EC5218A2C5500C854F7 /* README.md in Resources */,
 				495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */,
 				49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */,
 				53604C09215E12F400071149 /* Assets.xcassets in Resources */,
