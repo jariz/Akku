@@ -40,13 +40,31 @@ class RFCOMMPacket {
         
         self.payloadLength = payloadLength
         
+        if data.count > 255 {
+            NSLog("RFCOMMPacket WARN: Data too big (> 255), skip!")
+            return
+        }
+        
         if payloadLength > 0 {
-            if payloadLength > data.count - 2 {
+            if payloadLength > (data.count - 2) {
                 NSLog("RFCOMMPacket WARN: packet claims to be longer (\(payloadLength)) than it actually is (\(data.count - 2))")
                 return
             }
-            let payload: [UInt8] = Array(data[3...2 + payloadLength])
-            self.payload = String(bytes: payload, encoding: .ascii)
+            
+            var offset = 3
+            
+            if UInt8(data[offset]) != 65 {
+                // (shitty) check if we encountered a credit based flow.
+                // basically checks if we received a character that isn't A
+                // if the next sequence doesn't match any known command the parser will fail anyway ¯\_(ツ)_/¯
+                // we should've concluded this from the "dlc parameter negotiation" which is stuff we don't interpret at all right now.
+                // but... meh. this isn't a friggin full-featured-bluetooth-stack and is probably "good enough".
+                
+                offset += 1
+                payloadLength -= 1
+            }
+            
+            self.payload = String(data: data[offset...(Int(payloadLength) + offset)], encoding: .ascii)
         }
     }
 }
