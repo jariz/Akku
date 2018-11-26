@@ -50,6 +50,8 @@ class StatusMenuController: NSObject {
                 self.showPopover()
             }
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(StatusMenuController.heightChange), name: .InstallerHeightChange, object: nil)
     }
     
     // MARK: -
@@ -221,6 +223,7 @@ class StatusMenuController: NSObject {
     func initPopover () {
         popover = NSPopover()
         popover!.contentViewController = HelperInstaller(nibName: NSNib.Name("HelperInstaller"), bundle: nil)
+        
     }
     
     func showPopover () {
@@ -243,6 +246,11 @@ class StatusMenuController: NSObject {
         } else {
             showPopover()
         }
+    }
+    
+    @objc func heightChange(_ notification: Notification) {
+        let newHeight = notification.object as! CGFloat
+        popover!.contentSize.height += newHeight
     }
 
 }

@@ -34,6 +34,7 @@
 		49A83C7721866F7C005BFBFD /* CVarArg+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */; };
 		49A83C7A21867235005BFBFD /* kern_return_t+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7821867150005BFBFD /* kern_return_t+string.swift */; };
 		49A83C7D2189BECB005BFBFD /* L2CapCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */; };
+		49C458B221ABFB7C00AB9FB9 /* NotificationNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C458B121ABFB7C00AB9FB9 /* NotificationNames.swift */; };
 		535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
 		53604C07215E12F300071149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C06215E12F300071149 /* AppDelegate.swift */; };
 		53604C09215E12F400071149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53604C08215E12F400071149 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		49A83C7821867150005BFBFD /* kern_return_t+string.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "kern_return_t+string.swift"; sourceTree = "<group>"; };
 		49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L2CapCommand.swift; sourceTree = "<group>"; };
 		49A83C812189E1BB005BFBFD /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
+		49C458B121ABFB7C00AB9FB9 /* NotificationNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNames.swift; sourceTree = "<group>"; };
 		532308F42163910700A456CF /* CodeSignUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CodeSignUpdate.sh; sourceTree = "<group>"; };
 		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				49A57C5221824B1A00119136 /* StatusMenuController.swift */,
 				49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */,
 				49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */,
+				49C458B121ABFB7C00AB9FB9 /* NotificationNames.swift */,
 			);
 			path = Akku;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53604C07215E12F300071149 /* AppDelegate.swift in Sources */,
+				49C458B221ABFB7C00AB9FB9 /* NotificationNames.swift in Sources */,
 				535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */,
 				49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */,
 				53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */,

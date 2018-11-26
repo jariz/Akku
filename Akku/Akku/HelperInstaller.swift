@@ -64,13 +64,12 @@ class HelperInstaller: NSViewController {
         disclosureText.alphaValue = disclosureButton.state == .on ? 0 : 1
         
         NSAnimationContext.runAnimationGroup { context in
-            context.duration = 0.25
+            context.duration = 0.1
             disclosureText.animator().alphaValue = disclosureButton.state == .on ? 1 : 0
         }
         
-//        var size = self.size
-//        size.height += 40
-//        self.view.setBoundsSize(size)
+        let height = CGFloat(integerLiteral: disclosureButton.state == .on ? 85 : -85)
+        NotificationCenter.default.post(name: .InstallerHeightChange, object: height)
     }
     
 }
