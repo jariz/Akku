@@ -64,7 +64,7 @@ class RFCOMMPacket {
                 payloadLength -= 1
             }
             
-            self.payload = String(data: data[offset...(Int(payloadLength) + offset)], encoding: .ascii)
+            self.payload = String(data: data[offset...(Int(payloadLength - 1) + offset)], encoding: .ascii)
         }
     }
 }

@@ -35,10 +35,11 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     public func run() {
         self.listener.resume()
         
-//        #if DEBUG
-//        NSLog("Helper started in debugging mode, not waiting for XPC connections and going to start listening immediately...")
-//        startListening { _ in }
-//        #endif
+        if CommandLine.arguments.count > 1 && CommandLine.arguments[1] == "--listenImmediately" {
+            helper.startListening(completion: {
+                if $0 != nil { NSLog(String(describing: $0)) }
+            })
+        }
         
         // Keep the helper tool running until the variable shouldQuit is set to true.
         // The variable should be changed in the "listener(_ listener:shoudlAcceptNewConnection:)" function.

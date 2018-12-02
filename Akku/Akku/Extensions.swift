@@ -12,3 +12,10 @@ import Cocoa
 extension NSNotification.Name {
     static let InstallerHeightChange = Notification.Name("HelperInstallerHeightChange")
 }
+
+extension Int {
+    init?(_ value: String?) {
+        guard let value = value else { return nil }
+        self.init(value)
+    }
+}

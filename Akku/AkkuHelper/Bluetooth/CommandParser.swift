@@ -23,6 +23,10 @@ class CommandParser {
         if payload.count < 4 {
             return nil
         }
+        #if DEBUG
+        NSLog("---- " + payload)
+        #endif
+        
         let endOfAT = payload.index(payload.startIndex, offsetBy: 3)
         let start = payload[..<endOfAT]
         if start != "AT+" {

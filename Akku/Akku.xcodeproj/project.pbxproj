@@ -14,7 +14,6 @@
 		49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */; };
 		49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */; };
 		49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
-		495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */ = {isa = PBXBuildFile; fileRef = 495D69CE218124CC004621C9 /* SMJobBlessUtil.py */; };
 		4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
@@ -108,7 +107,6 @@
 		49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L2CapCommand.swift; sourceTree = "<group>"; };
 		49A83C812189E1BB005BFBFD /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
 		49C458B121ABFB7C00AB9FB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		532308F42163910700A456CF /* CodeSignUpdate.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = CodeSignUpdate.sh; sourceTree = "<group>"; };
 		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53604C08215E12F400071149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -208,7 +206,7 @@
 		532308F12163908D00A456CF /* Scripts */ = {
 			isa = PBXGroup;
 			children = (
-				532308F42163910700A456CF /* CodeSignUpdate.sh */,
+				495D69CE218124CC004621C9 /* SMJobBlessUtil.py */,
 			);
 			path = Scripts;
 			sourceTree = "<group>";
@@ -217,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				49415EC4218A2C5500C854F7 /* README.md */,
-				495D69CE218124CC004621C9 /* SMJobBlessUtil.py */,
 				53604C05215E12F300071149 /* Akku */,
 				53604C19215E131E00071149 /* AkkuHelper */,
 				53C6B95C21676229001A80FD /* Utility */,
@@ -365,7 +362,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495D69CF218124CC004621C9 /* SMJobBlessUtil.py in Resources */,
 				49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */,
 				53604C09215E12F400071149 /* Assets.xcassets in Resources */,
 				49A57C55218250CA00119136 /* HelperInstaller.xib in Resources */,
@@ -391,7 +387,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n";
+			shellScript = "#\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n";
 		};
 		5361D213216254BC0036E296 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -408,7 +404,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n\n";
+			shellScript = "#\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -602,8 +598,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = Akku/Info.plist;
@@ -623,8 +619,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = Akku/Info.plist;
@@ -643,8 +639,8 @@
 		53604C1D215E131E00071149 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -660,6 +656,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -668,8 +665,8 @@
 		53604C1E215E131E00071149 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
@@ -685,6 +682,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};

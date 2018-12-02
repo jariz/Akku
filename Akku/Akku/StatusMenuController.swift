@@ -94,7 +94,9 @@ class StatusMenuController: NSObject {
             return
         }
         
-        self.shouldShowNotification(addressString, percentage)
+        let prevPercentage = self.batteryInfo[addressString]?.percentage
+        
+        self.shouldShowNotification(addressString, percentage, prevPercentage)
         
         var batteryInfo = self.getBatteryInfo(for: addressString)
         batteryInfo.percentage = percentage
@@ -102,12 +104,21 @@ class StatusMenuController: NSObject {
         buildMenu()
     }
     
-    func shouldShowNotification (_ addressString: String, _ percentage: Int) {
-        let warnAt = UserDefaults.standard.string(forKey: "warnAt") ?? "20%"
+    func shouldShowNotification (_ addressString: String, _ percentage: Int, _ prevPercentage: Int?) {
         let devices = IOBluetoothDevice.pairedDevices() as! [IOBluetoothDevice]
         
-        guard warnAt == "\(String(percentage))%",
+        guard let warnAt = Int(UserDefaults.standard.string(forKey: "warnAt") ?? "20"),
             let device = devices.first(where: { device in device.addressString == addressString }) else {
+            return
+        }
+        
+        if let prev = prevPercentage,
+            percentage > prev,
+            prev < warnAt {
+            return
+        }
+        
+        if percentage > warnAt {
             return
         }
         
@@ -206,19 +217,20 @@ class StatusMenuController: NSObject {
         
         let warnAtItem = NSMenuItem(title: "Show notification at...", action: nil, keyEquivalent: "")
         let submenu = NSMenu(title: "Show notification at")
-        func addWarnAtItem(value: String) {
-            let warnAt = UserDefaults.standard.string(forKey: "warnAt") ?? "20%"
-            let item = NSMenuItem(title: value, action: #selector(warnSettingChange(sender:)), keyEquivalent: "")
+        func addWarnAtItem(title: String, value: Int?) {
+            let warnAt = UserDefaults.standard.string(forKey: "warnAt")
+            let item = NSMenuItem(title: title, action: #selector(warnSettingChange(sender:)), keyEquivalent: "")
+            item.representedObject = value
             item.target = self
-            item.state = warnAt == value ? .on : .off
+            item.state = Int(warnAt ?? "") == value ? .on : .off
             submenu.addItem(item)
         }
         
         for i in 0...4 {
-            addWarnAtItem(value: String(describing: i * 10) + "%")
+            addWarnAtItem(title: String(describing: i * 10) + "%", value: i)
         }
         
-        addWarnAtItem(value: "Never")
+        addWarnAtItem(title: "Never", value: nil)
         
         warnAtItem.submenu = submenu
         menu.addItem(warnAtItem)
