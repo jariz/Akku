@@ -135,6 +135,10 @@ class StatusMenuController: NSObject {
         buildMenu()
     }
     
+    @objc func quit (sender: NSMenuItem) {
+        NSApplication.shared.terminate(self)
+    }
+    
     @objc func buildMenu () {
         guard let menu = self.menu else {
             return
@@ -155,6 +159,7 @@ class StatusMenuController: NSObject {
                 statusItem.button!.contentTintColor = nil
             }
             buildSettings()
+            buildActions()
             return
         }
         
@@ -202,6 +207,7 @@ class StatusMenuController: NSObject {
         }
         
         buildSettings()
+        buildActions()
     }
     
     @objc
@@ -236,13 +242,24 @@ class StatusMenuController: NSObject {
         menu.addItem(warnAtItem)
     }
     
+    func buildActions () {
+        guard let menu = self.menu else { return }
+        
+        menu.addItem(NSMenuItem.separator());
+        
+        // Quit item
+        let item = NSMenuItem(title: "Quit", action: #selector(quit(sender:)), keyEquivalent: "q")
+        item.target = self
+        item.keyEquivalentModifierMask = .command
+        menu.addItem(item)
+    }
+    
     // MARK: -
     // MARK: Popover control functions
     
     func initPopover () {
         popover = NSPopover()
         popover!.contentViewController = HelperInstaller(nibName: NSNib.Name("HelperInstaller"), bundle: nil)
-        
     }
     
     func showPopover () {
