@@ -1,0 +1,39 @@
+PODS:
+  - EMCLoginItem (1.0.1)
+  - Sentry (4.1.0):
+    - Sentry/Core (= 4.1.0)
+  - Sentry/Core (4.1.0)
+  - Sparkle (1.18.1)
+  - SwiftyBeaver (1.5.1)
+
+DEPENDENCIES:
+  - EMCLoginItem
+  - Sentry (from `https://github.com/getsentry/sentry-cocoa.git`, tag `4.1.0`)
+  - Sparkle
+  - SwiftyBeaver
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - EMCLoginItem
+    - Sparkle
+    - SwiftyBeaver
+
+EXTERNAL SOURCES:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.1.0
+
+CHECKOUT OPTIONS:
+  Sentry:
+    :git: https://github.com/getsentry/sentry-cocoa.git
+    :tag: 4.1.0
+
+SPEC CHECKSUMS:
+  EMCLoginItem: ac4a198cda3f4a8dc72797d2e89ad6c640624835
+  Sentry: 44b85e768f435ede4d12ea279af588ff275c3939
+  Sparkle: 06ea33170007c5937ee54da481b4481af98fac79
+  SwiftyBeaver: 4f74563624b2c1e821c522c54142b5dd5ebb0f30
+
+PODFILE CHECKSUM: 389128c2f134df79a847a99ea2f37352b6694a5a
+
+COCOAPODS: 1.5.3

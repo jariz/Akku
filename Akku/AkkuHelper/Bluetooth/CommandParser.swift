@@ -6,8 +6,6 @@
 //  Copyright © 2018 JARI.IO. All rights reserved.
 //
 
-import Foundation
-
 class CommandParser {
     
     // MARK: -
@@ -24,7 +22,7 @@ class CommandParser {
             return nil
         }
         #if DEBUG
-        NSLog("---- " + payload)
+        log.debug("---- " + payload)
         #endif
         
         let endOfAT = payload.index(payload.startIndex, offsetBy: 3)
@@ -62,19 +60,19 @@ class CommandParser {
     static fileprivate func getBatteryFromAppleVsc (_ args: [String]) -> BatteryInfo? {
         let intArgs = args.map({ $0.trimmingCharacters(in: [" ", "\r", "\n"]) }).compactMap { Int($0) }
         if intArgs.count == 0 {
-            NSLog("getBatteryFromAppleVsc WARN: received a apple vsc without a length indicator")
+            log.warning("getBatteryFromAppleVsc: received a apple vsc without a length indicator")
             return nil
         }
         
         let length = intArgs[0]
         
         if length == 0 {
-            NSLog("getBatteryFromAppleVsc WARN: received a apple vsc with 0 keyvals")
+            log.warning("getBatteryFromAppleVsc: received a apple vsc with 0 keyvals")
             return nil
         }
         
         if intArgs.count - 1 < length * 2 {
-            NSLog("getBatteryFromAppleVsc WARN: received a apple vsc that contains a invalid length")
+            log.warning("getBatteryFromAppleVsc: received a apple vsc that contains a invalid length")
             return nil
         }
         
@@ -90,7 +88,7 @@ class CommandParser {
                 let percentage = (val + 1) * 10
                 
                 if percentage > 100 || percentage < 0 {
-                    NSLog("getBatteryFromAppleVsc WARN: illegal battery value! (\(percentage)%)")
+                    log.warning("getBatteryFromAppleVsc: illegal battery value! (\(percentage)%)")
                     return nil
                 }
                 

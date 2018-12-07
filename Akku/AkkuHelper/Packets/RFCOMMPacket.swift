@@ -41,19 +41,14 @@ class RFCOMMPacket {
         self.payloadLength = payloadLength
         
         if data.count > 255 {
-            NSLog("RFCOMMPacket WARN: Data too big (> 255), skip!")
+            log.warning("RFCOMMPacket: Data too big (> 255), skip!")
             return
         }
         
         if payloadLength > 0 {
-            if payloadLength > (data.count - 2) {
-                NSLog("RFCOMMPacket WARN: packet claims to be longer (\(payloadLength)) than it actually is (\(data.count - 2))")
-                return
-            }
-            
             var offset = 3
             
-            if UInt8(data[offset]) != 65 {
+            if data.count > 0, UInt8(data[offset]) != 65 {
                 // (shitty) check if we encountered a credit based flow.
                 // basically checks if we received a character that isn't A
                 // if the next sequence doesn't match any known command the parser will fail anyway ¯\_(ツ)_/¯
@@ -62,6 +57,15 @@ class RFCOMMPacket {
                 
                 offset += 1
                 payloadLength -= 1
+                
+                if payloadLength == 0 {
+                    return
+                }
+            }
+            
+            if payloadLength > (data.count - offset) {
+                log.warning("RFCOMMPacket: packet claims to be longer (\(payloadLength)) than it actually is (\(data.count - 2))")
+                return
             }
             
             self.payload = String(data: data[offset...(Int(payloadLength - 1) + offset)], encoding: .ascii)

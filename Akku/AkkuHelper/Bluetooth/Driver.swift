@@ -125,7 +125,7 @@ class Driver: NSObject {
 
                 if packet.eventCode == kBluetoothHCIEventConnectionComplete && packet.status == 0x00 /* Success */ {
                     let conn = Connection(addr: BluetoothDeviceAddress(data: packet.addr!), connectionHandle: packet.connectionHandle!)
-                    NSLog("Added connection, handle: \(packet.connectionHandle!.hex)")
+                    log.info("Added connection, handle: \(packet.connectionHandle!.hex)")
                     self.connections.append(conn)
                 }
                 
@@ -143,7 +143,7 @@ class Driver: NSObject {
                     if packetType == .RECV_ACL_DATA,
                         let payload = rfcommPacket.payload,
                         let battInfo = CommandParser.parsePayload(payload) {
-                        NSLog("Got battery command: docked = \(String(describing: battInfo.docked)), percentage = \(String(describing: battInfo.percentage))")
+                        log.info("Got battery command: docked = \(String(describing: battInfo.docked)), percentage = \(String(describing: battInfo.percentage))")
                         
                         if let appProtocol = self.appProtocol {
                             if let docked = battInfo.docked {
@@ -154,7 +154,7 @@ class Driver: NSObject {
                                 appProtocol.reportBatteryChange(address: channel.connection.addr, percentage: percentage)
                             }
                         } else {
-                            NSLog("Driver: No remote object found to send battery events to!")
+                            log.error("Driver: No remote object found to send battery events to!")
                         }
                     }
                     
@@ -167,10 +167,9 @@ class Driver: NSObject {
                         let psm = cmdPacket.psm,
                         psm == kBluetoothL2CAPPSMRFCOMM {
 
-                        if /*let sourceCID = cmdPacket.sourceCID,*/
-                            let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
+                        if let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
                             let request = ConnectionRequest(commandID: cmdPacket.commandID, connection: connection)
-                            NSLog("Got connection request, ID: \(request.commandID.hex), handle: \(request.connection.connectionHandle.hex)")
+                            log.debug("Got connection request, ID: \(request.commandID.hex), handle: \(request.connection.connectionHandle.hex)")
                             self.connectionRequests.append(request)
                         }
                     } else if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue),
@@ -184,7 +183,7 @@ class Driver: NSObject {
                         if let requestIndex = self.connectionRequests.firstIndex(where: { $0.commandID == cmdPacket.commandID && $0.connection.connectionHandle == connectionHandle }) {
                             self.connectionRequests.remove(at: requestIndex)
                             let channel = RFCOMMChannel(CID: packet.CID, sourceCID: sourceCID, destinationCID: destinationCID, connection: connection)
-                            NSLog("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), destinationCID: \(destinationCID.hex) handle: \(channel.connection.connectionHandle.hex)")
+                            log.info("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), destinationCID: \(destinationCID.hex) handle: \(channel.connection.connectionHandle.hex)")
                             self.channels.append(channel)
                         }
                     }
@@ -215,7 +214,7 @@ class Driver: NSObject {
             do {
                 try self.process()
             } catch {
-                NSLog(error.localizedDescription)
+                log.error(error.localizedDescription)
             }
         })
         

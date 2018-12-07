@@ -10,6 +10,9 @@
 import Cocoa
 import ServiceManagement
 import IOBluetooth
+import Sentry
+import SwiftyBeaver
+let log = SwiftyBeaver.self
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
@@ -37,6 +40,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // fire up logging
+        let file = FileDestination()
+        let console = ConsoleDestination()
+        let url = try? FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        file.logFileURL = url?.appendingPathComponent("Logs/Akku.log")
+        console.format = "$DHH:mm:ss$d $C$L - $M"
+        file.format = "$Ddd-MM-yyyy HH:mm:ss$d $L $F:$l - $M"
+        log.addDestination(file)
+        log.addDestination(console)
+        
+        // fire up sentry
+        do {
+            Client.shared = try Client(dsn: "https://7c90f578bae24cafb69e519f4a692036@sentry.io/1338198")
+            try Client.shared?.startCrashHandler()
+        } catch let error {
+            log.error(error)
+        }
+        
         // Check if the current embedded helper tool is installed on the machine.
         
         self.helperStatus { installed in
@@ -78,7 +99,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
         // Currently there's a lot of stuff that can go wrong. But it all leads back to this single function.
         // Retry buttons, and perhaps something a bit more subtle than a modal...
         
-        print(error)
+        log.error(error)
         OperationQueue.main.addOperation {
             let alert = NSAlert()
             alert.informativeText = error
@@ -90,14 +111,14 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
     // MARK: AppProtocol Methods
     
     func reportDockChange(address: BluetoothDeviceAddress, docked: Bool) {
-        debugPrint(address, "docked", docked)
+        log.debug(address, "docked", String(docked))
         OperationQueue.main.addOperation {
             self.statusMenuController?.reportDockChange(address: address, docked: docked)
         }
     }
     
     func reportBatteryChange(address: BluetoothDeviceAddress, percentage: Int) {
-        debugPrint(address, "battery", percentage)
+        log.debug(address, "battery", String(percentage))
         OperationQueue.main.addOperation {
             self.statusMenuController?.reportBatteryChange(address: address, percentage: percentage)
         }
@@ -146,7 +167,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
         // Get the current helper connection and return the remote object (Helper.swift) as a proxy object to call functions on.
 
         guard let helper = self.helperConnection()?.remoteObjectProxyWithErrorHandler({ error in
-            print("Helper connection was closed with error: \(error)")
+            log.error("Helper connection was closed with error: \(error)")
             if let onCompletion = completion { onCompletion(false) }
         }) as? HelperProtocol else { return nil }
         return helper

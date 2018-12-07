@@ -37,7 +37,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
         
         if CommandLine.arguments.count > 1 && CommandLine.arguments[1] == "--listenImmediately" {
             helper.startListening(completion: {
-                if $0 != nil { NSLog(String(describing: $0)) }
+                if $0 != nil { log.error(String(describing: $0)) }
             })
         }
         
@@ -113,7 +113,7 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
         do {
             return try CodesignCheck.codeSigningMatches(pid: connection.processIdentifier)
         } catch {
-            NSLog("Code signing check failed with error: \(error)")
+            log.error("Code signing check failed with error: \(error)")
             return false
         }
     }

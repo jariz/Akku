@@ -9,7 +9,7 @@
 import Foundation
 import Cocoa
 import IOBluetooth
-import IOBluetoothUI
+import EMCLoginItem
 
 class StatusMenuController: NSObject {
     
@@ -18,6 +18,7 @@ class StatusMenuController: NSObject {
     private var popover: NSPopover?;
     private var menu: NSMenu?;
     private var batteryInfo: [String: BatteryInfo] = [:]
+    private var loginItem = EMCLoginItem()
     
     // MARK: Private constants
     
@@ -130,13 +131,25 @@ class StatusMenuController: NSObject {
     }
     
     @objc func warnSettingChange (sender: NSMenuItem) {
-        UserDefaults.standard.set(sender.title, forKey: "warnAt")
+        UserDefaults.standard.set(sender.representedObject as? Int, forKey: "warnAt")
         
         buildMenu()
     }
     
     @objc func quit (sender: NSMenuItem) {
         NSApplication.shared.terminate(self)
+    }
+    
+    @objc func toggleLoginItem (sender: NSMenuItem) {
+        guard let loginItem = self.loginItem else { return }
+        
+        if !loginItem.isLoginItem() {
+            loginItem.add()
+        } else {
+            loginItem.remove()
+        }
+        
+        buildMenu()
     }
     
     @objc func buildMenu () {
@@ -220,7 +233,9 @@ class StatusMenuController: NSObject {
         guard let menu = self.menu else { return }
         
         menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Settings", action: nil, keyEquivalent: ""))
         
+        // Show notification at... setting
         let warnAtItem = NSMenuItem(title: "Show notification at...", action: nil, keyEquivalent: "")
         let submenu = NSMenu(title: "Show notification at")
         func addWarnAtItem(title: String, value: Int?) {
@@ -233,13 +248,19 @@ class StatusMenuController: NSObject {
         }
         
         for i in 0...4 {
-            addWarnAtItem(title: String(describing: i * 10) + "%", value: i)
+            addWarnAtItem(title: String(describing: i * 10) + "%", value: i * 10)
         }
         
         addWarnAtItem(title: "Never", value: nil)
         
         warnAtItem.submenu = submenu
         menu.addItem(warnAtItem)
+        
+        // Start with system setting
+        let startWithSystemItem = NSMenuItem(title: "Start with system", action: #selector(toggleLoginItem(sender:)), keyEquivalent: "")
+        startWithSystemItem.target = self
+        startWithSystemItem.state = loginItem!.isLoginItem() ? .on : .off
+        menu.addItem(startWithSystemItem)
     }
     
     func buildActions () {

@@ -43,7 +43,7 @@ class EventPacket {
         
         if self.eventCode == kBluetoothHCIEventConnectionComplete {
             if data.count < EventPacket.connectionRequestLength {
-                NSLog("EventPacket WARN: received a kBluetoothHCIEventConnectionComplete but the packet length was too short, ignoring...")
+                log.warning("EventPacket: received a kBluetoothHCIEventConnectionComplete but the packet length was too short, ignoring...")
                 return
             }
             
