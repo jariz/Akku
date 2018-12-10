@@ -47,7 +47,7 @@
 		53604C2E215E1CFB00071149 /* io.jari.AkkuHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* io.jari.AkkuHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6B95921676219001A80FD /* CodesignCheck.swift */; };
 		53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
-		BE7433273385ACD10B74A4D0 /* libPods-io.jari.AkkuHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E3CFB6AFC65A7D951F57DC8 /* libPods-io.jari.AkkuHelper.a */; };
+		B980D8163C317B0C8E3B5107 /* Pods_io_jari_AkkuHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24080E5E88C171847FB4B136 /* Pods_io_jari_AkkuHelper.framework */; };
 		C62EA679303FFBF1BC3A0E4A /* Pods_Akku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F050B9F0EDD513237C34B393 /* Pods_Akku.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,8 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0E3CFB6AFC65A7D951F57DC8 /* libPods-io.jari.AkkuHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-io.jari.AkkuHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4979FE873E1710EE994FFC /* Pods-Akku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.release.xcconfig"; sourceTree = "<group>"; };
+		24080E5E88C171847FB4B136 /* Pods_io_jari_AkkuHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_io_jari_AkkuHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49415EB92189F55500C854F7 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		49415EBB2189F56700C854F7 /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
 		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE7433273385ACD10B74A4D0 /* libPods-io.jari.AkkuHelper.a in Frameworks */,
+				B980D8163C317B0C8E3B5107 /* Pods_io_jari_AkkuHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				F050B9F0EDD513237C34B393 /* Pods_Akku.framework */,
-				0E3CFB6AFC65A7D951F57DC8 /* libPods-io.jari.AkkuHelper.a */,
+				24080E5E88C171847FB4B136 /* Pods_io_jari_AkkuHelper.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -423,7 +423,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "declare -a DEPENDENCIES=();\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			shellScript = "declare -a DEPENDENCIES=('Sentry' 'SwiftyBeaver');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
 		5361D2122162410E0036E296 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -469,7 +469,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "declare -a DEPENDENCIES=('EMCLoginItem' 'Sentry-framework' 'SwiftyBeaver-framework');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			shellScript = "declare -a DEPENDENCIES=('EMCLoginItem' 'Sentry' 'SwiftyBeaver');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
 		F0BA878096340B757F707E39 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -723,6 +723,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
+					"$(inherited)",
 					"-sectcreate",
 					__TEXT,
 					__info_plist,
@@ -749,16 +750,6 @@
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				OTHER_LDFLAGS = (
-					"-sectcreate",
-					__TEXT,
-					__info_plist,
-					"\"$(SRCROOT)/AkkuHelper/Helper-Info.plist\"",
-					"-sectcreate",
-					__TEXT,
-					__launchd_plist,
-					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
-				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
