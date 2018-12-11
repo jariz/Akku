@@ -1,0 +1,12 @@
+{
+  "buildCommand": "./build.sh",
+  "src": {
+     "commit": "false",
+     "tag": true,
+     "push": true
+  },
+  "github": {
+    "release": true,
+    "assets": ["build/*.dmg"]
+  }
+}

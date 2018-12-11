@@ -11,6 +11,7 @@ target 'Akku' do
   pod 'EMCLoginItem'
   pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '4.1.0'
   pod 'SwiftyBeaver'
+  pod 'Sparkle'
 end
 
 target 'io.jari.AkkuHelper' do
@@ -20,7 +21,6 @@ target 'io.jari.AkkuHelper' do
   # Pods for io.jari.AkkuHelper
   pod 'Sentry', :git => 'https://github.com/getsentry/sentry-cocoa.git', :tag => '4.1.0'
   pod 'SwiftyBeaver'
-
 end
 
 post_install do |installer|

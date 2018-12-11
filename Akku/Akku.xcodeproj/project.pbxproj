@@ -750,6 +750,17 @@
 				DEVELOPMENT_TEAM = JHKDY4UQ72;
 				INFOPLIST_FILE = "$(SRCROOT)/AkkuHelper/Helper-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-sectcreate",
+					__TEXT,
+					__info_plist,
+					"\"$(SRCROOT)/AkkuHelper/Helper-Info.plist\"",
+					"-sectcreate",
+					__TEXT,
+					__launchd_plist,
+					"\"$(SRCROOT)/AkkuHelper/Helper-Launchd.plist\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
