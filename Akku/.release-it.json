@@ -8,5 +8,8 @@
   "github": {
     "release": true,
     "assets": ["build/*.dmg"]
+  },
+  "npm": {
+    "publish": false
   }
 }
