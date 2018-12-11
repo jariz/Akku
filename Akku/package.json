@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release:beta": "node -r dotenv/config node_modules/.bin/release-it --dry-run --preRelease=beta -n",
-    "release": "node -r dotenv/config node_modules/.bin/release-it --dry-run -n"
+    "release:beta": "node -r dotenv/config node_modules/.bin/release-it --preRelease=beta -n",
+    "release": "node -r dotenv/config node_modules/.bin/release-it -n"
   },
   "keywords": [],
   "author": "",
