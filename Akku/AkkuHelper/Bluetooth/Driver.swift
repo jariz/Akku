@@ -210,16 +210,19 @@ class Driver: NSObject {
     }
     
     func poll () {
-        self.timer = Timer(timeInterval: 5, repeats: true, block: { (_) in
-            do {
-                try self.process()
-            } catch {
-                log.error(error.localizedDescription)
-            }
-        })
+        self.timer = Timer(timeInterval: 5, target: self, selector: #selector(timerHit), userInfo: nil, repeats: true)
         
         OperationQueue.main.addOperation {
             RunLoop.current.add(self.timer!, forMode: .common)
+        }
+    }
+    
+    @objc
+    func timerHit () {
+        do {
+            try self.process()
+        } catch {
+            log.error(error.localizedDescription)
         }
     }
 }

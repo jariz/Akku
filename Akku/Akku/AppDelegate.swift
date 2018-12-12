@@ -78,17 +78,23 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
         
         // TODO: this is kinda hacky??
         // but... invoking a non existing helper does not seem to cause any errors for whatever reason.
-        self.timeoutCheck = Timer(timeInterval: 2.5, repeats: false, block: { _ in
-            if !self.helperIsInstalled {
-                guard let statusMenuController = self.statusMenuController else {
-                    return
-                }
-                
-                statusMenuController.initStatusItem()
-            }
-        })
+        self.timeoutCheck = Timer(timeInterval: 2.5, target: self, selector: #selector(timerHit), userInfo: nil, repeats: false)
         
         RunLoop.current.add(self.timeoutCheck!, forMode: .common)
+    }
+    
+    // MARK: -
+    // MARK: Timer callbacks
+    
+    @objc
+    func timerHit () {
+        if !self.helperIsInstalled {
+            guard let statusMenuController = self.statusMenuController else {
+                return
+            }
+            
+            statusMenuController.initStatusItem()
+        }
     }
 
     // MARK: -
