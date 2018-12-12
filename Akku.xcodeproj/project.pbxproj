@@ -91,7 +91,6 @@
 		49415EBB2189F56700C854F7 /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
 		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
 		49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMenuItemController.swift; sourceTree = "<group>"; };
-		49415EC4218A2C5500C854F7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		49415EC6218B965E00C854F7 /* NSImage+tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+tinting.swift"; sourceTree = "<group>"; };
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRequest.swift; sourceTree = "<group>"; };
@@ -112,7 +111,7 @@
 		49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L2CapCommand.swift; sourceTree = "<group>"; };
 		49A83C812189E1BB005BFBFD /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
 		49C458B121ABFB7C00AB9FB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		49FD57E821BE9DAA00B2A5CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		49FD57E821BE9DAA00B2A5CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53604C08215E12F400071149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				49FD57E821BE9DAA00B2A5CE /* Podfile */,
-				49415EC4218A2C5500C854F7 /* README.md */,
 				53604C05215E12F300071149 /* Akku */,
 				53604C19215E131E00071149 /* AkkuHelper */,
 				53C6B95C21676229001A80FD /* Utility */,
