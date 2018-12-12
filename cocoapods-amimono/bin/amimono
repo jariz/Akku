@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+$:.push File.expand_path("../lib", File.dirname(__FILE__))
+require "cocoapods-amimono"
+require "cocoapods-amimono/command"
+
+Amimono::run

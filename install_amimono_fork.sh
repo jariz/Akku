@@ -3,5 +3,5 @@
 
 cd cocoapods-amimono
 gem build cocoapods-amimono.gemspec
-gem install cocoapods-amimono-0.0.10.gem
+gem install ./cocoapods-amimono-0.0.10.gem
 cd ..
