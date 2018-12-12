@@ -1,3 +1,4 @@
 osx_image: xcode10.1
 language: objective-c
+before_install: ./install_amimono_fork.sh
 script: CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ./build.sh
