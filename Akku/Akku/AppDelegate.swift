@@ -12,6 +12,7 @@ import ServiceManagement
 import IOBluetooth
 import Sentry
 import SwiftyBeaver
+import Sparkle
 let log = SwiftyBeaver.self
 
 @NSApplicationMain
@@ -19,7 +20,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, AppProtocol {
     
     // MARK: -
     // MARK: Variables
-
     private var currentHelperConnection: NSXPCConnection?
     private var timeoutCheck: Timer?
 

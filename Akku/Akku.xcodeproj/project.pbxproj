@@ -47,8 +47,8 @@
 		53604C2E215E1CFB00071149 /* io.jari.AkkuHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* io.jari.AkkuHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6B95921676219001A80FD /* CodesignCheck.swift */; };
 		53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
-		B980D8163C317B0C8E3B5107 /* Pods_io_jari_AkkuHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 24080E5E88C171847FB4B136 /* Pods_io_jari_AkkuHelper.framework */; };
-		C62EA679303FFBF1BC3A0E4A /* Pods_Akku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F050B9F0EDD513237C34B393 /* Pods_Akku.framework */; };
+		A67226C22997AFAB255AD179 /* Pods_Akku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97EDD0801ADD1255902D6C0 /* Pods_Akku.framework */; };
+		AC2A73A073EAF4D60B90A5A4 /* Pods_io_jari_AkkuHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,8 +85,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1B4979FE873E1710EE994FFC /* Pods-Akku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.release.xcconfig"; sourceTree = "<group>"; };
-		24080E5E88C171847FB4B136 /* Pods_io_jari_AkkuHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_io_jari_AkkuHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_io_jari_AkkuHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45E1786BB16FAE0C4FF70254 /* Pods-Akku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.release.xcconfig"; sourceTree = "<group>"; };
 		49415EB92189F55500C854F7 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		49415EBB2189F56700C854F7 /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
 		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
@@ -113,8 +113,6 @@
 		49A83C812189E1BB005BFBFD /* CommandParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandParser.swift; sourceTree = "<group>"; };
 		49C458B121ABFB7C00AB9FB9 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		49FD57E821BE9DAA00B2A5CE /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		4FA9976E32DA4295A1702A7E /* Pods-io.jari.AkkuHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-io.jari.AkkuHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-io.jari.AkkuHelper/Pods-io.jari.AkkuHelper.release.xcconfig"; sourceTree = "<group>"; };
-		50A7B038D5A54FC3F1FB8719 /* Pods-io.jari.AkkuHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-io.jari.AkkuHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-io.jari.AkkuHelper/Pods-io.jari.AkkuHelper.debug.xcconfig"; sourceTree = "<group>"; };
 		53604C03215E12F300071149 /* Akku.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Akku.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53604C06215E12F300071149 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53604C08215E12F400071149 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -129,8 +127,10 @@
 		53604C25215E185D00071149 /* HelperProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperProtocol.swift; sourceTree = "<group>"; };
 		53604C29215E1B0100071149 /* AppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppProtocol.swift; sourceTree = "<group>"; };
 		53C6B95921676219001A80FD /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
-		75F9A3D9EC5458C9B9157091 /* Pods-Akku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.debug.xcconfig"; sourceTree = "<group>"; };
-		F050B9F0EDD513237C34B393 /* Pods_Akku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Akku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FCCD277D050807BA418957B /* Pods-io.jari.AkkuHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-io.jari.AkkuHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-io.jari.AkkuHelper/Pods-io.jari.AkkuHelper.release.xcconfig"; sourceTree = "<group>"; };
+		C0273CCC27ADA7521975ADEB /* Pods-io.jari.AkkuHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-io.jari.AkkuHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-io.jari.AkkuHelper/Pods-io.jari.AkkuHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		E8264CE5DD8E68D4479388EC /* Pods-Akku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.debug.xcconfig"; sourceTree = "<group>"; };
+		F97EDD0801ADD1255902D6C0 /* Pods_Akku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Akku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +138,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C62EA679303FFBF1BC3A0E4A /* Pods_Akku.framework in Frameworks */,
+				A67226C22997AFAB255AD179 /* Pods_Akku.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,13 +146,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B980D8163C317B0C8E3B5107 /* Pods_io_jari_AkkuHelper.framework in Frameworks */,
+				AC2A73A073EAF4D60B90A5A4 /* Pods_io_jari_AkkuHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		082F41C6D4B79026C21461DB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E8264CE5DD8E68D4479388EC /* Pods-Akku.debug.xcconfig */,
+				45E1786BB16FAE0C4FF70254 /* Pods-Akku.release.xcconfig */,
+				C0273CCC27ADA7521975ADEB /* Pods-io.jari.AkkuHelper.debug.xcconfig */,
+				7FCCD277D050807BA418957B /* Pods-io.jari.AkkuHelper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3104D131B031FC0FADA58396 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F97EDD0801ADD1255902D6C0 /* Pods_Akku.framework */,
+				3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		49A57C352182353A00119136 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,8 +253,8 @@
 				53C6B95C21676229001A80FD /* Utility */,
 				532308F12163908D00A456CF /* Scripts */,
 				53604C04215E12F300071149 /* Products */,
-				CE11B9A143CF630DEE88E941 /* Pods */,
-				E6734501B9F45133DFD1F7C0 /* Frameworks */,
+				082F41C6D4B79026C21461DB /* Pods */,
+				3104D131B031FC0FADA58396 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,26 +309,6 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
-		CE11B9A143CF630DEE88E941 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				75F9A3D9EC5458C9B9157091 /* Pods-Akku.debug.xcconfig */,
-				1B4979FE873E1710EE994FFC /* Pods-Akku.release.xcconfig */,
-				50A7B038D5A54FC3F1FB8719 /* Pods-io.jari.AkkuHelper.debug.xcconfig */,
-				4FA9976E32DA4295A1702A7E /* Pods-io.jari.AkkuHelper.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E6734501B9F45133DFD1F7C0 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				F050B9F0EDD513237C34B393 /* Pods_Akku.framework */,
-				24080E5E88C171847FB4B136 /* Pods_io_jari_AkkuHelper.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -316,13 +316,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "Akku" */;
 			buildPhases = (
-				F0BA878096340B757F707E39 /* [CP] Check Pods Manifest.lock */,
-				E1F3C2FFC6665066346A6298 /* [Amimono] Create filelist per architecture */,
+				D8BE457BCA28D7B5DC25B7EB /* [CP] Check Pods Manifest.lock */,
+				D52F93A00C48FAF4FF301A0E /* [Amimono] Create filelist per architecture */,
 				5361D2122162410E0036E296 /* Run Script */,
 				53604BFF215E12F300071149 /* Sources */,
 				53604C00215E12F300071149 /* Frameworks */,
 				53604C01215E12F300071149 /* Resources */,
 				53604C2D215E1CE600071149 /* Copy Helper */,
+				2B0D274D8FE0F34DA790365A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -338,7 +339,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53604C1C215E131E00071149 /* Build configuration list for PBXNativeTarget "io.jari.AkkuHelper" */;
 			buildPhases = (
-				A8B20CAAE4466CA4BE7CFAAC /* [CP] Check Pods Manifest.lock */,
+				75F28CD0E8C84EBB54557010 /* [CP] Check Pods Manifest.lock */,
 				0D3DA44508C6C07D504BCCB9 /* [Amimono] Create filelist per architecture */,
 				53604C14215E131D00071149 /* Sources */,
 				53604C15215E131D00071149 /* Frameworks */,
@@ -425,6 +426,32 @@
 			shellPath = /bin/bash;
 			shellScript = "declare -a DEPENDENCIES=('Sentry' 'SwiftyBeaver');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
+		2B0D274D8FE0F34DA790365A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Akku/Pods-Akku-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EMCLoginItem/EMCLoginItem.framework",
+				"${BUILT_PRODUCTS_DIR}/Sentry/Sentry.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework",
+				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/SwiftyBeaver/SwiftyBeaver.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EMCLoginItem.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sentry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyBeaver.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Akku/Pods-Akku-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		5361D2122162410E0036E296 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,7 +466,7 @@
 			shellPath = /bin/sh;
 			shellScript = "#\"${SRCROOT}\"/Scripts/CodeSignUpdate.sh\n";
 		};
-		A8B20CAAE4466CA4BE7CFAAC /* [CP] Check Pods Manifest.lock */ = {
+		75F28CD0E8C84EBB54557010 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -457,7 +484,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E1F3C2FFC6665066346A6298 /* [Amimono] Create filelist per architecture */ = {
+		D52F93A00C48FAF4FF301A0E /* [Amimono] Create filelist per architecture */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -471,7 +498,7 @@
 			shellPath = /bin/bash;
 			shellScript = "declare -a DEPENDENCIES=('EMCLoginItem' 'Sentry' 'SwiftyBeaver');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
-		F0BA878096340B757F707E39 /* [CP] Check Pods Manifest.lock */ = {
+		D8BE457BCA28D7B5DC25B7EB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -679,7 +706,7 @@
 		};
 		53604C12215E12F400071149 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75F9A3D9EC5458C9B9157091 /* Pods-Akku.debug.xcconfig */;
+			baseConfigurationReference = E8264CE5DD8E68D4479388EC /* Pods-Akku.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -697,7 +724,7 @@
 		};
 		53604C13215E12F400071149 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B4979FE873E1710EE994FFC /* Pods-Akku.release.xcconfig */;
+			baseConfigurationReference = 45E1786BB16FAE0C4FF70254 /* Pods-Akku.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
@@ -715,7 +742,7 @@
 		};
 		53604C1D215E131E00071149 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50A7B038D5A54FC3F1FB8719 /* Pods-io.jari.AkkuHelper.debug.xcconfig */;
+			baseConfigurationReference = C0273CCC27ADA7521975ADEB /* Pods-io.jari.AkkuHelper.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
@@ -743,7 +770,7 @@
 		};
 		53604C1E215E131E00071149 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FA9976E32DA4295A1702A7E /* Pods-io.jari.AkkuHelper.release.xcconfig */;
+			baseConfigurationReference = 7FCCD277D050807BA418957B /* Pods-io.jari.AkkuHelper.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;

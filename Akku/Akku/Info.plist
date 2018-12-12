@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>string 0.1-test</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSApplicationCategoryType</key>
@@ -37,5 +37,7 @@
 		<key>io.jari.AkkuHelper</key>
 		<string>anchor apple generic and identifier "io.jari.AkkuHelper" and (certificate leaf[field.1.2.840.113635.100.6.1.9] /* exists */ or certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = JHKDY4UQ72)</string>
 	</dict>
+	<key>SUFeedURL</key>
+	<string>https://jariz-appcast.herokuapp.com/akku/appcast.xml</string>
 </dict>
 </plist>

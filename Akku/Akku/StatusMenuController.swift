@@ -10,11 +10,13 @@ import Foundation
 import Cocoa
 import IOBluetooth
 import EMCLoginItem
+import Sparkle
 
 class StatusMenuController: NSObject {
     
     // MARK: Private vars
     
+    private var updater = SUUpdater()
     private var popover: NSPopover?;
     private var menu: NSMenu?;
     private var batteryInfo: [String: BatteryInfo] = [:]
@@ -268,11 +270,17 @@ class StatusMenuController: NSObject {
         
         menu.addItem(NSMenuItem.separator());
         
+        // Check for updates item
+        let updateItem = NSMenuItem(title: "Check for updates", action: #selector(SUUpdater.checkForUpdates(_:)), keyEquivalent: "u")
+        updateItem.target = updater
+        updateItem.keyEquivalentModifierMask = .shift
+        menu.addItem(updateItem)
+        
         // Quit item
-        let item = NSMenuItem(title: "Quit", action: #selector(quit(sender:)), keyEquivalent: "q")
-        item.target = self
-        item.keyEquivalentModifierMask = .command
-        menu.addItem(item)
+        let quitItem = NSMenuItem(title: "Quit", action: #selector(quit(sender:)), keyEquivalent: "q")
+        quitItem.target = self
+        quitItem.keyEquivalentModifierMask = .command
+        menu.addItem(quitItem)
     }
     
     // MARK: -

@@ -1,5 +1,9 @@
 {
-  "buildCommand": "./build.sh",
+  "increment": "conventional:angular",
+  "buildCommand": "./build.sh > /dev/null",
+  "scripts": {
+    "afterBump": "/usr/libexec/PlistBuddy Akku/Info.plist -c \"Set :CFBundleShortVersionString string \\\"${version}\\\"\""
+  },
   "src": {
      "commit": "false",
      "tag": true,

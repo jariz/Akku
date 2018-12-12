@@ -1,4 +1,3 @@
 osx_image: xcode10.1
 language: objective-c
-before_install: gem install cocoapods-amimono && pod install --project-directory=Akku/
-script: xcodebuild clean build -verbose -workspace Akku/Akku.xcworkspace -scheme Akku CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
+script: cd Akku && ./build.sh
