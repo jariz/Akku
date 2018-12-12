@@ -1,4 +1,6 @@
-# Akku [![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
+# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku 
+
+ [![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
 
 Akku is a tiny battery status monitoring app for headset bluetooth devices.  
 
