@@ -27,12 +27,19 @@ If your iPhone device can read your headset's battery status, it will work.
 ----
 \* = You read that correctly, Apple did not bother to implement their own specifications on the Mac.
 
-## My device doesn't work!  
+## FAQ
+
+### My device doesn't work!  
 
 It's possible that your device doesn't have a battery indication feature, or that it's not supported.  
-If it works on iPhone / Android: donate me the device and I will ensure it works. (DM me [@JariZwarts](https://twitter.com/JariZwarts))  
+See [CONTRIBUTING.md](CONTRIBUTING.md) on how to open an issue, and we'll take a look at the bluetooth traffic.
 
-## How does it work?
+### I don't want Akku in my menubar all the time!
+Use [Bartender](https://www.macbartender.com/) to hide it, and configure it to only show Akku on changes.
+I recommend the following config:
+<img src="https://jari.lol/u0fBwJJpHf.png" width="469" />
+
+### How does it work?
 
 **The simple explanation:**   
 You give it root, and it will monitor all bluetooth communication that goes through the system to intercept battery indicator commands.  
