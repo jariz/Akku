@@ -14,6 +14,7 @@
 		49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */; };
 		49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */; };
 		49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
+		496354C921DE7F740074CF1D /* AkkuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496354C821DE7F740074CF1D /* AkkuTests.swift */; };
 		4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
@@ -52,6 +53,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		496354CB21DE7F740074CF1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53604BFB215E12F300071149 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53604C02215E12F300071149;
+			remoteInfo = Akku;
+		};
 		49A57C342181DA1C00119136 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53604BFB215E12F300071149 /* Project object */;
@@ -93,6 +101,9 @@
 		49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMenuItemController.swift; sourceTree = "<group>"; };
 		49415EC6218B965E00C854F7 /* NSImage+tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+tinting.swift"; sourceTree = "<group>"; };
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
+		496354C621DE7F740074CF1D /* AkkuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AkkuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		496354C821DE7F740074CF1D /* AkkuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkkuTests.swift; sourceTree = "<group>"; };
+		496354CA21DE7F740074CF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRequest.swift; sourceTree = "<group>"; };
 		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
 		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
@@ -133,6 +144,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		496354C321DE7F740074CF1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53604C00215E12F300071149 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -170,6 +188,15 @@
 				3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		496354C721DE7F740074CF1D /* AkkuTests */ = {
+			isa = PBXGroup;
+			children = (
+				496354C821DE7F740074CF1D /* AkkuTests.swift */,
+				496354CA21DE7F740074CF1D /* Info.plist */,
+			);
+			path = AkkuTests;
 			sourceTree = "<group>";
 		};
 		49A57C352182353A00119136 /* Helper */ = {
@@ -250,6 +277,7 @@
 				53604C19215E131E00071149 /* AkkuHelper */,
 				53C6B95C21676229001A80FD /* Utility */,
 				532308F12163908D00A456CF /* Scripts */,
+				496354C721DE7F740074CF1D /* AkkuTests */,
 				53604C04215E12F300071149 /* Products */,
 				082F41C6D4B79026C21461DB /* Pods */,
 				3104D131B031FC0FADA58396 /* Frameworks */,
@@ -261,6 +289,7 @@
 			children = (
 				53604C03215E12F300071149 /* Akku.app */,
 				53604C18215E131D00071149 /* io.jari.AkkuHelper */,
+				496354C621DE7F740074CF1D /* AkkuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -310,6 +339,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		496354C521DE7F740074CF1D /* AkkuTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496354CF21DE7F740074CF1D /* Build configuration list for PBXNativeTarget "AkkuTests" */;
+			buildPhases = (
+				496354C221DE7F740074CF1D /* Sources */,
+				496354C321DE7F740074CF1D /* Frameworks */,
+				496354C421DE7F740074CF1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				496354CC21DE7F740074CF1D /* PBXTargetDependency */,
+			);
+			name = AkkuTests;
+			productName = AkkuTests;
+			productReference = 496354C621DE7F740074CF1D /* AkkuTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		53604C02215E12F300071149 /* Akku */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53604C11215E12F400071149 /* Build configuration list for PBXNativeTarget "Akku" */;
@@ -358,10 +405,14 @@
 		53604BFB215E12F300071149 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1000;
+				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = JARI.IO;
 				TargetAttributes = {
+					496354C521DE7F740074CF1D = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 53604C02215E12F300071149;
+					};
 					53604C02215E12F300071149 = {
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
@@ -390,11 +441,19 @@
 			targets = (
 				53604C02215E12F300071149 /* Akku */,
 				53604C17215E131D00071149 /* io.jari.AkkuHelper */,
+				496354C521DE7F740074CF1D /* AkkuTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		496354C421DE7F740074CF1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53604C01215E12F300071149 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -517,6 +576,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		496354C221DE7F740074CF1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496354C921DE7F740074CF1D /* AkkuTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53604BFF215E12F300071149 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -568,6 +635,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		496354CC21DE7F740074CF1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53604C02215E12F300071149 /* Akku */;
+			targetProxy = 496354CB21DE7F740074CF1D /* PBXContainerItemProxy */;
+		};
 		53EE395C215E22CE007310F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53604C17215E131D00071149 /* io.jari.AkkuHelper */;
@@ -587,6 +659,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		496354CD21DE7F740074CF1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E72CQ4L7EE;
+				INFOPLIST_FILE = AkkuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Akku.app/Contents/MacOS/Akku";
+			};
+			name = Debug;
+		};
+		496354CE21DE7F740074CF1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = E72CQ4L7EE;
+				INFOPLIST_FILE = AkkuTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = io.jari.AkkuTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Akku.app/Contents/MacOS/Akku";
+			};
+			name = Release;
+		};
 		53604C0F215E12F400071149 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -797,6 +911,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		496354CF21DE7F740074CF1D /* Build configuration list for PBXNativeTarget "AkkuTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496354CD21DE7F740074CF1D /* Debug */,
+				496354CE21DE7F740074CF1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		53604BFE215E12F300071149 /* Build configuration list for PBXProject "Akku" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

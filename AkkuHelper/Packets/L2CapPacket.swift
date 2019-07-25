@@ -13,7 +13,7 @@ class L2CapPacket {
     // MARK: -
     // MARK: Public static constants
     
-    static let length = 7
+    static let length = 8
     
     // MARK: -
     // MARK: Public constants
@@ -26,11 +26,16 @@ class L2CapPacket {
     // MARK: -
     // MARK: Initializers
     
-    init (pointer: UnsafeMutableBufferPointer<UInt8>) {
+    init? (pointer: UnsafeMutableBufferPointer<UInt8>) {
         let data = Data(buffer: pointer)
+        
+        if data.count < L2CapPacket.length {
+            return nil
+        }
+        
         self.flags = data[0...1].withUnsafeBytes { $0.pointee }
         self.totalLength = data[2...3].withUnsafeBytes { $0.pointee }
         self.length = data[4...5].withUnsafeBytes { $0.pointee }
-        self.CID = data[6...L2CapPacket.length].withUnsafeBytes { $0.pointee }
+        self.CID = data[6...7].withUnsafeBytes { $0.pointee }
     }
 }

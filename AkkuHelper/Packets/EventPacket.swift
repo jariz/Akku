@@ -16,7 +16,7 @@ class EventPacket {
     // MARK: -
     // MARK: Public static constants
     
-    static let connectionRequestLength = 12
+    static let connectionRequestLength = 13
     
     // MARK: -
     // MARK: Public constants
@@ -35,18 +35,17 @@ class EventPacket {
     // MARK: -
     // MARK: Initializers
     
-    init (pointer: UnsafeMutableBufferPointer<UInt8>) {
+    init? (pointer: UnsafeMutableBufferPointer<UInt8>) {
         let data = Data(buffer: pointer)
+        
+        if data.count < EventPacket.connectionRequestLength {
+            return nil
+        }
         
         self.eventCode = data[0...0].withUnsafeBytes { $0.pointee }
         self.parameterLength = data[1...1].withUnsafeBytes { $0.pointee }
         
         if self.eventCode == kBluetoothHCIEventConnectionComplete {
-            if data.count < EventPacket.connectionRequestLength {
-                log.warning("EventPacket: received a kBluetoothHCIEventConnectionComplete but the packet length was too short, ignoring...")
-                return
-            }
-            
             let status: UInt8 = data[2...2].withUnsafeBytes { $0.pointee }
             let connectionHandle: UInt16 = data[3...4].withUnsafeBytes { $0.pointee }
             

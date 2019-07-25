@@ -26,9 +26,9 @@ class RFCOMMPacket {
     // MARK: -
     // MARK: Initializers
     
-    init(pointer: UnsafeMutableBufferPointer<UInt8>, parent: L2CapPacket) {
+    init?(pointer: UnsafeMutableBufferPointer<UInt8>, parent: L2CapPacket) {
         let data = Data(buffer: pointer)
-        
+    
         self.parent = parent
         
         self.address = data[0...0].withUnsafeBytes { $0.pointee }
@@ -63,9 +63,10 @@ class RFCOMMPacket {
                 }
             }
             
-            if payloadLength > (data.count - offset) {
-                log.warning("RFCOMMPacket: packet claims to be longer (\(payloadLength)) than it actually is (\(data.count - 2))")
-                return
+            let packetLength = data.count - (offset + 1)
+            if payloadLength > (packetLength - 1) {
+                log.warning("RFCOMMPacket: packet claims to be longer (\(payloadLength)) than it actually is (\(packetLength)), this shouldn't happen! Capping the length at the actual packet length...")
+                payloadLength = UInt8(packetLength)
             }
             
             self.payload = String(data: data[offset...(Int(payloadLength - 1) + offset)], encoding: .ascii)

@@ -123,7 +123,7 @@ class Driver: NSObject {
             case .HCI_EVENT:
                 let packet = EventPacket(pointer: buffer)
 
-                if packet.eventCode == kBluetoothHCIEventConnectionComplete && packet.status == 0x00 /* Success */ {
+                if let packet = packet, packet.eventCode == kBluetoothHCIEventConnectionComplete && packet.status == 0x00 /* Success */ {
                     let conn = Connection(addr: BluetoothDeviceAddress(data: packet.addr!), connectionHandle: packet.connectionHandle!)
                     log.info("Added connection, handle: \(packet.connectionHandle!.hex)")
                     self.connections.append(conn)
@@ -133,15 +133,15 @@ class Driver: NSObject {
                 let packet = L2CapPacket(pointer: buffer)
                 
                 // now that we've read the l2cap header, we can skip over it
-                offset += L2CapPacket.length + 1
+                offset += L2CapPacket.length
                 buffer = UnsafeMutableBufferPointer(start: UnsafeMutablePointer<UInt8>(bitPattern: offset), count: Int(size));
                 
-                if let channel = channels.first(where: { $0.sourceCID == packet.CID || $0.destinationCID == packet.CID }) {
+                if let packet = packet, let channel = channels.first(where: { $0.sourceCID == packet.CID || $0.destinationCID == packet.CID }) {
                     // known RFCOMM channel, assume we're speaking RFCOMM
                     let rfcommPacket = RFCOMMPacket(pointer: buffer, parent: packet)
                     
                     if packetType == .RECV_ACL_DATA,
-                        let payload = rfcommPacket.payload,
+                        let payload = rfcommPacket?.payload,
                         let battInfo = CommandParser.parsePayload(payload) {
                         log.info("Got battery command: docked = \(String(describing: battInfo.docked)), percentage = \(String(describing: battInfo.percentage))")
                         
@@ -158,33 +158,35 @@ class Driver: NSObject {
                         }
                     }
                     
-                } else {
+                } else if let packet = packet {
                     // unknown channel, assume it's a command
                     let cmdPacket = L2CapCommand(pointer: buffer, parent: packet)
                     let connectionHandle = packet.flags & 0x0fff
                     
-                    if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionRequest.rawValue),
-                        let psm = cmdPacket.psm,
-                        psm == kBluetoothL2CAPPSMRFCOMM {
-
-                        if let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
-                            let request = ConnectionRequest(commandID: cmdPacket.commandID, connection: connection)
-                            log.debug("Got connection request, ID: \(request.commandID.hex), handle: \(request.connection.connectionHandle.hex)")
-                            self.connectionRequests.append(request)
-                        }
-                    } else if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue),
-                        let result = cmdPacket.result,
-                        result == UInt16(kBluetoothL2CAPConnectionResultSuccessful.rawValue),
-                        let sourceCID = cmdPacket.sourceCID,
-                        let destinationCID = cmdPacket.destinationCID,
-                        let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
-                        
-                        // check if this is a connection request attempt that we've heard of...
-                        if let requestIndex = self.connectionRequests.firstIndex(where: { $0.commandID == cmdPacket.commandID && $0.connection.connectionHandle == connectionHandle }) {
-                            self.connectionRequests.remove(at: requestIndex)
-                            let channel = RFCOMMChannel(CID: packet.CID, sourceCID: sourceCID, destinationCID: destinationCID, connection: connection)
-                            log.info("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), destinationCID: \(destinationCID.hex) handle: \(channel.connection.connectionHandle.hex)")
-                            self.channels.append(channel)
+                    if let cmdPacket = cmdPacket {
+                        if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionRequest.rawValue),
+                            let psm = cmdPacket.psm,
+                            psm == kBluetoothL2CAPPSMRFCOMM {
+                            
+                            if let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
+                                let request = ConnectionRequest(commandID: cmdPacket.commandID, connection: connection)
+                                log.debug("Got connection request, ID: \(request.commandID.hex), handle: \(request.connection.connectionHandle.hex)")
+                                self.connectionRequests.append(request)
+                            }
+                        } else if cmdPacket.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue),
+                            let result = cmdPacket.result,
+                            result == UInt16(kBluetoothL2CAPConnectionResultSuccessful.rawValue),
+                            let sourceCID = cmdPacket.sourceCID,
+                            let destinationCID = cmdPacket.destinationCID,
+                            let connection = self.connections.first(where: { $0.connectionHandle == connectionHandle }) {
+                            
+                            // check if this is a connection request attempt that we've heard of...
+                            if let requestIndex = self.connectionRequests.firstIndex(where: { $0.commandID == cmdPacket.commandID && $0.connection.connectionHandle == connectionHandle }) {
+                                self.connectionRequests.remove(at: requestIndex)
+                                let channel = RFCOMMChannel(CID: packet.CID, sourceCID: sourceCID, destinationCID: destinationCID, connection: connection)
+                                log.info("Added channel, CID: \(channel.CID.hex), sourceCID: \(sourceCID.hex), destinationCID: \(destinationCID.hex) handle: \(channel.connection.connectionHandle.hex)")
+                                self.channels.append(channel)
+                            }
                         }
                     }
                 }

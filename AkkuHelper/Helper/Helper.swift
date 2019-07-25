@@ -33,17 +33,21 @@ class Helper: NSObject, NSXPCListenerDelegate, HelperProtocol {
     }
 
     public func run() {
-        self.listener.resume()
-        
-        if CommandLine.arguments.count > 1 && CommandLine.arguments[1] == "--listenImmediately" {
-            helper.startListening(completion: {
-                if $0 != nil { log.error(String(describing: $0)) }
-            })
+        // for debugging reasons, AkkuHelper can be ran as a standalone command, analysing the current buffer only.
+        if CommandLine.arguments.count > 1 && CommandLine.arguments[1] == "--standalone" {
+            self.startListening { error in
+                if let err = error {
+                    log.error(err.localizedDescription)
+                }
+            }
+            return;
         }
+        
+        self.listener.resume()
         
         // Keep the helper tool running until the variable shouldQuit is set to true.
         // The variable should be changed in the "listener(_ listener:shoudlAcceptNewConnection:)" function.
-
+        
         while !self.shouldQuit {
             RunLoop.current.run(until: Date(timeIntervalSinceNow: self.shouldQuitCheckInterval))
         }

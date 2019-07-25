@@ -12,6 +12,13 @@ import IOBluetooth
 class L2CapCommand {
     
     // MARK: -
+    // MARK: Public static constants
+    
+    static let baseLength = 4
+    static let connectionRequestLength = 6
+    static let connectionResponseLength = 4
+    
+    // MARK: -
     // MARK: Private constants
     
     private let parent: L2CapPacket
@@ -37,16 +44,24 @@ class L2CapCommand {
     // MARK: -
     // MARK: Initializers
     
-    init (pointer: UnsafeMutableBufferPointer<UInt8>, parent: L2CapPacket) {
+    init? (pointer: UnsafeMutableBufferPointer<UInt8>, parent: L2CapPacket) {
         self.parent = parent
         
         let data = Data(buffer: pointer)
+        
+        if (data.count < L2CapCommand.baseLength) {
+            return nil
+        }
         
         self.commandCode = data[0...0].withUnsafeBytes { $0.pointee }
         self.commandID = data[1...1].withUnsafeBytes { $0.pointee }
         self.commandLength = data[2...3].withUnsafeBytes { $0.pointee }
         
         if self.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionRequest.rawValue) {
+            if (data.count < L2CapCommand.baseLength + L2CapCommand.connectionRequestLength) {
+                return nil;
+            }
+            
             let psm: UInt16 = data[4...5].withUnsafeBytes { $0.pointee }
             let sourceCID: UInt16 = data[6...7].withUnsafeBytes { $0.pointee }
             self.psm = psm
@@ -54,6 +69,10 @@ class L2CapCommand {
         }
         
         if (self.commandCode == UInt8(kBluetoothL2CAPCommandCodeConnectionResponse.rawValue)) {
+            if (data.count < L2CapCommand.baseLength + L2CapCommand.connectionResponseLength) {
+                return nil;
+            }
+            
             let destinationCID: UInt16 = data[4...5].withUnsafeBytes { $0.pointee }
             let sourceCID: UInt16 = data[6...7].withUnsafeBytes { $0.pointee }
             let result: UInt16 = data[8...9].withUnsafeBytes { $0.pointee }
