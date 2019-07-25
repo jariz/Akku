@@ -67,6 +67,9 @@ Both are codesigned with a valid Apple developer cert.
 Icon Design, moral support 😍    
 - [SwiftPrivilegedHelper](https://github.com/erikberglund/SwiftPrivilegedHelper/)  
 Great starting point to implement helper installation & XPC communication, thanks [@ekkrik](https://twitter.com/ekkrik)!  
+- [cocoapods-amimono](https://github.com/UnsafePointer/cocoapods-amimono)  
+Needed to embed the pods into the helper itself, which is not really something cocoapods is designed to do.  
+Luckily amimono was there, despite needing a few more patches to make it do what I wanted.  
 - Android's [BluetoothHeadset.java](http://androidxref.com/9.0.0_r3/xref/frameworks/base/core/java/android/bluetooth/BluetoothHeadset.java)  
 Gives some good information on the vendor specific AT commands that Android accepts.  
 - [Wireshark](https://www.wireshark.org/)    
