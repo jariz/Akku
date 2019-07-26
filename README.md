@@ -1,6 +1,6 @@
-# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku  
-
 <img src="https://jari.lol/8OQmLnyKru.png" width="305" align="right" />  
+
+# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku  
 
 The missing macOS bluetooth headset battery indicator app.
 
