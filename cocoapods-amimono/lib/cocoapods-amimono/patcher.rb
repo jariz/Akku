@@ -46,7 +46,7 @@ module Amimono
     end
 
     def self.patch_copy_resources_script(installer)
-      project = installer.sandbox.project
+      project = installer.sandbox.project_path
       aggregated_targets = installer.aggregate_targets.reject { |target| target.label.include? 'Test' }
         .reject { |target| installer.podfile.amimono_ignore.include? target.label }
       aggregated_targets.each do |aggregated_target|
@@ -73,7 +73,7 @@ module Amimono
     def self.resources_by_config(aggregated_target, project)
       aggregated_target.user_build_configurations.keys.each_with_object({}) do |config, resources_by_config|
         resources_by_config[config] = aggregated_target.pod_targets.flat_map do |library_target|
-          next [] unless library_target.include_in_build_config?(aggregated_target.target_definition, config)
+          next []
           resource_paths = library_target.file_accessors.flat_map do |accessor|
             accessor.resources.flat_map { |res| res.relative_path_from(project.path.dirname) }
           end

@@ -1,4 +1,4 @@
-osx_image: xcode10.1
+osx_image: xcode10.2
 language: objective-c
-before_install: ./install_amimono_fork.sh && pod repo update
+before_install: gem install cocoapods -v 1.7 && ./install_amimono_fork.sh && pod repo update
 script: xcodebuild clean build -verbose -workspace Akku.xcworkspace -scheme Akku CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO | xcpretty
