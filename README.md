@@ -1,10 +1,12 @@
-# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku 
+# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku  
 
- [![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
+<img src="https://jari.lol/8OQmLnyKru.png" width="305" align="right" />  
 
-Akku is a tiny battery status monitoring app for headset bluetooth devices.  
+The missing macOS bluetooth headset battery indicator app.
 
-<img src="https://jari.lol/8OQmLnyKru.png" width="305" />
+[![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
+[![GitHub pre-release](https://img.shields.io/github/release-pre/jariz/akku?label=beta)](https://github.com/jariz/Akku/releases/latest)
+[![GitHub release](https://img.shields.io/github/release/jariz/akku?label=stable)](https://github.com/jariz/Akku/releases/latest)
 
 ## What does it do?
 - Displays headset battery status, which can't be viewed on macOS at all (only for Apple accessories).
