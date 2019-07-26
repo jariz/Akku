@@ -1,7 +1,6 @@
 {
-   "scripts": {
-    "beforeStage": "./build.sh > /dev/null",
-    "afterBump": "/usr/libexec/PlistBuddy Akku/Info.plist -c \"Set :CFBundleShortVersionString string \\\"${version}\\\"\" -c \"Set :CFBundleVersion string \\\"${version}\\\"\""
+   "hooks": {
+    "after:bump": "/usr/libexec/PlistBuddy Akku/Info.plist -c \"Set :CFBundleShortVersionString \\\"${version}\\\"\" -c \"Set :CFBundleVersion \\\"${version}\\\"\" && ./build.sh"
   },
   "git": {
      "commit": true,
