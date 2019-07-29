@@ -41,7 +41,7 @@ If you were just listening to music, it is not that important.
 1. Press CMD+SHIFT+G in Finder
 2. Enter `/Library/Logs/AkkuHelper.log`
 3. Upload the file
-4. Repeat 1-3 for `~/Library/Logs/AkkuHelper.log` as well.
+4. Repeat 1-3 for `~/Library/Logs/Akku.log` as well.
     
 ### Optional: attaching crash logs.  
   > Crashes will be reported to the Akku team automatically, but attaching the crash reports can help pin down a specific crash type to an issue.
