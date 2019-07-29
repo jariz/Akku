@@ -31,7 +31,7 @@ If you were just listening to music, it is not that important.
   ```
 - Upload the file that shows up in finder
 - Additionally - _and preferably_ -  you can check if the packetlog contains the correct data we are looking for:
-  - Install Wireshark
+  - Install [Wireshark](https://www.wireshark.org/download.html)
   - Open the `upload_me.pklg` file.
   - Type `btrfcomm.address` in the 'Apply a display filter' field (& hit enter)
   - If it doesn't show any results below the filter field, it means wireshark can't find any useful data in the file (and neither will we).
