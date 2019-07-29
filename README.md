@@ -37,8 +37,13 @@ If your iPhone device can read your headset's battery status, it will work.
 
 ### My device doesn't work!  
 
-It's possible that your device doesn't have a battery indication feature, or that it's not supported.  
-See [CONTRIBUTING.md](CONTRIBUTING.md) on how to open an issue, and we'll take a look at the bluetooth traffic.
+Whilst we're still in beta, it might be possible that Akku reports that it can't find any battery status for your device.  
+Before opening an issue, check the following:
+
+- If you have a iPhone/Android device, please confirm that it shows you the battery status.  
+If not, chances are high that your device simply does support battery statuses.  
+- If you just installed Akku, reconnect at least once.  
+- If your phone can read the status, but Akku can't, please follow [this guide](https://github.com/jariz/Akku/blob/master/CONTRIBUTING.md#my-device-does-not-work) that tells you what data you need to provide in order for us to fix the issue.
 
 ### I don't want Akku in my menubar all the time!
 Use [Bartender](https://www.macbartender.com/) to hide it, and configure it to only show Akku on changes.
