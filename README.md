@@ -1,21 +1,27 @@
-# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku 
+<img src="https://jari.lol/8OQmLnyKru.png" width="305" align="right" />  
 
- [![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
+# ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku  
 
-Akku is a tiny battery status monitoring app for headset bluetooth devices.  
+The missing macOS bluetooth headset battery indicator app.
 
-<img src="https://jari.lol/8OQmLnyKru.png" width="305" />
+[![Build Status](https://travis-ci.org/jariz/Akku.svg?branch=master)](https://travis-ci.org/jariz/Akku)
+[![GitHub pre-release](https://img.shields.io/github/release-pre/jariz/akku?label=beta)](https://github.com/jariz/Akku/releases/latest)
+[![GitHub release](https://img.shields.io/github/release/jariz/akku?label=stable)](https://github.com/jariz/Akku/releases/latest)
 
 ## What does it do?
 - Displays headset battery status, which can't be viewed on macOS at all (only for Apple accessories).
 - (Optionally) notifies you when headset battery gets low.
 - Menu bar icon.
 
-## What it doesn't do
+## Download
 
-- Display battery status for non-headsets, and/or Apple accessories.  
-_Those can all be viewed from the regular macOS bluetooth menu.  
-Maybe someday. Currently not part of Akku's scope._
+### DMG
+
+Get the [latest .DMG here.](https://github.com/jariz/Akku/releases/latest)
+
+### brew cask
+
+Coming soon once app goes stable.
 
 ## Compatibility  
 It will work with any headset that conforms to the [Apple bluetooth spec](https://developer.apple.com/hardwaredrivers/BluetoothDesignGuidelines.pdf)\*
@@ -31,15 +37,20 @@ If your iPhone device can read your headset's battery status, it will work.
 
 ### My device doesn't work!  
 
-It's possible that your device doesn't have a battery indication feature, or that it's not supported.  
-See [CONTRIBUTING.md](CONTRIBUTING.md) on how to open an issue, and we'll take a look at the bluetooth traffic.
+Whilst we're still in beta, it might be possible that Akku reports that it can't find any battery status for your device.  
+Before opening an issue, check the following:
+
+- If you have a iPhone/Android device, please confirm that it shows you the battery status.  
+If not, chances are high that your device simply does support battery statuses.  
+- If you just installed Akku, reconnect at least once.  
+- If your phone can read the status, but Akku can't, please follow [this guide](https://github.com/jariz/Akku/blob/master/CONTRIBUTING.md#my-device-does-not-work) that tells you what data you need to provide in order for us to fix the issue.
 
 ### I don't want Akku in my menubar all the time!
 Use [Bartender](https://www.macbartender.com/) to hide it, and configure it to only show Akku on changes.
 I recommend the following config:
 <img src="https://jari.lol/u0fBwJJpHf.png" width="469" />
 
-## Will this app be in the App Store?
+### Will this app be in the App Store?
 
 No. [Like most of my apps](https://noti.center), it uses pretty unorthodox API's that will very likely not work in the app sandbox and/or be approved by Apple.  
 Despite not 
