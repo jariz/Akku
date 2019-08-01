@@ -26,6 +26,10 @@ target 'io.jari.AkkuHelper' do
   pod 'SwiftyBeaver'
 end
 
+target 'AkkuTests' do
+  pod 'SwiftyBeaver'
+end
+
 post_install do |installer|
   require 'cocoapods-amimono/patcher'
   Amimono::Patcher.patch!(installer)

@@ -22,7 +22,7 @@ class CommandParser {
             return nil
         }
         #if DEBUG
-        log.debug("---- " + payload)
+        print("---- " + payload)
         #endif
         
         let endOfAT = payload.index(payload.startIndex, offsetBy: 3)
@@ -76,7 +76,7 @@ class CommandParser {
             return nil
         }
         
-        var battInfo = BatteryInfo(percentage: nil, docked: nil)
+        var battInfo = BatteryInfo(percentage: nil, docked: nil, connection: nil)
         var index = 1
         
         repeat {

@@ -3,18 +3,51 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		097AC666E92ED1453E5E15BC /* libPods-AkkuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2A35E64B993C686985FB7B /* libPods-AkkuTests.a */; };
 		49415EB82189E68100C854F7 /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C812189E1BB005BFBFD /* CommandParser.swift */; };
 		49415EBD2189F56D00C854F7 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
 		49415EBE2189F57000C854F7 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EB92189F55500C854F7 /* Connection.swift */; };
-		49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
 		49415EC1218A1C1F00C854F7 /* BatteryMenuItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */; };
 		49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */; };
 		49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
-		496354C921DE7F740074CF1D /* AkkuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496354C821DE7F740074CF1D /* AkkuTests.swift */; };
+		494BACA422F0C6E400F63741 /* CVarArg+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */; };
+		494BACA522F0C6E400F63741 /* kern_return_t+string.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7821867150005BFBFD /* kern_return_t+string.swift */; };
+		494BACB722F0C85000F63741 /* ParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BACB622F0C85000F63741 /* ParserTests.swift */; };
+		494C8F1922F0D70C00ACF41D /* LogReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955173D22F0B02D00C775EE /* LogReader.swift */; };
+		494C8F1B22F0EC0600ACF41D /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EB92189F55500C854F7 /* Connection.swift */; };
+		494C8F1C22F0EC0600ACF41D /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
+		494C8F1D22F0EC0600ACF41D /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
+		494C8F1E22F0EC0600ACF41D /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
+		494C8F1F22F0EC0A00ACF41D /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
+		494C8F2022F0EC0A00ACF41D /* L2CapPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3C2182359100119136 /* L2CapPacket.swift */; };
+		494C8F2122F0EC0A00ACF41D /* EventPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3D2182359100119136 /* EventPacket.swift */; };
+		494C8F2222F0EC0A00ACF41D /* L2CapCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */; };
+		494C8F2322F0EC0E00ACF41D /* BluetoothHCIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3F2182359100119136 /* BluetoothHCIError.swift */; };
+		494C8F2422F0EC0E00ACF41D /* PacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C402182359100119136 /* PacketType.swift */; };
+		494C8F2722F0EC5900ACF41D /* NSImage+tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EC6218B965E00C854F7 /* NSImage+tinting.swift */; };
+		494C8F2C22F0EC9D00ACF41D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C1F215E134500071149 /* Helper.swift */; };
+		494C8F2D22F0ECA300ACF41D /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */; };
+		494C8F2E22F0ECA600ACF41D /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4B2182494100119136 /* HelperAuthorization.swift */; };
+		494C8F2F22F0ECA800ACF41D /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
+		494C8F3022F0EDE300ACF41D /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
+		494C8F3122F0EE0E00ACF41D /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
+		494C8F3222F0EE1B00ACF41D /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EB92189F55500C854F7 /* Connection.swift */; };
+		494C8F3422F0F18000ACF41D /* PacketParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955173F22F0B08900C775EE /* PacketParser.swift */; };
+		494C8F3522F0F1C800ACF41D /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
+		494C8F3622F0F1E000ACF41D /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4B2182494100119136 /* HelperAuthorization.swift */; };
+		494C8F3722F0F1F300ACF41D /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */; };
+		494C8F3922F0F43E00ACF41D /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494C8F3822F0F43E00ACF41D /* main.swift */; };
+		494C8F3A22F0F49400ACF41D /* CVarArg+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7521866F1D005BFBFD /* CVarArg+hex.swift */; };
+		494C8F3B22F0F4A700ACF41D /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C812189E1BB005BFBFD /* CommandParser.swift */; };
+		4955174122F0BD4D00C775EE /* PacketParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955173F22F0B08900C775EE /* PacketParser.swift */; };
+		496B297022F3875700ED191B /* MOMENTUM 2 AEBT.pklg in Resources */ = {isa = PBXBuildFile; fileRef = 496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */; };
+		496B297222F3894200ED191B /* BOSE QUIETCOMFORT.pklg in Resources */ = {isa = PBXBuildFile; fileRef = 496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */; };
+		496B297622F38BAF00ED191B /* BOSE QUIETCOMFORT.pklg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */; };
+		496B297722F38BAF00ED191B /* MOMENTUM 2 AEBT.pklg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */; };
 		4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
@@ -23,10 +56,6 @@
 		49A57C472182359100119136 /* BluetoothHCIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3F2182359100119136 /* BluetoothHCIError.swift */; };
 		49A57C482182359100119136 /* PacketType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C402182359100119136 /* PacketType.swift */; };
 		49A57C492182359100119136 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C412182359100119136 /* Driver.swift */; };
-		49A57C4C2182494100119136 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */; };
-		49A57C4D2182494100119136 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4B2182494100119136 /* HelperAuthorization.swift */; };
-		49A57C4E218249E500119136 /* HelperAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4B2182494100119136 /* HelperAuthorization.swift */; };
-		49A57C4F218249E500119136 /* HelperAuthorizationRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C4A2182494100119136 /* HelperAuthorizationRight.swift */; };
 		49A57C5121824AA400119136 /* HelperInstaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C5021824AA400119136 /* HelperInstaller.swift */; };
 		49A57C5321824B1A00119136 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C5221824B1A00119136 /* StatusMenuController.swift */; };
 		49A57C55218250CA00119136 /* HelperInstaller.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A57C54218250CA00119136 /* HelperInstaller.xib */; };
@@ -35,25 +64,21 @@
 		49A83C7D2189BECB005BFBFD /* L2CapCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C7B2189B3D3005BFBFD /* L2CapCommand.swift */; };
 		49C458B221ABFB7C00AB9FB9 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C458B121ABFB7C00AB9FB9 /* Extensions.swift */; };
 		49FD57E921BE9DAA00B2A5CE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 49FD57E821BE9DAA00B2A5CE /* Podfile */; };
-		535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
 		53604C07215E12F300071149 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C06215E12F300071149 /* AppDelegate.swift */; };
 		53604C09215E12F400071149 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53604C08215E12F400071149 /* Assets.xcassets */; };
 		53604C0C215E12F400071149 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53604C0A215E12F400071149 /* MainMenu.xib */; };
 		53604C1B215E131E00071149 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C1A215E131E00071149 /* main.swift */; };
-		53604C20215E134500071149 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C1F215E134500071149 /* Helper.swift */; };
 		53604C22215E13E200071149 /* HelperConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C21215E13E200071149 /* HelperConstants.swift */; };
-		53604C26215E185D00071149 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
 		53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C29215E1B0100071149 /* AppProtocol.swift */; };
 		53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C29215E1B0100071149 /* AppProtocol.swift */; };
 		53604C2E215E1CFB00071149 /* io.jari.AkkuHelper in Copy Helper */ = {isa = PBXBuildFile; fileRef = 53604C18215E131D00071149 /* io.jari.AkkuHelper */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6B95921676219001A80FD /* CodesignCheck.swift */; };
-		53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53604C25215E185D00071149 /* HelperProtocol.swift */; };
 		A67226C22997AFAB255AD179 /* Pods_Akku.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F97EDD0801ADD1255902D6C0 /* Pods_Akku.framework */; };
 		AC2A73A073EAF4D60B90A5A4 /* Pods_io_jari_AkkuHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		496354CB21DE7F740074CF1D /* PBXContainerItemProxy */ = {
+		494BACB922F0C85000F63741 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53604BFB215E12F300071149 /* Project object */;
 			proxyType = 1;
@@ -70,6 +95,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		496B297322F38B2100ED191B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = TestData;
+			dstSubfolderSpec = 16;
+			files = (
+				496B297622F38BAF00ED191B /* BOSE QUIETCOMFORT.pklg in CopyFiles */,
+				496B297722F38BAF00ED191B /* MOMENTUM 2 AEBT.pklg in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53604C16215E131D00071149 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -100,10 +136,16 @@
 		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
 		49415EC2218A1C7A00C854F7 /* BatteryMenuItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMenuItemController.swift; sourceTree = "<group>"; };
 		49415EC6218B965E00C854F7 /* NSImage+tinting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+tinting.swift"; sourceTree = "<group>"; };
+		494BACB422F0C85000F63741 /* AkkuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AkkuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		494BACB622F0C85000F63741 /* ParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserTests.swift; sourceTree = "<group>"; };
+		494BACB822F0C85000F63741 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		494C8F3822F0F43E00ACF41D /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		4955173D22F0B02D00C775EE /* LogReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogReader.swift; sourceTree = "<group>"; };
+		4955173F22F0B08900C775EE /* PacketParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketParser.swift; sourceTree = "<group>"; };
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
-		496354C621DE7F740074CF1D /* AkkuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AkkuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		496354C821DE7F740074CF1D /* AkkuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AkkuTests.swift; sourceTree = "<group>"; };
-		496354CA21DE7F740074CF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MOMENTUM 2 AEBT.pklg"; sourceTree = "<group>"; };
+		496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BOSE QUIETCOMFORT.pklg"; sourceTree = "<group>"; };
+		496B297822F3953200ED191B /* VEHO ZB-Z6.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VEHO ZB-Z6.pklg"; sourceTree = "<group>"; };
 		4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRequest.swift; sourceTree = "<group>"; };
 		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
 		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
@@ -139,15 +181,19 @@
 		53C6B95921676219001A80FD /* CodesignCheck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodesignCheck.swift; sourceTree = "<group>"; };
 		7FCCD277D050807BA418957B /* Pods-io.jari.AkkuHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-io.jari.AkkuHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-io.jari.AkkuHelper/Pods-io.jari.AkkuHelper.release.xcconfig"; sourceTree = "<group>"; };
 		C0273CCC27ADA7521975ADEB /* Pods-io.jari.AkkuHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-io.jari.AkkuHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-io.jari.AkkuHelper/Pods-io.jari.AkkuHelper.debug.xcconfig"; sourceTree = "<group>"; };
+		CF2A35E64B993C686985FB7B /* libPods-AkkuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AkkuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2EA0F975472244F007C863D /* Pods-AkkuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AkkuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AkkuTests/Pods-AkkuTests.release.xcconfig"; sourceTree = "<group>"; };
+		E0980257779498561A4E021C /* Pods-AkkuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AkkuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AkkuTests/Pods-AkkuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E8264CE5DD8E68D4479388EC /* Pods-Akku.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.debug.xcconfig"; sourceTree = "<group>"; };
 		F97EDD0801ADD1255902D6C0 /* Pods_Akku.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Akku.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		496354C321DE7F740074CF1D /* Frameworks */ = {
+		494BACB122F0C85000F63741 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				097AC666E92ED1453E5E15BC /* libPods-AkkuTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +223,8 @@
 				45E1786BB16FAE0C4FF70254 /* Pods-Akku.release.xcconfig */,
 				C0273CCC27ADA7521975ADEB /* Pods-io.jari.AkkuHelper.debug.xcconfig */,
 				7FCCD277D050807BA418957B /* Pods-io.jari.AkkuHelper.release.xcconfig */,
+				E0980257779498561A4E021C /* Pods-AkkuTests.debug.xcconfig */,
+				D2EA0F975472244F007C863D /* Pods-AkkuTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -186,17 +234,31 @@
 			children = (
 				F97EDD0801ADD1255902D6C0 /* Pods_Akku.framework */,
 				3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */,
+				CF2A35E64B993C686985FB7B /* libPods-AkkuTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		496354C721DE7F740074CF1D /* AkkuTests */ = {
+		494BACB522F0C85000F63741 /* AkkuTests */ = {
 			isa = PBXGroup;
 			children = (
-				496354C821DE7F740074CF1D /* AkkuTests.swift */,
-				496354CA21DE7F740074CF1D /* Info.plist */,
+				496B296E22F3871B00ED191B /* TestData */,
+				4955173D22F0B02D00C775EE /* LogReader.swift */,
+				494BACB622F0C85000F63741 /* ParserTests.swift */,
+				494BACB822F0C85000F63741 /* Info.plist */,
+				494C8F3822F0F43E00ACF41D /* main.swift */,
 			);
 			path = AkkuTests;
+			sourceTree = "<group>";
+		};
+		496B296E22F3871B00ED191B /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				496B297822F3953200ED191B /* VEHO ZB-Z6.pklg */,
+				496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */,
+				496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 		49A57C352182353A00119136 /* Helper */ = {
@@ -257,6 +319,7 @@
 			children = (
 				49A57C412182359100119136 /* Driver.swift */,
 				49A83C812189E1BB005BFBFD /* CommandParser.swift */,
+				4955173F22F0B08900C775EE /* PacketParser.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -277,7 +340,7 @@
 				53604C19215E131E00071149 /* AkkuHelper */,
 				53C6B95C21676229001A80FD /* Utility */,
 				532308F12163908D00A456CF /* Scripts */,
-				496354C721DE7F740074CF1D /* AkkuTests */,
+				494BACB522F0C85000F63741 /* AkkuTests */,
 				53604C04215E12F300071149 /* Products */,
 				082F41C6D4B79026C21461DB /* Pods */,
 				3104D131B031FC0FADA58396 /* Frameworks */,
@@ -289,7 +352,7 @@
 			children = (
 				53604C03215E12F300071149 /* Akku.app */,
 				53604C18215E131D00071149 /* io.jari.AkkuHelper */,
-				496354C621DE7F740074CF1D /* AkkuTests.xctest */,
+				494BACB422F0C85000F63741 /* AkkuTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -339,22 +402,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		496354C521DE7F740074CF1D /* AkkuTests */ = {
+		494BACB322F0C85000F63741 /* AkkuTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 496354CF21DE7F740074CF1D /* Build configuration list for PBXNativeTarget "AkkuTests" */;
+			buildConfigurationList = 494BACBB22F0C85000F63741 /* Build configuration list for PBXNativeTarget "AkkuTests" */;
 			buildPhases = (
-				496354C221DE7F740074CF1D /* Sources */,
-				496354C321DE7F740074CF1D /* Frameworks */,
-				496354C421DE7F740074CF1D /* Resources */,
+				8985078171EE478AF52CC516 /* [CP] Check Pods Manifest.lock */,
+				494BACB022F0C85000F63741 /* Sources */,
+				494BACB122F0C85000F63741 /* Frameworks */,
+				494BACB222F0C85000F63741 /* Resources */,
+				496B297322F38B2100ED191B /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				496354CC21DE7F740074CF1D /* PBXTargetDependency */,
+				494BACBA22F0C85000F63741 /* PBXTargetDependency */,
 			);
 			name = AkkuTests;
 			productName = AkkuTests;
-			productReference = 496354C621DE7F740074CF1D /* AkkuTests.xctest */;
+			productReference = 494BACB422F0C85000F63741 /* AkkuTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		53604C02215E12F300071149 /* Akku */ = {
@@ -409,7 +474,7 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = JARI.IO;
 				TargetAttributes = {
-					496354C521DE7F740074CF1D = {
+					494BACB322F0C85000F63741 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 53604C02215E12F300071149;
 					};
@@ -441,16 +506,18 @@
 			targets = (
 				53604C02215E12F300071149 /* Akku */,
 				53604C17215E131D00071149 /* io.jari.AkkuHelper */,
-				496354C521DE7F740074CF1D /* AkkuTests */,
+				494BACB322F0C85000F63741 /* AkkuTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		496354C421DE7F740074CF1D /* Resources */ = {
+		494BACB222F0C85000F63741 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496B297222F3894200ED191B /* BOSE QUIETCOMFORT.pklg in Resources */,
+				496B297022F3875700ED191B /* MOMENTUM 2 AEBT.pklg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,7 +548,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "declare -a DEPENDENCIES=('Sentry' 'SwiftyBeaver');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
+			shellScript = "declare -a DEPENDENCIES=('Sentry' 'SwiftyBeaver-framework');\nIFS=\" \" read -r -a SPLIT <<< \"$ARCHS\"\nfor ARCH in \"${SPLIT[@]}\"; do\n  cd \"$OBJROOT/Pods.build\"\n  filelist=\"\"\n  for dependency in \"${DEPENDENCIES[@]}\"; do\n    path=\"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}/${dependency}.build/Objects-normal/${ARCH}\"\n    if [ -d \"$path\" ]; then\n      search_path=\"$path/*.o\"\n      for obj_file in $search_path; do\n        filelist+=\"${OBJROOT}/Pods.build/${obj_file}\"\n        filelist+=$'\\n'\n      done\n    fi\n  done\n  filelist=${filelist%$'\\n'}\n  echo \"$filelist\" > \"${CONFIGURATION}${EFFECTIVE_PLATFORM_NAME}-${TARGET_NAME}-${ARCH}.objects.filelist\"\ndone\n";
 		};
 		2B0D274D8FE0F34DA790365A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -532,6 +599,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8985078171EE478AF52CC516 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AkkuTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		D52F93A00C48FAF4FF301A0E /* [Amimono] Create filelist per architecture */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -567,11 +656,26 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		496354C221DE7F740074CF1D /* Sources */ = {
+		494BACB022F0C85000F63741 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				496354C921DE7F740074CF1D /* AkkuTests.swift in Sources */,
+				494C8F1F22F0EC0A00ACF41D /* RFCOMMPacket.swift in Sources */,
+				494C8F2322F0EC0E00ACF41D /* BluetoothHCIError.swift in Sources */,
+				494C8F2122F0EC0A00ACF41D /* EventPacket.swift in Sources */,
+				494BACB722F0C85000F63741 /* ParserTests.swift in Sources */,
+				494C8F1922F0D70C00ACF41D /* LogReader.swift in Sources */,
+				494C8F1B22F0EC0600ACF41D /* Connection.swift in Sources */,
+				494C8F1C22F0EC0600ACF41D /* BatteryInfo.swift in Sources */,
+				494C8F1E22F0EC0600ACF41D /* ConnectionRequest.swift in Sources */,
+				494C8F3922F0F43E00ACF41D /* main.swift in Sources */,
+				494C8F2222F0EC0A00ACF41D /* L2CapCommand.swift in Sources */,
+				494C8F3B22F0F4A700ACF41D /* CommandParser.swift in Sources */,
+				494C8F1D22F0EC0600ACF41D /* RFCOMMChannel.swift in Sources */,
+				494C8F3A22F0F49400ACF41D /* CVarArg+hex.swift in Sources */,
+				494C8F3422F0F18000ACF41D /* PacketParser.swift in Sources */,
+				494C8F2422F0EC0E00ACF41D /* PacketType.swift in Sources */,
+				494C8F2022F0EC0A00ACF41D /* L2CapPacket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,18 +683,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494C8F3722F0F1F300ACF41D /* HelperAuthorizationRight.swift in Sources */,
+				494C8F3522F0F1C800ACF41D /* HelperConstants.swift in Sources */,
+				494C8F3622F0F1E000ACF41D /* HelperAuthorization.swift in Sources */,
 				53604C07215E12F300071149 /* AppDelegate.swift in Sources */,
 				49C458B221ABFB7C00AB9FB9 /* Extensions.swift in Sources */,
-				535731AF215E1E5A009FDE00 /* HelperConstants.swift in Sources */,
-				49415EBF2189F57D00C854F7 /* BatteryInfo.swift in Sources */,
+				494BACA422F0C6E400F63741 /* CVarArg+hex.swift in Sources */,
 				53604C2A215E1B0100071149 /* AppProtocol.swift in Sources */,
-				53EE395F215E2631007310F5 /* HelperProtocol.swift in Sources */,
 				49415EC7218B965E00C854F7 /* NSImage+tinting.swift in Sources */,
+				494C8F3122F0EE0E00ACF41D /* BatteryInfo.swift in Sources */,
 				49415EC3218A1C7A00C854F7 /* BatteryMenuItemController.swift in Sources */,
-				49A57C4F218249E500119136 /* HelperAuthorizationRight.swift in Sources */,
+				494C8F3222F0EE1B00ACF41D /* Connection.swift in Sources */,
+				494BACA522F0C6E400F63741 /* kern_return_t+string.swift in Sources */,
 				49A57C5321824B1A00119136 /* StatusMenuController.swift in Sources */,
 				49A57C5121824AA400119136 /* HelperInstaller.swift in Sources */,
-				49A57C4E218249E500119136 /* HelperAuthorization.swift in Sources */,
+				494C8F3022F0EDE300ACF41D /* HelperProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,25 +705,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49A57C4C2182494100119136 /* HelperAuthorizationRight.swift in Sources */,
+				494C8F2E22F0ECA600ACF41D /* HelperAuthorization.swift in Sources */,
 				49A57C472182359100119136 /* BluetoothHCIError.swift in Sources */,
+				4955174122F0BD4D00C775EE /* PacketParser.swift in Sources */,
 				53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */,
 				4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */,
 				49A57C482182359100119136 /* PacketType.swift in Sources */,
 				49A57C492182359100119136 /* Driver.swift in Sources */,
-				49A57C4D2182494100119136 /* HelperAuthorization.swift in Sources */,
 				53604C2C215E1C2700071149 /* AppProtocol.swift in Sources */,
 				49415EB82189E68100C854F7 /* CommandParser.swift in Sources */,
+				494C8F2C22F0EC9D00ACF41D /* Helper.swift in Sources */,
 				49A57C452182359100119136 /* L2CapPacket.swift in Sources */,
 				53604C1B215E131E00071149 /* main.swift in Sources */,
+				494C8F2722F0EC5900ACF41D /* NSImage+tinting.swift in Sources */,
+				494C8F2D22F0ECA300ACF41D /* HelperAuthorizationRight.swift in Sources */,
 				49A57C462182359100119136 /* EventPacket.swift in Sources */,
 				49A83C7D2189BECB005BFBFD /* L2CapCommand.swift in Sources */,
-				53604C26215E185D00071149 /* HelperProtocol.swift in Sources */,
 				49415EBE2189F57000C854F7 /* Connection.swift in Sources */,
+				494C8F2F22F0ECA800ACF41D /* HelperProtocol.swift in Sources */,
 				49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */,
 				49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */,
 				53604C22215E13E200071149 /* HelperConstants.swift in Sources */,
-				53604C20215E134500071149 /* Helper.swift in Sources */,
 				49A83C7A21867235005BFBFD /* kern_return_t+string.swift in Sources */,
 				49A83C7721866F7C005BFBFD /* CVarArg+hex.swift in Sources */,
 				49415EBD2189F56D00C854F7 /* BatteryInfo.swift in Sources */,
@@ -626,10 +735,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		496354CC21DE7F740074CF1D /* PBXTargetDependency */ = {
+		494BACBA22F0C85000F63741 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53604C02215E12F300071149 /* Akku */;
-			targetProxy = 496354CB21DE7F740074CF1D /* PBXContainerItemProxy */;
+			targetProxy = 494BACB922F0C85000F63741 /* PBXContainerItemProxy */;
 		};
 		53EE395C215E22CE007310F5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -650,8 +759,9 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		496354CD21DE7F740074CF1D /* Debug */ = {
+		494BACBC22F0C85000F63741 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0980257779498561A4E021C /* Pods-AkkuTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -671,8 +781,9 @@
 			};
 			name = Debug;
 		};
-		496354CE21DE7F740074CF1D /* Release */ = {
+		494BACBD22F0C85000F63741 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2EA0F975472244F007C863D /* Pods-AkkuTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -902,11 +1013,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		496354CF21DE7F740074CF1D /* Build configuration list for PBXNativeTarget "AkkuTests" */ = {
+		494BACBB22F0C85000F63741 /* Build configuration list for PBXNativeTarget "AkkuTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				496354CD21DE7F740074CF1D /* Debug */,
-				496354CE21DE7F740074CF1D /* Release */,
+				494BACBC22F0C85000F63741 /* Debug */,
+				494BACBD22F0C85000F63741 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

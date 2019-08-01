@@ -11,4 +11,5 @@ import Foundation
 struct BatteryInfo {
     var percentage: Int?
     var docked: Bool?
+    var connection: Connection?
 }
