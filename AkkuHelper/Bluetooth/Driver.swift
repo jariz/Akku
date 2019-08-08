@@ -21,6 +21,7 @@ class Driver: NSObject {
     
     fileprivate var timer: Timer?;
     fileprivate let appProtocol: AppProtocol?;
+    fileprivate let packetParser = PacketParser()
     
     // MARK: -
     // MARK: Internal IOBluetoothHCIController communication
@@ -81,19 +82,14 @@ class Driver: NSObject {
                 return false
             }
             
-            var size: UInt32 = 0;
-            IODataQueueDequeue(queuePointer, nil, &size)
+            let dequeue = IODataQueueDequeue(queuePointer, nil, nil)
             
-            var offset = unsafeBitCast(entryPointer, to: Int.self)
+            if (dequeue != kIOReturnSuccess) {
+                throw BluetoothHCIError.dataQueueReadFail(ioError: dequeue.string)
+            }
             
-            // skip over the entry's own memory...
-            offset += MemoryLayout<IODataQueueEntry>.alignment
-            
-            // skip to the packet type (todo: research what this data actually contains)
-            offset += 8;
-            
-            let packetParser = PacketParser()
-            packetParser.read(offset, size)
+            let offset = unsafeBitCast(entryPointer, to: Int.self)
+            _ = packetParser.read(offset)
             
             for battInfo in packetParser.batteryInfos {
                 if let appProtocol = self.appProtocol, let connection = battInfo.connection {
@@ -106,8 +102,7 @@ class Driver: NSObject {
                     }
                 }
             }
-            
-            offset += Int(size)
+
         } while IODataQueueDataAvailable(queuePointer)
         
         return true

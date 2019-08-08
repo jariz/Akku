@@ -16,15 +16,18 @@ class ParserTests: XCTestCase {
     func testPacketLog() {
         // most simple usecase, sends battery states seperately
         assertTestData("MOMENTUM 2 AEBT", "00:1b:66:7f:d3:15", 70)
-        
+
         // a bit harder cause this device sends all the keypairs in a single command.
         assertTestData("BOSE QUIETCOMFORT", "4c:87:5d:0b:03:ea", 10)
-        
+
+//        // corrupted file test
+//        assertTestData("Sennheiser HD 4.50 BTNC", "00:16:94:32:10:d6", 90)
+//
 //        // corrupted file. multiple headphones. complete chaos.
-//        assertTestData("VEHO ZB-Z6", "20:18:01:bb:5c:42", 100)
+//        assertTestData("VEHO ZB-6", "20:18:01:bb:5c:42", 100)
     }
     
-    func assertBatteryLevel (_ addr: BluetoothDeviceAddress, _ amount: Int, states: [BatteryInfo]) {
+    func assertBatteryLevel (_ addr: inout BluetoothDeviceAddress, _ amount: Int, states: [BatteryInfo]) {
         // validate that there are any actual states
         XCTAssertTrue(states.contains { $0.percentage != nil}, "No battery percentages found")
         
@@ -32,10 +35,10 @@ class ParserTests: XCTestCase {
         XCTAssertTrue(states
             .compactMap { $0.connection }
             .contains { $0.addr.data == addr.data }
-        , "No devices found with address \(addr.data)")
+        , "No devices found with address \(IOBluetoothNSStringFromDeviceAddressColon(&addr)!)")
         
         // validate that none of the devices are docked
-        XCTAssertTrue(states.contains { $0.docked == false})
+        XCTAssertTrue(states.contains { $0.docked == false })
         
         for state in states {
             if let percentage = state.percentage, let conn = state.connection {
@@ -53,7 +56,7 @@ class ParserTests: XCTestCase {
             var addr = BluetoothDeviceAddress(data: (0, 0, 0, 0, 0, 0))
             IOBluetoothNSStringToDeviceAddress(addrString, &addr)
             
-            assertBatteryLevel(addr, amount, states: log.parser.batteryInfos)
+            assertBatteryLevel(&addr, amount, states: log.parser.batteryInfos)
         } else {
             XCTFail("Unable to parse packetlog '\(baseName)'.")
             return

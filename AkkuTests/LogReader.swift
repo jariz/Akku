@@ -12,35 +12,8 @@
 import Foundation
 import SwiftyBeaver
 
-struct PacketLoggerHeader {
-    var length: UInt32;
-    var ts_secs: UInt32;
-    var ts_usecs: UInt32;
-}
-
-let MAX_PACKET_SIZE = 262144
-let MIN_PACKET_SIZE = 8
-
 class LogReader {
     let parser = PacketParser()
-    
-    func readHeader (bitPattern: Int) -> PacketLoggerHeader? {
-        guard var header = UnsafePointer<PacketLoggerHeader>.init(bitPattern: bitPattern)?.pointee else {
-            debugPrint("failed to read header")
-            return nil
-        }
-        
-        /*
-         * If the upper 16 bits of the length are non-zero and the lower
-         * 16 bits are zero, assume the file is little-endian.
-         */
-        if (header.length & 0x0000FFFF) == 0 && (header.length & 0xFFFF0000) != 0 {
-            // Byte-swap the upper 16 bits (the lower 16 bits are zero, so we don't have to look at them).
-            header.length = ((header.length >> 24) & 0xFF) | (((header.length >> 16) & 0xFF) << 8);
-        }
-        
-        return header
-    }
     
     init? (pklgFile: String) {
         let handle = FileHandle(forReadingAtPath: pklgFile)
@@ -58,35 +31,20 @@ class LogReader {
             var packetTypes = Dictionary<PacketType, Int>()
             
             repeat {
-                guard let header = self.readHeader(bitPattern: start + offset) else {
-                    return nil
-                }
+                let length = parser.read(start + offset)
                 
-                // skip over header
-                offset += MemoryLayout<PacketLoggerHeader>.size
+                offset += MemoryLayout<PacketHeader>.size
                 
-                if header.length > MAX_PACKET_SIZE {
-                    print("WARNING: header of packet #\(packets) too big")
-                    continue
-                } else {
-                    if let packetType = parser.read(start + offset, header.length) {
-                        if let val = packetTypes[packetType] {
-                            packetTypes[packetType] = val + 1
-                        } else {
-                            packetTypes[packetType] = 1
-                        }
+                if let packetType = parser.lastPacketType {
+                    if let val = packetTypes[packetType] {
+                        packetTypes[packetType] = val + 1
+                    } else {
+                        packetTypes[packetType] = 1
                     }
                 }
                 
-                if header.length < MIN_PACKET_SIZE {
-                    print("packet length is too small")
-                    return nil
-                }
-                
-                
                 // skip over the rest of the packet
-                offset += Int(header.length - 8)
-                
+                offset += Int(length - 8)
                 packets += 1
                 
             } while (offset < data.count)
@@ -96,7 +54,7 @@ class LogReader {
             print("------")
             print("Parsed \(packets) packets in \((diff * 1000).rounded())ms")
             print(packetTypes
-                .map({ entry in "\(entry.key): \(entry.value) packets"})
+                .map({ entry in "\(entry.key): \(entry.value) packets" })
                 .joined(separator: ", ")
             )
             

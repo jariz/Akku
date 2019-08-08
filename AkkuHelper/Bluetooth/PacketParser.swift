@@ -9,6 +9,9 @@
 import Foundation
 import IOBluetooth
 
+let MAX_PACKET_SIZE = 262144
+let MIN_PACKET_SIZE = 8
+
 class PacketParser {
     // MARK: Detected RFCOMM channels and connections
     
@@ -17,19 +20,48 @@ class PacketParser {
     var channels: [RFCOMMChannel] = []
     var batteryInfos: [BatteryInfo] = []
     
-    func read (_ offset: Int, _ size: UInt32) -> PacketType? {
+    var lastPacketType: PacketType?
+    
+    func read (_ offset: Int) -> UInt32 {
         var offset = offset
+        lastPacketType = nil
+        
+        guard var header = UnsafePointer<PacketHeader>(bitPattern: offset)?.pointee else {
+            return 0
+        }
+        
+        /*
+         * If the upper 16 bits of the length are non-zero and the lower
+         * 16 bits are zero, assume the file is little-endian.
+         */
+        if (header.length & 0x0000FFFF) == 0 && (header.length & 0xFFFF0000) != 0 {
+            // Byte-swap the upper 16 bits (the lower 16 bits are zero, so we don't have to look at them).
+            header.length = ((header.length >> 24) & 0xFF) | (((header.length >> 16) & 0xFF) << 8);
+        }
+        
+        if header.length < MIN_PACKET_SIZE {
+            print("packet length is too small")
+            return header.length
+        }
+        
+        if header.length > MAX_PACKET_SIZE {
+            print("packet length too big")
+            return header.length
+        }
+        
+        // skip over header
+        offset += MemoryLayout<PacketHeader>.size
         
         guard let ptr = UnsafeMutablePointer<UInt8>(bitPattern: offset),
             let packetType = PacketType(rawValue: ptr.pointee) else {
-                return nil
+                return header.length
         }
         
         // skip over packet type
         offset += MemoryLayout<UInt8>.size
         
         // build a buffer from the remaining packet
-        var buffer = UnsafeMutableBufferPointer(start: UnsafeMutablePointer<UInt8>(bitPattern: offset), count: Int(size));
+        var buffer = UnsafeMutableBufferPointer(start: UnsafeMutablePointer<UInt8>(bitPattern: offset), count: Int(header.length));
         
         switch packetType {
         case .HCI_EVENT:
@@ -46,9 +78,11 @@ class PacketParser {
             
             // now that we've read the l2cap header, we can skip over it
             offset += L2CapPacket.length
-            buffer = UnsafeMutableBufferPointer(start: UnsafeMutablePointer<UInt8>(bitPattern: offset), count: Int(size));
+            buffer = UnsafeMutableBufferPointer(start: UnsafeMutablePointer<UInt8>(bitPattern: offset), count: Int(header.length));
             
-            if let packet = packet, let channel = channels.first(where: { $0.sourceCID == packet.CID || $0.destinationCID == packet.CID }) {
+            if let packet = packet, let channel = channels.first(where: {
+                packetType == .RECV_ACL_DATA ? $0.sourceCID == packet.CID : $0.destinationCID == packet.CID
+            }) {
                 // known RFCOMM channel, assume we're speaking RFCOMM
                 let rfcommPacket = RFCOMMPacket(pointer: buffer, parent: packet)
                 
@@ -97,6 +131,7 @@ class PacketParser {
             break
         }
         
-        return packetType
+        lastPacketType = packetType
+        return header.length
     }
 }

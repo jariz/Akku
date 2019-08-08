@@ -16,4 +16,3 @@ let console = ConsoleDestination()
 console.format = "$DHH:mm:ss$d $C$L - $M"
 log.addDestination(console)
 
-log.info("ya")

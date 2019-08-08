@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		097AC666E92ED1453E5E15BC /* libPods-AkkuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2A35E64B993C686985FB7B /* libPods-AkkuTests.a */; };
+		49382A8A22FCB14A005A7722 /* PacketHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49382A8722FCB0E7005A7722 /* PacketHeader.swift */; };
+		49382A8B22FCB6D4005A7722 /* PacketHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49382A8722FCB0E7005A7722 /* PacketHeader.swift */; };
 		49415EB82189E68100C854F7 /* CommandParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A83C812189E1BB005BFBFD /* CommandParser.swift */; };
 		49415EBD2189F56D00C854F7 /* BatteryInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EBB2189F56700C854F7 /* BatteryInfo.swift */; };
 		49415EBE2189F57000C854F7 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49415EB92189F55500C854F7 /* Connection.swift */; };
@@ -46,8 +48,12 @@
 		4955174122F0BD4D00C775EE /* PacketParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4955173F22F0B08900C775EE /* PacketParser.swift */; };
 		496B297022F3875700ED191B /* MOMENTUM 2 AEBT.pklg in Resources */ = {isa = PBXBuildFile; fileRef = 496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */; };
 		496B297222F3894200ED191B /* BOSE QUIETCOMFORT.pklg in Resources */ = {isa = PBXBuildFile; fileRef = 496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */; };
-		496B297622F38BAF00ED191B /* BOSE QUIETCOMFORT.pklg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */; };
-		496B297722F38BAF00ED191B /* MOMENTUM 2 AEBT.pklg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */; };
+		496B297622F38BAF00ED191B /* BOSE QUIETCOMFORT.pklg in Copy test data */ = {isa = PBXBuildFile; fileRef = 496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */; };
+		496B297722F38BAF00ED191B /* MOMENTUM 2 AEBT.pklg in Copy test data */ = {isa = PBXBuildFile; fileRef = 496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */; };
+		496B297C22F4851800ED191B /* VEHO ZB-6.pklg in Resources */ = {isa = PBXBuildFile; fileRef = 496B297B22F4851800ED191B /* VEHO ZB-6.pklg */; };
+		496B297D22F4853F00ED191B /* VEHO ZB-6.pklg in Copy test data */ = {isa = PBXBuildFile; fileRef = 496B297B22F4851800ED191B /* VEHO ZB-6.pklg */; };
+		496B297F22F4856500ED191B /* Sennheiser HD 4.50 BTNC.pklg in Resources */ = {isa = PBXBuildFile; fileRef = 496B297E22F4856500ED191B /* Sennheiser HD 4.50 BTNC.pklg */; };
+		496B298022F485FB00ED191B /* Sennheiser HD 4.50 BTNC.pklg in Copy test data */ = {isa = PBXBuildFile; fileRef = 496B297E22F4856500ED191B /* Sennheiser HD 4.50 BTNC.pklg */; };
 		4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */; };
 		49A57C432182359100119136 /* RFCOMMChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C392182359100119136 /* RFCOMMChannel.swift */; };
 		49A57C442182359100119136 /* RFCOMMPacket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A57C3B2182359100119136 /* RFCOMMPacket.swift */; };
@@ -95,15 +101,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		496B297322F38B2100ED191B /* CopyFiles */ = {
+		496B297322F38B2100ED191B /* Copy test data */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = TestData;
 			dstSubfolderSpec = 16;
 			files = (
-				496B297622F38BAF00ED191B /* BOSE QUIETCOMFORT.pklg in CopyFiles */,
-				496B297722F38BAF00ED191B /* MOMENTUM 2 AEBT.pklg in CopyFiles */,
+				496B298022F485FB00ED191B /* Sennheiser HD 4.50 BTNC.pklg in Copy test data */,
+				496B297D22F4853F00ED191B /* VEHO ZB-6.pklg in Copy test data */,
+				496B297622F38BAF00ED191B /* BOSE QUIETCOMFORT.pklg in Copy test data */,
+				496B297722F38BAF00ED191B /* MOMENTUM 2 AEBT.pklg in Copy test data */,
 			);
+			name = "Copy test data";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		53604C16215E131D00071149 /* CopyFiles */ = {
@@ -131,6 +140,7 @@
 /* Begin PBXFileReference section */
 		3B116B1BDC658F4CBA4B3348 /* Pods_io_jari_AkkuHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_io_jari_AkkuHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E1786BB16FAE0C4FF70254 /* Pods-Akku.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Akku.release.xcconfig"; path = "Pods/Target Support Files/Pods-Akku/Pods-Akku.release.xcconfig"; sourceTree = "<group>"; };
+		49382A8722FCB0E7005A7722 /* PacketHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketHeader.swift; sourceTree = "<group>"; };
 		49415EB92189F55500C854F7 /* Connection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
 		49415EBB2189F56700C854F7 /* BatteryInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryInfo.swift; sourceTree = "<group>"; };
 		49415EC0218A1C1F00C854F7 /* BatteryMenuItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BatteryMenuItem.xib; sourceTree = "<group>"; };
@@ -145,7 +155,8 @@
 		495D69CE218124CC004621C9 /* SMJobBlessUtil.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = SMJobBlessUtil.py; sourceTree = "<group>"; };
 		496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MOMENTUM 2 AEBT.pklg"; sourceTree = "<group>"; };
 		496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BOSE QUIETCOMFORT.pklg"; sourceTree = "<group>"; };
-		496B297822F3953200ED191B /* VEHO ZB-Z6.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VEHO ZB-Z6.pklg"; sourceTree = "<group>"; };
+		496B297B22F4851800ED191B /* VEHO ZB-6.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "VEHO ZB-6.pklg"; sourceTree = "<group>"; };
+		496B297E22F4856500ED191B /* Sennheiser HD 4.50 BTNC.pklg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sennheiser HD 4.50 BTNC.pklg"; sourceTree = "<group>"; };
 		4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRequest.swift; sourceTree = "<group>"; };
 		49A57C392182359100119136 /* RFCOMMChannel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMChannel.swift; sourceTree = "<group>"; };
 		49A57C3B2182359100119136 /* RFCOMMPacket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RFCOMMPacket.swift; sourceTree = "<group>"; };
@@ -254,7 +265,8 @@
 		496B296E22F3871B00ED191B /* TestData */ = {
 			isa = PBXGroup;
 			children = (
-				496B297822F3953200ED191B /* VEHO ZB-Z6.pklg */,
+				496B297E22F4856500ED191B /* Sennheiser HD 4.50 BTNC.pklg */,
+				496B297B22F4851800ED191B /* VEHO ZB-6.pklg */,
 				496B297122F3894200ED191B /* BOSE QUIETCOMFORT.pklg */,
 				496B296F22F3875700ED191B /* MOMENTUM 2 AEBT.pklg */,
 			);
@@ -280,6 +292,7 @@
 				49415EBB2189F56700C854F7 /* BatteryInfo.swift */,
 				49A57C392182359100119136 /* RFCOMMChannel.swift */,
 				4996492D21A5ED2E0088D8FE /* ConnectionRequest.swift */,
+				49382A8722FCB0E7005A7722 /* PacketHeader.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -410,7 +423,7 @@
 				494BACB022F0C85000F63741 /* Sources */,
 				494BACB122F0C85000F63741 /* Frameworks */,
 				494BACB222F0C85000F63741 /* Resources */,
-				496B297322F38B2100ED191B /* CopyFiles */,
+				496B297322F38B2100ED191B /* Copy test data */,
 			);
 			buildRules = (
 			);
@@ -516,8 +529,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496B297F22F4856500ED191B /* Sennheiser HD 4.50 BTNC.pklg in Resources */,
 				496B297222F3894200ED191B /* BOSE QUIETCOMFORT.pklg in Resources */,
 				496B297022F3875700ED191B /* MOMENTUM 2 AEBT.pklg in Resources */,
+				496B297C22F4851800ED191B /* VEHO ZB-6.pklg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,6 +688,7 @@
 				494C8F3B22F0F4A700ACF41D /* CommandParser.swift in Sources */,
 				494C8F1D22F0EC0600ACF41D /* RFCOMMChannel.swift in Sources */,
 				494C8F3A22F0F49400ACF41D /* CVarArg+hex.swift in Sources */,
+				49382A8B22FCB6D4005A7722 /* PacketHeader.swift in Sources */,
 				494C8F3422F0F18000ACF41D /* PacketParser.swift in Sources */,
 				494C8F2422F0EC0E00ACF41D /* PacketType.swift in Sources */,
 				494C8F2022F0EC0A00ACF41D /* L2CapPacket.swift in Sources */,
@@ -707,6 +723,7 @@
 			files = (
 				494C8F2E22F0ECA600ACF41D /* HelperAuthorization.swift in Sources */,
 				49A57C472182359100119136 /* BluetoothHCIError.swift in Sources */,
+				49382A8A22FCB14A005A7722 /* PacketHeader.swift in Sources */,
 				4955174122F0BD4D00C775EE /* PacketParser.swift in Sources */,
 				53C6B95E216767F0001A80FD /* CodesignCheck.swift in Sources */,
 				4996492F21A5F5EF0088D8FE /* ConnectionRequest.swift in Sources */,

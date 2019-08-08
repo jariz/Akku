@@ -7,10 +7,10 @@
 //
 
 public enum BluetoothHCIError: Error {
-    /// IOBluetoothHCIController driver not found
+    // IOBluetoothHCIController driver not found
     case driverNotFound
     
-    /// Failed to open a connection to the IOBluetoothHCIController driver
+    // Failed to open a connection to the IOBluetoothHCIController driver
     case failedToOpen(ioError: String)
     
     // Failed to map memory from driver
@@ -18,6 +18,9 @@ public enum BluetoothHCIError: Error {
     
     // Failed to call method on driver
     case methodCallFail(ioError: String)
+    
+    // Failed to read from data queue
+    case dataQueueReadFail(ioError: String)
     
     // Failed to initialize data queue
     case dataQueueInitFail
