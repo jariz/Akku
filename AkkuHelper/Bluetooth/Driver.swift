@@ -90,20 +90,20 @@ class Driver: NSObject {
             
             let offset = unsafeBitCast(entryPointer, to: Int.self)
             _ = packetParser.read(offset)
-            
-            for battInfo in packetParser.batteryInfos {
-                if let appProtocol = self.appProtocol, let connection = battInfo.connection {
-                    if let docked = battInfo.docked {
-                        appProtocol.reportDockChange(address: connection.addr, docked: docked)
-                    }
-                    
-                    if let percentage = battInfo.percentage {
-                        appProtocol.reportBatteryChange(address: connection.addr, percentage: percentage)
-                    }
-                }
-            }
 
         } while IODataQueueDataAvailable(queuePointer)
+        
+        for battInfo in packetParser.batteryInfos {
+            if let appProtocol = self.appProtocol, let connection = battInfo.connection {
+                if let docked = battInfo.docked {
+                    appProtocol.reportDockChange(address: connection.addr, docked: docked)
+                }
+                
+                if let percentage = battInfo.percentage {
+                    appProtocol.reportBatteryChange(address: connection.addr, percentage: percentage)
+                }
+            }
+        }
         
         return true
     }
