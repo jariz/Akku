@@ -29,7 +29,14 @@ class Driver: NSObject {
     public func open () throws {
         // get driver
         let port = kIOMasterPortDefault;
-        let service = IOServiceGetMatchingService(port, IOServiceMatching("IOBluetoothHCIController"))
+        
+        var serviceName = "IOBluetoothHCIController";
+        
+        if #available(OSX 10.15, *) {
+            serviceName = "IOBluetoothPacketLogger";
+        }
+        
+        let service = IOServiceGetMatchingService(port, IOServiceMatching(serviceName))
         
         if (service == 0) {
             throw BluetoothHCIError.driverNotFound
