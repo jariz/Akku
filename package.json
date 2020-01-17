@@ -12,8 +12,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "appdmg": "^0.5.2",
-    "dotenv": "^6.2.0",
-    "release-it": "^12.3.4"
+    "appdmg": "^0.6.0",
+    "dotenv": "^8.2.0",
+    "release-it": "^12.4.3"
   }
 }
