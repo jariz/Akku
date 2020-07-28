@@ -92,8 +92,8 @@ I will let you know!</string>
                     <textFieldCell key="cell" alignment="left" id="cu2-xn-1WW">
                         <font key="font" usesAppearanceFont="YES"/>
                         <string key="title">Akku needs to intercept communication with the system’s bluetooth audio service. Sadly, this requires root access.
-It’s helper app is designed to only accept commands from the Akku application and certifies it’s certificate. On top of that, Akku is open 
-source and can be fully audited on it’s GitHub repo.</string>
+The helper app is designed to only accept commands from the Akku application and certifies its certificate. On top of that, Akku is open 
+source and can be fully audited on the GitHub repo.</string>
                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
