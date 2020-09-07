@@ -53,8 +53,7 @@ I recommend the following config:
 ### Will this app be in the App Store?
 
 No. [Like most of my apps](https://noti.center), it uses pretty unorthodox API's that will very likely not work in the app sandbox and/or be approved by Apple.  
-Despite not 
-Akku contains a automatic updater that will keep it up to date, and additionally, you can manually check by clicking 'Check for updates' from it's menu.
+However, Akku contains a automatic updater that will keep it up to date, and additionally, you can manually check by clicking 'Check for updates' from it's menu.
 
 ### How does it work?
 
