@@ -41,7 +41,7 @@ Whilst we're still in beta, it might be possible that Akku reports that it can't
 Before opening an issue, check the following:
 
 - If you have a iPhone/Android device, please confirm that it shows you the battery status.  
-If not, chances are high that your device simply does support battery statuses.  
+If not, chances are high that your device simply doesn't support battery statuses.  
 - If you just installed Akku, reconnect at least once.  
 - If your phone can read the status, but Akku can't, please follow [this guide](https://github.com/jariz/Akku/blob/master/CONTRIBUTING.md#my-device-does-not-work) that tells you what data you need to provide in order for us to fix the issue.
 
