@@ -38,7 +38,7 @@
                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="CXj-7m-FVk">
                         <font key="font" usesAppearanceFont="YES"/>
                         <string key="title">I will be your tiny companion who lives in your menu bar.
-Whenever I pick up a bluetooth battery signal, 
+Whenever I pick up a Bluetooth battery signal, 
 I will let you know!</string>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
