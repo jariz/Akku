@@ -1,3 +1,15 @@
+------
+
+### ⚠️ **IMPORTANT** ⚠️
+
+**MacOS monterey now supports 3rd party bluetooth headsets by itself!**  
+I have therefore decided to stop development on this project.  
+
+**This app will not work on Monterey, I have no plans on adding adding compatibility with Monterey, and I recommend not using it at all on Monterey to begin with.**  
+You can read [my full announcement here](https://github.com/jariz/Akku/issues/122).  
+
+------
+
 <img src="https://jari.lol/8OQmLnyKru.png" width="305" align="right" />  
 
 # ​ ![](https://jari.lol/rR76J5YsnU.png)  Akku  
